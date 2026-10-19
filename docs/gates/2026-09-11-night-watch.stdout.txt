@@ -1,0 +1,1049 @@
+2026-09-11T11:15:36.992Z start active=文件传输助手 conversations=8 interval=1.0 messages=1 mode=both seconds=28800.0
+2026-09-11T11:15:36.997Z subscribe added=24 unsupported=
+2026-09-11T11:18:23.426Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T11:18:23.428Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T11:33:26.023Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T11:33:26.026Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T11:48:29.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T11:48:29.131Z relocate ok=true
+2026-09-11T11:48:29.132Z subscribe added=24 unsupported=
+2026-09-11T11:58:19.043Z error error=invalid or stale AX element trigger=timer
+2026-09-11T11:58:19.090Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T11:58:19.091Z lock screen_locked=true
+2026-09-11T11:58:20.041Z error error=invalid or stale AX element trigger=timer
+2026-09-11T11:58:20.074Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T11:58:21.043Z error error=invalid or stale AX element trigger=timer
+2026-09-11T11:58:21.083Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T11:58:22.046Z error error=invalid or stale AX element trigger=timer
+2026-09-11T11:58:22.082Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T11:58:23.043Z error error=invalid or stale AX element trigger=timer
+2026-09-11T11:58:23.085Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T11:58:24.062Z lock screen_locked=false
+2026-09-11T12:01:05.273Z ax name=AXApplicationActivated role=AXApplication
+2026-09-11T12:01:25.171Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T12:01:25.217Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T12:01:25.218Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T12:01:25.404Z poll event=conversation #1 文件传输助手 changed title,preview,timeLabel,selected trigger=ax:AXSelectedRowsChanged
+2026-09-11T12:01:25.404Z poll event=conversation #2 «aa28a575» changed title,preview trigger=ax:AXSelectedRowsChanged
+2026-09-11T12:01:25.404Z poll event=conversation #3 «c92d358a» changed title,preview,timeLabel trigger=ax:AXSelectedRowsChanged
+2026-09-11T12:01:25.404Z poll event=conversation #4 «c5f1b630» changed title,preview trigger=ax:AXSelectedRowsChanged
+2026-09-11T12:01:25.404Z poll event=conversation #5 «3f209d3d» changed title,preview,timeLabel trigger=ax:AXSelectedRowsChanged
+2026-09-11T12:01:25.404Z poll event=conversation #6 «f24aa1bc» changed title,preview,timeLabel,selected trigger=ax:AXSelectedRowsChanged
+2026-09-11T12:01:25.404Z poll event=message count 1 -> 2 trigger=ax:AXSelectedRowsChanged
+2026-09-11T12:01:25.404Z poll event=message #1 added dir=outbound time=20:01 trigger=ax:AXSelectedRowsChanged
+2026-09-11T12:01:26.865Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T12:01:27.038Z poll event=conversation #1 文件传输助手 changed preview trigger=ax:AXRowCountChanged
+2026-09-11T12:01:27.038Z poll event=message count 2 -> 3 trigger=ax:AXRowCountChanged
+2026-09-11T12:01:27.038Z poll event=message #2 added dir=outbound time=- trigger=ax:AXRowCountChanged
+2026-09-11T12:01:32.848Z ax name=AXApplicationDeactivated role=AXApplication
+2026-09-11T12:03:28.934Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T12:03:28.974Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T12:18:32.155Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T12:18:32.188Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T12:23:24.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:23:24.119Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:23:24.120Z lock screen_locked=true
+2026-09-11T12:23:25.065Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:23:25.102Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:23:26.067Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:23:26.117Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:23:27.065Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:23:27.123Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:23:28.084Z lock screen_locked=false
+2026-09-11T12:24:28.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:28.112Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:28.114Z lock screen_locked=true
+2026-09-11T12:24:29.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:29.112Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:30.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:30.115Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:31.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:31.125Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:32.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:32.109Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:33.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:33.099Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:34.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:34.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:35.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:35.116Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:36.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:36.100Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:37.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:37.125Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:38.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:38.105Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:39.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:39.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:40.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:40.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:41.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:41.125Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:42.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:42.127Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:43.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:43.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:44.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:44.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:45.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:45.123Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:46.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:46.111Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:47.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:47.108Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:48.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:48.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:49.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:49.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:50.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:50.122Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:51.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:51.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:52.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:52.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:53.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:53.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:54.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:54.119Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:55.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:55.122Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:56.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:56.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:57.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:57.114Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:58.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:58.106Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:24:59.069Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:24:59.120Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:00.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:00.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:01.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:01.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:02.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:02.109Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:03.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:03.127Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:04.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:04.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:05.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:05.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:06.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:06.123Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:07.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:07.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:08.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:08.110Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:09.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:09.123Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:10.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:10.112Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:11.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:11.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:12.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:12.118Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:13.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:13.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:14.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:14.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:15.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:15.125Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:16.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:16.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:17.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:17.122Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:18.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:18.109Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:19.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:19.112Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:20.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:20.141Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:21.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:21.101Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:22.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:22.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:23.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:23.114Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:24.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:24.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:25.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:25.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:26.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:26.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:27.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:27.121Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:28.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:28.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:29.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:29.104Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:30.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:30.112Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:31.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:31.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:32.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:32.121Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:33.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:33.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:34.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:34.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:35.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:35.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:36.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:36.141Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:37.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:37.109Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:38.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:38.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:39.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:39.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:40.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:40.107Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:41.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:41.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:42.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:42.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:43.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:43.134Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:44.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:44.125Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:45.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:45.134Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:46.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:46.123Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:47.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:47.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:48.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:48.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:49.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:49.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:50.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:50.106Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:51.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:51.109Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:52.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:52.113Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:53.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:53.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:54.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:54.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:55.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:55.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:56.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:56.122Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:57.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:57.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:58.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:58.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:25:59.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:25:59.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:00.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:00.122Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:01.070Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:01.106Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:02.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:02.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:03.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:03.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:04.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:04.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:05.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:05.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:06.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:06.157Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:07.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:07.123Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:08.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:08.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:09.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:09.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:10.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:10.120Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:11.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:11.110Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:12.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:12.109Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:13.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:13.134Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:14.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:14.140Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:15.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:15.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:16.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:16.141Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:17.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:17.121Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:18.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:18.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:19.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:19.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:20.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:20.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:21.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:21.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:22.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:22.107Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:23.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:23.110Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:24.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:24.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:25.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:25.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:26.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:26.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:27.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:27.119Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:28.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:28.117Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:29.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:29.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:30.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:30.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:31.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:31.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:32.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:32.127Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:33.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:33.106Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:34.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:34.144Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:35.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:35.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:36.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:36.142Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:37.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:37.112Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:38.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:38.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:39.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:39.134Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:40.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:40.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:41.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:41.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:42.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:42.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:43.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:43.107Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:44.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:44.108Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:45.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:45.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:46.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:46.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:47.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:47.134Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:48.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:48.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:49.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:49.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:50.071Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:50.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:51.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:51.125Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:52.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:52.117Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:53.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:53.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:54.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:54.109Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:55.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:55.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:56.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:56.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:57.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:57.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:58.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:58.119Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:26:59.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:26:59.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:00.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:00.150Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:01.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:01.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:02.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:02.114Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:03.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:03.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:04.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:04.121Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:05.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:05.107Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:06.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:06.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:07.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:07.134Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:08.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:08.140Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:09.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:09.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:10.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:10.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:11.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:11.142Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:12.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:12.125Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:13.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:13.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:14.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:14.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:15.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:15.104Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:16.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:16.112Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:17.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:17.127Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:18.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:18.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:19.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:19.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:20.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:20.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:21.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:21.138Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:22.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:22.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:23.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:23.140Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:24.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:24.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:25.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:25.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:26.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:26.107Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:27.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:27.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:28.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:28.143Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:29.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:29.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:30.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:30.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:31.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:31.123Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:32.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:32.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:33.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:33.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:34.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:34.142Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:35.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:35.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:36.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:36.105Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:37.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:37.105Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:38.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:38.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:39.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:39.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:40.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:40.138Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:41.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:41.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:42.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:42.134Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:43.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:43.138Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:44.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:44.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:45.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:45.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:46.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:46.141Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:47.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:47.103Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:48.072Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:48.127Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:49.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:49.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:50.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:50.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:51.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:51.138Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:52.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:52.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:53.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:53.138Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:54.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:54.127Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:55.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:55.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:56.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:56.142Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:57.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:57.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:58.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:58.105Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:27:59.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:27:59.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:00.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:00.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:01.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:01.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:02.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:02.115Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:03.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:03.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:04.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:04.149Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:05.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:05.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:06.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:06.138Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:07.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:07.123Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:08.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:08.105Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:09.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:09.111Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:10.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:10.134Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:11.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:11.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:12.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:12.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:13.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:13.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:14.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:14.127Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:15.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:15.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:16.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:16.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:17.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:17.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:18.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:18.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:19.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:19.109Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:20.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:20.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:21.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:21.125Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:22.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:22.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:23.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:23.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:24.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:24.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:25.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:25.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:26.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:26.115Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:27.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:27.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:28.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:28.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:29.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:29.109Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:30.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:30.103Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:31.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:31.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:32.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:32.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:33.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:33.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:34.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:34.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:35.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:35.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:36.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:36.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:37.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:37.118Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:38.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:38.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:39.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:39.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:40.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:40.113Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:41.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:41.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:42.073Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:42.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:43.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:43.144Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:44.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:44.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:45.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:45.125Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:46.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:46.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:47.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:47.125Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:48.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:48.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:49.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:49.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:50.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:50.134Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:51.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:51.107Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:52.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:52.144Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:53.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:53.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:54.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:54.134Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:55.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:55.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:56.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:56.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:57.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:57.122Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:58.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:58.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:28:59.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:28:59.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:00.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:00.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:01.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:01.111Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:02.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:02.103Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:03.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:03.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:04.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:04.138Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:05.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:05.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:06.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:06.165Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:07.075Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:07.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:08.074Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:08.129Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:09.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:09.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:10.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:10.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:11.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:11.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:12.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:12.111Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:13.079Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:13.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:14.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:14.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:15.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:15.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:16.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:16.138Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:17.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:17.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:18.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:18.138Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:19.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:19.123Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:20.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:20.144Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:21.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:21.133Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:22.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:22.112Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:23.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:23.117Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:24.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:24.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:25.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:25.147Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:26.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:26.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:27.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:27.127Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:28.081Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:28.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:29.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:29.143Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:30.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:30.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:31.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:31.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:32.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:32.130Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:33.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:33.120Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:34.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:34.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:35.079Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:35.148Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:36.086Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:36.156Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:37.079Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:37.138Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:38.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:38.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:39.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:39.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:40.081Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:40.143Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:41.081Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:41.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:42.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:42.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:43.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:43.144Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:44.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:44.109Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:45.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:45.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:46.079Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:46.143Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:47.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:47.151Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:48.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:48.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:49.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:49.128Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:50.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:50.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:51.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:51.146Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:52.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:52.147Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:53.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:53.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:54.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:54.115Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:55.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:55.112Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:56.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:56.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:57.079Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:57.151Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:58.079Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:58.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:29:59.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:29:59.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:00.081Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:00.147Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:01.079Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:01.126Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:02.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:02.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:03.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:03.142Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:04.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:04.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:05.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:05.114Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:06.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:06.163Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:07.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:07.140Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:08.080Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:08.137Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:09.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:09.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:10.083Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:10.141Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:11.079Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:11.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:12.081Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:12.136Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:13.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:13.140Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:14.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:14.139Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:15.081Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:15.113Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:16.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:16.117Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:17.081Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:17.146Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:18.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:18.140Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:19.078Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:19.131Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:20.082Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:20.143Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:21.081Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:21.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:22.081Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:22.124Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:23.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:23.135Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:24.077Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:24.144Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:25.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T12:30:25.132Z relocate error=could not locate WeCom region conversationTable in the window ok=false
+2026-09-11T12:30:26.143Z lock screen_locked=false
+2026-09-11T12:33:32.689Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T12:33:32.690Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T12:33:40.386Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T12:33:40.580Z poll event=conversation #1 文件传输助手 changed preview trigger=ax:AXRowCountChanged
+2026-09-11T12:33:40.580Z poll event=message count 3 -> 4 trigger=ax:AXRowCountChanged
+2026-09-11T12:33:40.580Z poll event=message #3 added dir=outbound time=20:33 trigger=ax:AXRowCountChanged
+2026-09-11T12:48:35.201Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T12:48:35.203Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T12:52:09.242Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T12:52:09.429Z poll event=conversation #1 文件传输助手 changed preview trigger=ax:AXRowCountChanged
+2026-09-11T12:52:09.429Z poll event=message count 4 -> 5 trigger=ax:AXRowCountChanged
+2026-09-11T12:52:09.429Z poll event=message #4 added dir=outbound time=20:52 trigger=ax:AXRowCountChanged
+2026-09-11T13:03:34.991Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T13:03:34.993Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T13:18:37.858Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T13:18:37.858Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T13:33:41.118Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T13:33:41.119Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T13:48:43.984Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T13:48:43.986Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T13:52:23.016Z poll event=conversation #1 文件传输助手 changed timeLabel trigger=timer
+2026-09-11T14:03:47.016Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T14:03:47.017Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T14:18:50.191Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T14:18:50.194Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T14:33:53.089Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T14:33:53.108Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T14:48:56.075Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T14:48:56.076Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T15:03:59.119Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T15:03:59.120Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T15:19:02.281Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T15:19:02.283Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T15:34:05.137Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T15:34:05.138Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T15:49:05.228Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T15:49:05.229Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:00:01.297Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T16:00:01.497Z poll event=message #0 changed timeLabel trigger=ax:AXRowCountChanged
+2026-09-11T16:00:01.497Z poll event=message #1 changed timeLabel trigger=ax:AXRowCountChanged
+2026-09-11T16:00:01.497Z poll event=message #3 changed timeLabel trigger=ax:AXRowCountChanged
+2026-09-11T16:00:01.497Z poll event=message #4 changed timeLabel trigger=ax:AXRowCountChanged
+2026-09-11T16:00:23.024Z poll event=conversation #1 文件传输助手 changed timeLabel trigger=timer
+2026-09-11T16:00:23.025Z poll event=conversation #2 «aa28a575» changed timeLabel trigger=timer
+2026-09-11T16:00:23.025Z poll event=conversation #3 «c92d358a» changed timeLabel trigger=timer
+2026-09-11T16:00:23.025Z poll event=conversation #4 «c5f1b630» changed timeLabel trigger=timer
+2026-09-11T16:00:23.025Z poll event=conversation #5 «3f209d3d» changed timeLabel trigger=timer
+2026-09-11T16:00:23.025Z poll event=conversation #6 «f24aa1bc» changed timeLabel trigger=timer
+2026-09-11T16:00:23.026Z poll event=conversation #7 «2794fc6e» changed timeLabel trigger=timer
+2026-09-11T16:03:12.411Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:03:12.435Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:03:31.963Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:03:31.989Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:03:32.004Z poll event=composer length 0 -> 17 trigger=timer
+2026-09-11T16:03:42.110Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:03:42.301Z poll event=composer length 17 -> 0 trigger=ax:AXValueChanged
+2026-09-11T16:04:08.051Z error error=invalid or stale AX element trigger=timer
+2026-09-11T16:04:08.082Z relocate ok=true
+2026-09-11T16:04:08.083Z subscribe added=24 unsupported=
+2026-09-11T16:19:11.022Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T16:19:11.044Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:32:02.664Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:32:02.834Z poll event=composer length 0 -> 16 trigger=ax:AXValueChanged
+2026-09-11T16:32:03.114Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:32:03.283Z poll event=composer length 16 -> 0 trigger=ax:AXValueChanged
+2026-09-11T16:32:03.548Z ax name=AXFocusedWindowChanged role=AXWindow
+2026-09-11T16:32:03.552Z ax name=AXFocusedUIElementChanged role=AXTextArea
+2026-09-11T16:32:03.552Z ax name=AXMainWindowChanged role=AXWindow
+2026-09-11T16:32:03.552Z ax name=AXApplicationActivated role=AXApplication
+2026-09-11T16:32:04.082Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:32:04.250Z poll event=composer length 0 -> 16 trigger=ax:AXValueChanged
+2026-09-11T16:32:04.548Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:32:04.583Z ax name=AXApplicationDeactivated role=AXApplication
+2026-09-11T16:32:04.890Z poll event=composer length 16 -> 0 trigger=ax:AXApplicationDeactivated
+2026-09-11T16:32:05.490Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T16:32:05.490Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:34:13.942Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T16:34:13.943Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:42:57.932Z ax name=AXApplicationActivated role=AXApplication
+2026-09-11T16:42:59.763Z ax name=AXApplicationDeactivated role=AXApplication
+2026-09-11T16:43:00.820Z ax name=AXApplicationActivated role=AXApplication
+2026-09-11T16:43:01.415Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:01.416Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:01.436Z ax name=AXWindowCreated role=AXWindow
+2026-09-11T16:43:01.614Z poll event=composer length 0 -> 2 trigger=ax:AXWindowCreated
+2026-09-11T16:43:01.677Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:01.858Z poll event=composer length 2 -> 1 trigger=ax:AXValueChanged
+2026-09-11T16:43:02.918Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:03.003Z poll event=composer length 1 -> 0 trigger=timer
+2026-09-11T16:43:03.214Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:03.236Z ax name=AXWindowCreated role=AXWindow
+2026-09-11T16:43:03.347Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:03.528Z poll event=composer length 0 -> 2 trigger=ax:AXValueChanged
+2026-09-11T16:43:03.637Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:03.824Z poll event=composer length 2 -> 4 trigger=ax:AXValueChanged
+2026-09-11T16:43:04.719Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:04.904Z poll event=composer length 4 -> 5 trigger=ax:AXValueChanged
+2026-09-11T16:43:05.021Z poll event=composer length 5 -> 6 trigger=timer
+2026-09-11T16:43:05.021Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:05.057Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:05.238Z poll event=composer length 6 -> 2 trigger=ax:AXValueChanged
+2026-09-11T16:43:08.407Z ax name=AXWindowCreated role=AXWindow
+2026-09-11T16:43:08.581Z poll event=message #0 changed direction trigger=ax:AXWindowCreated
+2026-09-11T16:43:08.581Z poll event=message #1 changed direction trigger=ax:AXWindowCreated
+2026-09-11T16:43:08.581Z poll event=message #2 changed direction trigger=ax:AXWindowCreated
+2026-09-11T16:43:08.581Z poll event=message #3 changed direction trigger=ax:AXWindowCreated
+2026-09-11T16:43:08.581Z poll event=message #4 changed direction trigger=ax:AXWindowCreated
+2026-09-11T16:43:11.343Z ax name=AXWindowCreated role=AXWindow
+2026-09-11T16:43:11.516Z poll event=message #0 changed direction trigger=ax:AXWindowCreated
+2026-09-11T16:43:11.516Z poll event=message #1 changed direction trigger=ax:AXWindowCreated
+2026-09-11T16:43:11.516Z poll event=message #2 changed direction trigger=ax:AXWindowCreated
+2026-09-11T16:43:11.516Z poll event=message #3 changed direction trigger=ax:AXWindowCreated
+2026-09-11T16:43:11.516Z poll event=message #4 changed direction trigger=ax:AXWindowCreated
+2026-09-11T16:43:14.131Z ax name=AXFocusedUIElementChanged role=AXTable
+2026-09-11T16:43:14.162Z ax name=AXUIElementDestroyed role=?
+2026-09-11T16:43:14.162Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:43:14.330Z error error=invalid or stale AX element trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:14.357Z relocate ok=true
+2026-09-11T16:43:14.358Z subscribe added=23 unsupported=
+2026-09-11T16:43:14.972Z ax name=AXFocusedUIElementChanged role=AXTextArea
+2026-09-11T16:43:15.005Z ax name=AXUIElementDestroyed role=?
+2026-09-11T16:43:15.025Z error error=invalid or stale AX element trigger=timer
+2026-09-11T16:43:15.051Z relocate ok=true
+2026-09-11T16:43:15.052Z subscribe added=24 unsupported=
+2026-09-11T16:43:15.180Z poll event=conversation #1 文件传输助手 changed timeLabel trigger=ax:AXUIElementDestroyed
+2026-09-11T16:43:16.568Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:16.569Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T16:43:16.766Z poll event=conversation #1 文件传输助手 changed preview trigger=ax:AXRowCountChanged
+2026-09-11T16:43:16.767Z poll event=message count 5 -> 6 trigger=ax:AXRowCountChanged
+2026-09-11T16:43:16.767Z poll event=message #5 added dir=outbound time=0:43 trigger=ax:AXRowCountChanged
+2026-09-11T16:43:16.767Z poll event=composer length 2 -> 0 trigger=ax:AXRowCountChanged
+2026-09-11T16:43:20.769Z ax name=AXFocusedUIElementChanged role=AXTable
+2026-09-11T16:43:20.963Z ax name=AXUIElementDestroyed role=?
+2026-09-11T16:43:20.965Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:43:20.980Z error error=invalid or stale AX element trigger=timer
+2026-09-11T16:43:21.027Z relocate ok=true
+2026-09-11T16:43:21.028Z subscribe added=23 unsupported=
+2026-09-11T16:43:21.167Z poll event=active 文件传输助手 -> «c5f1b630» trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:21.167Z poll event=conversation #1 文件传输助手 changed selected trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:21.167Z poll event=conversation #4 «c5f1b630» changed selected trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:21.167Z poll event=message count 6 -> 5 trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:21.167Z poll event=message #0 changed text,timeLabel trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:21.167Z poll event=message #1 changed text,timeLabel,direction trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:21.167Z poll event=message #2 changed text,timeLabel,direction trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:21.167Z poll event=message #3 changed text,timeLabel,direction trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:21.167Z poll event=message #4 changed text,timeLabel,direction trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:21.641Z ax name=AXUIElementDestroyed role=?
+2026-09-11T16:43:21.733Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:43:21.914Z error error=invalid or stale AX element trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:21.954Z relocate ok=true
+2026-09-11T16:43:21.955Z subscribe added=23 unsupported=
+2026-09-11T16:43:21.993Z poll event=active «c5f1b630» -> «c92d358a» trigger=timer
+2026-09-11T16:43:21.993Z poll event=conversation #3 «c92d358a» changed selected trigger=timer
+2026-09-11T16:43:21.993Z poll event=conversation #4 «c5f1b630» changed selected trigger=timer
+2026-09-11T16:43:21.993Z poll event=message count 5 -> 4 trigger=timer
+2026-09-11T16:43:21.993Z poll event=message #0 changed text,timeLabel trigger=timer
+2026-09-11T16:43:21.993Z poll event=message #1 changed text,timeLabel trigger=timer
+2026-09-11T16:43:21.993Z poll event=message #2 changed text,timeLabel trigger=timer
+2026-09-11T16:43:21.993Z poll event=message #3 changed text,timeLabel trigger=timer
+2026-09-11T16:43:22.204Z ax name=AXUIElementDestroyed role=?
+2026-09-11T16:43:22.245Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:43:22.423Z error error=invalid or stale AX element trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:22.454Z relocate ok=true
+2026-09-11T16:43:22.455Z subscribe added=23 unsupported=
+2026-09-11T16:43:23.076Z error error=invalid or stale AX element trigger=timer
+2026-09-11T16:43:23.102Z relocate ok=true
+2026-09-11T16:43:23.103Z subscribe added=24 unsupported=
+2026-09-11T16:43:23.994Z poll event=active «c92d358a» -> 文件传输助手 trigger=timer
+2026-09-11T16:43:23.994Z poll event=conversation #1 文件传输助手 changed selected trigger=timer
+2026-09-11T16:43:23.994Z poll event=conversation #3 «c92d358a» changed selected trigger=timer
+2026-09-11T16:43:23.994Z poll event=message count 4 -> 6 trigger=timer
+2026-09-11T16:43:23.994Z poll event=message #0 changed text,timeLabel trigger=timer
+2026-09-11T16:43:23.994Z poll event=message #1 changed text,timeLabel,direction trigger=timer
+2026-09-11T16:43:23.994Z poll event=message #2 changed text,timeLabel,direction trigger=timer
+2026-09-11T16:43:23.994Z poll event=message #3 changed text,timeLabel,direction trigger=timer
+2026-09-11T16:43:23.994Z poll event=message #4 added dir=outbound time=昨天 20:52 trigger=timer
+2026-09-11T16:43:23.994Z poll event=message #5 added dir=outbound time=0:43 trigger=timer
+2026-09-11T16:43:28.270Z ax name=AXFocusedUIElementChanged role=AXTable
+2026-09-11T16:43:28.317Z ax name=AXFocusedUIElementChanged role=AXTextArea
+2026-09-11T16:43:28.332Z ax name=AXUIElementDestroyed role=?
+2026-09-11T16:43:28.340Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:28.361Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:43:28.531Z error error=invalid or stale AX element trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:28.562Z relocate ok=true
+2026-09-11T16:43:28.563Z subscribe added=24 unsupported=
+2026-09-11T16:43:28.990Z poll event=active 文件传输助手 -> «2794fc6e» trigger=timer
+2026-09-11T16:43:28.990Z poll event=conversation #1 文件传输助手 changed selected trigger=timer
+2026-09-11T16:43:28.990Z poll event=conversation #7 «2794fc6e» changed selected trigger=timer
+2026-09-11T16:43:28.990Z poll event=message count 6 -> 2 trigger=timer
+2026-09-11T16:43:28.991Z poll event=message #0 changed text,timeLabel,direction trigger=timer
+2026-09-11T16:43:28.991Z poll event=message #1 changed text,timeLabel,direction trigger=timer
+2026-09-11T16:43:29.815Z ax name=AXFocusedUIElementChanged role=AXTable
+2026-09-11T16:43:29.874Z ax name=AXFocusedUIElementChanged role=AXTextArea
+2026-09-11T16:43:29.878Z ax name=AXUIElementDestroyed role=?
+2026-09-11T16:43:29.878Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T16:43:29.878Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:43:29.980Z error error=invalid or stale AX element trigger=timer
+2026-09-11T16:43:30.046Z relocate ok=true
+2026-09-11T16:43:30.047Z subscribe added=24 unsupported=
+2026-09-11T16:43:30.059Z poll event=active «2794fc6e» -> - trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:30.059Z poll event=conversation #7 «2794fc6e» changed selected trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:30.059Z poll event=conversation #8 «946c4b20» changed badge,selected trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:30.059Z poll event=message count 2 -> 1 trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:30.059Z poll event=message #0 changed text,timeLabel,direction trigger=ax:AXSelectedRowsChanged
+2026-09-11T16:43:32.991Z ax name=AXFocusedUIElementChanged role=AXTable
+2026-09-11T16:43:33.025Z ax name=AXFocusedUIElementChanged role=AXTextArea
+2026-09-11T16:43:33.037Z error error=invalid or stale AX element trigger=timer
+2026-09-11T16:43:33.063Z relocate ok=true
+2026-09-11T16:43:33.064Z subscribe added=24 unsupported=
+2026-09-11T16:43:33.195Z poll event=active - -> 文件传输助手 trigger=ax:AXFocusedUIElementChanged
+2026-09-11T16:43:33.195Z poll event=conversation #1 文件传输助手 changed selected trigger=ax:AXFocusedUIElementChanged
+2026-09-11T16:43:33.196Z poll event=conversation #8 «946c4b20» changed selected trigger=ax:AXFocusedUIElementChanged
+2026-09-11T16:43:33.196Z poll event=message count 1 -> 6 trigger=ax:AXFocusedUIElementChanged
+2026-09-11T16:43:33.196Z poll event=message #0 changed text,timeLabel trigger=ax:AXFocusedUIElementChanged
+2026-09-11T16:43:33.196Z poll event=message #1 added dir=outbound time=昨天 20:01 trigger=ax:AXFocusedUIElementChanged
+2026-09-11T16:43:33.196Z poll event=message #2 added dir=outbound time=- trigger=ax:AXFocusedUIElementChanged
+2026-09-11T16:43:33.196Z poll event=message #3 added dir=outbound time=昨天 20:33 trigger=ax:AXFocusedUIElementChanged
+2026-09-11T16:43:33.196Z poll event=message #4 added dir=outbound time=昨天 20:52 trigger=ax:AXFocusedUIElementChanged
+2026-09-11T16:43:33.196Z poll event=message #5 added dir=outbound time=0:43 trigger=ax:AXFocusedUIElementChanged
+2026-09-11T16:43:48.052Z ax name=AXApplicationDeactivated role=AXApplication
+2026-09-11T16:49:17.091Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T16:49:17.093Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T16:49:17.278Z poll event=conversation #8 «946c4b20» changed badge trigger=ax:AXSelectedRowsChanged
+2026-09-11T17:04:19.862Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T17:04:19.862Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T17:08:45.290Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T17:08:45.433Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T17:08:45.433Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T17:08:45.607Z error error=AX API failure -25201 during get AXRole trigger=ax:AXRowCountChanged
+2026-09-11T17:08:45.650Z relocate ok=true
+2026-09-11T17:08:45.651Z subscribe added=24 unsupported=
+2026-09-11T17:08:45.983Z poll event=conversation #1 文件传输助手 changed preview trigger=timer
+2026-09-11T17:08:45.983Z poll event=message count 6 -> 7 trigger=timer
+2026-09-11T17:08:45.983Z poll event=message #6 added dir=outbound time=1:08 trigger=timer
+2026-09-11T17:19:23.048Z error error=invalid or stale AX element trigger=timer
+2026-09-11T17:19:23.077Z relocate ok=true
+2026-09-11T17:19:23.077Z subscribe added=24 unsupported=
+2026-09-11T17:24:04.086Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T17:24:04.193Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T17:24:04.194Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T17:24:04.384Z poll event=conversation #1 文件传输助手 changed preview trigger=ax:AXRowCountChanged
+2026-09-11T17:24:04.384Z poll event=message count 7 -> 8 trigger=ax:AXRowCountChanged
+2026-09-11T17:24:04.384Z poll event=message #7 added dir=outbound time=1:24 trigger=ax:AXRowCountChanged
+2026-09-11T17:24:05.066Z poll event=conversation #1 文件传输助手 changed preview trigger=timer
+2026-09-11T17:25:06.266Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T17:25:06.371Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T17:25:06.371Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T17:25:06.562Z poll event=conversation #1 文件传输助手 changed preview trigger=ax:AXRowCountChanged
+2026-09-11T17:25:06.562Z poll event=message count 8 -> 9 trigger=ax:AXRowCountChanged
+2026-09-11T17:25:06.562Z poll event=message #8 added dir=outbound time=- trigger=ax:AXRowCountChanged
+2026-09-11T17:25:07.063Z poll event=conversation #1 文件传输助手 changed preview trigger=timer
+2026-09-11T17:34:23.307Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T17:34:23.310Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T17:35:20.490Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T17:35:20.598Z ax name=AXValueChanged role=AXTextArea
+2026-09-11T17:35:20.598Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T17:35:20.772Z poll event=conversation #1 文件传输助手 changed preview trigger=ax:AXRowCountChanged
+2026-09-11T17:35:20.772Z poll event=message count 9 -> 10 trigger=ax:AXRowCountChanged
+2026-09-11T17:35:20.772Z poll event=message #9 added dir=outbound time=1:35 trigger=ax:AXRowCountChanged
+2026-09-11T17:35:21.045Z poll event=conversation #1 文件传输助手 changed preview trigger=timer
+2026-09-11T17:49:26.099Z error error=invalid or stale AX element trigger=timer
+2026-09-11T17:49:26.173Z relocate ok=true
+2026-09-11T17:49:26.174Z subscribe added=24 unsupported=
+2026-09-11T18:04:29.057Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T18:04:29.058Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T18:19:32.052Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T18:19:32.076Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T18:34:35.161Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T18:34:35.162Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T18:35:23.101Z poll event=conversation #1 文件传输助手 changed timeLabel trigger=timer
+2026-09-11T18:49:38.132Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T18:49:38.133Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T19:04:41.248Z ax name=AXRowCountChanged role=AXTable
+2026-09-11T19:04:41.248Z ax name=AXSelectedRowsChanged role=AXTable
+2026-09-11T19:15:37.183Z summary errors=381 events=123 polls=28871
+watch: seconds=28800 polls=28871 events=123 relocations=14 errors=381 lock_changes=6
+cpu: user=123.40s sys=66.57s
+poll_ms: max=384 mean=36
+notifications: AXRowCountChanged=40 AXSelectedRowsChanged=36 AXValueChanged=30 AXFocusedUIElementChanged=10 AXUIElementDestroyed=7 AXApplicationDeactivated=4 AXWindowCreated=4 AXApplicationActivated=4 AXMainWindowChanged=1 AXFocusedWindowChanged=1

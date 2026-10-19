@@ -1,0 +1,4 @@
+# Only needed against a real broker; tests and `--broker memory://` use the stdlib.
+paho-mqtt>=2.1,<3
+# Optional: render scannable images for the mock's placeholder QR URLs.
+# qrcode[pil]>=8

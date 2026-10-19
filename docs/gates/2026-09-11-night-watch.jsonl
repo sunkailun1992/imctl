@@ -1,0 +1,1045 @@
+{"active":"文件传输助手","conversations":"8","interval":"1.0","messages":"1","mode":"both","seconds":"28800.0","source":"start","t":"2026-09-11T11:15:36.992Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T11:15:36.997Z","unsupported":""}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T11:18:23.426Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T11:18:23.428Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T11:33:26.023Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T11:33:26.026Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T11:48:29.071Z","trigger":"timer"}
+{"ok":"true","source":"relocate","t":"2026-09-11T11:48:29.131Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T11:48:29.132Z","unsupported":""}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T11:58:19.043Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T11:58:19.090Z"}
+{"screen_locked":"true","source":"lock","t":"2026-09-11T11:58:19.091Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T11:58:20.041Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T11:58:20.074Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T11:58:21.043Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T11:58:21.083Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T11:58:22.046Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T11:58:22.082Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T11:58:23.043Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T11:58:23.085Z"}
+{"screen_locked":"false","source":"lock","t":"2026-09-11T11:58:24.062Z"}
+{"name":"AXApplicationActivated","role":"AXApplication","source":"ax","t":"2026-09-11T12:01:05.273Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:01:25.171Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:01:25.217Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:01:25.218Z"}
+{"event":"conversation #1 文件传输助手 changed title,preview,timeLabel,selected","source":"poll","t":"2026-09-11T12:01:25.404Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"conversation #2 «aa28a575» changed title,preview","source":"poll","t":"2026-09-11T12:01:25.404Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"conversation #3 «c92d358a» changed title,preview,timeLabel","source":"poll","t":"2026-09-11T12:01:25.404Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"conversation #4 «c5f1b630» changed title,preview","source":"poll","t":"2026-09-11T12:01:25.404Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"conversation #5 «3f209d3d» changed title,preview,timeLabel","source":"poll","t":"2026-09-11T12:01:25.404Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"conversation #6 «f24aa1bc» changed title,preview,timeLabel,selected","source":"poll","t":"2026-09-11T12:01:25.404Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"message count 1 -> 2","source":"poll","t":"2026-09-11T12:01:25.404Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"message #1 added dir=outbound time=20:01","source":"poll","t":"2026-09-11T12:01:25.404Z","trigger":"ax:AXSelectedRowsChanged"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:01:26.865Z"}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T12:01:27.038Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message count 2 -> 3","source":"poll","t":"2026-09-11T12:01:27.038Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message #2 added dir=outbound time=-","source":"poll","t":"2026-09-11T12:01:27.038Z","trigger":"ax:AXRowCountChanged"}
+{"name":"AXApplicationDeactivated","role":"AXApplication","source":"ax","t":"2026-09-11T12:01:32.848Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:03:28.934Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:03:28.974Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:18:32.155Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:18:32.188Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:23:24.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:23:24.119Z"}
+{"screen_locked":"true","source":"lock","t":"2026-09-11T12:23:24.120Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:23:25.065Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:23:25.102Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:23:26.067Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:23:26.117Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:23:27.065Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:23:27.123Z"}
+{"screen_locked":"false","source":"lock","t":"2026-09-11T12:23:28.084Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:28.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:28.112Z"}
+{"screen_locked":"true","source":"lock","t":"2026-09-11T12:24:28.114Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:29.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:29.112Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:30.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:30.115Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:31.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:31.125Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:32.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:32.109Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:33.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:33.099Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:34.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:34.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:35.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:35.116Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:36.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:36.100Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:37.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:37.125Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:38.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:38.105Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:39.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:39.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:40.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:40.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:41.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:41.125Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:42.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:42.127Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:43.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:43.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:44.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:44.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:45.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:45.123Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:46.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:46.111Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:47.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:47.108Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:48.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:48.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:49.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:49.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:50.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:50.122Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:51.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:51.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:52.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:52.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:53.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:53.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:54.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:54.119Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:55.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:55.122Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:56.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:56.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:57.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:57.114Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:58.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:58.106Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:24:59.069Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:24:59.120Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:00.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:00.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:01.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:01.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:02.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:02.109Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:03.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:03.127Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:04.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:04.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:05.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:05.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:06.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:06.123Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:07.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:07.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:08.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:08.110Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:09.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:09.123Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:10.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:10.112Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:11.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:11.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:12.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:12.118Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:13.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:13.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:14.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:14.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:15.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:15.125Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:16.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:16.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:17.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:17.122Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:18.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:18.109Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:19.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:19.112Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:20.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:20.141Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:21.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:21.101Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:22.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:22.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:23.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:23.114Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:24.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:24.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:25.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:25.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:26.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:26.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:27.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:27.121Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:28.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:28.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:29.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:29.104Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:30.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:30.112Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:31.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:31.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:32.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:32.121Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:33.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:33.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:34.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:34.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:35.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:35.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:36.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:36.141Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:37.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:37.109Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:38.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:38.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:39.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:39.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:40.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:40.107Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:41.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:41.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:42.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:42.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:43.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:43.134Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:44.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:44.125Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:45.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:45.134Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:46.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:46.123Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:47.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:47.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:48.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:48.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:49.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:49.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:50.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:50.106Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:51.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:51.109Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:52.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:52.113Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:53.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:53.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:54.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:54.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:55.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:55.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:56.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:56.122Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:57.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:57.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:58.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:58.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:25:59.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:25:59.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:00.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:00.122Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:01.070Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:01.106Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:02.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:02.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:03.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:03.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:04.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:04.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:05.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:05.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:06.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:06.157Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:07.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:07.123Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:08.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:08.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:09.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:09.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:10.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:10.120Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:11.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:11.110Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:12.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:12.109Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:13.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:13.134Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:14.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:14.140Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:15.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:15.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:16.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:16.141Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:17.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:17.121Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:18.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:18.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:19.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:19.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:20.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:20.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:21.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:21.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:22.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:22.107Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:23.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:23.110Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:24.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:24.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:25.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:25.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:26.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:26.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:27.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:27.119Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:28.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:28.117Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:29.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:29.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:30.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:30.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:31.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:31.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:32.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:32.127Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:33.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:33.106Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:34.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:34.144Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:35.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:35.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:36.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:36.142Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:37.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:37.112Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:38.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:38.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:39.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:39.134Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:40.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:40.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:41.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:41.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:42.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:42.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:43.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:43.107Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:44.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:44.108Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:45.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:45.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:46.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:46.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:47.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:47.134Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:48.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:48.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:49.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:49.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:50.071Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:50.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:51.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:51.125Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:52.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:52.117Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:53.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:53.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:54.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:54.109Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:55.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:55.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:56.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:56.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:57.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:57.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:58.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:58.119Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:26:59.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:26:59.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:00.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:00.150Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:01.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:01.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:02.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:02.114Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:03.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:03.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:04.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:04.121Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:05.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:05.107Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:06.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:06.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:07.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:07.134Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:08.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:08.140Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:09.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:09.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:10.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:10.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:11.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:11.142Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:12.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:12.125Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:13.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:13.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:14.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:14.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:15.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:15.104Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:16.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:16.112Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:17.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:17.127Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:18.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:18.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:19.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:19.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:20.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:20.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:21.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:21.138Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:22.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:22.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:23.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:23.140Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:24.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:24.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:25.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:25.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:26.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:26.107Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:27.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:27.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:28.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:28.143Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:29.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:29.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:30.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:30.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:31.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:31.123Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:32.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:32.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:33.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:33.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:34.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:34.142Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:35.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:35.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:36.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:36.105Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:37.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:37.105Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:38.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:38.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:39.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:39.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:40.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:40.138Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:41.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:41.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:42.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:42.134Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:43.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:43.138Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:44.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:44.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:45.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:45.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:46.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:46.141Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:47.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:47.103Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:48.072Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:48.127Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:49.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:49.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:50.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:50.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:51.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:51.138Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:52.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:52.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:53.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:53.138Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:54.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:54.127Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:55.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:55.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:56.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:56.142Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:57.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:57.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:58.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:58.105Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:27:59.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:27:59.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:00.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:00.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:01.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:01.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:02.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:02.115Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:03.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:03.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:04.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:04.149Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:05.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:05.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:06.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:06.138Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:07.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:07.123Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:08.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:08.105Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:09.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:09.111Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:10.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:10.134Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:11.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:11.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:12.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:12.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:13.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:13.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:14.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:14.127Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:15.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:15.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:16.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:16.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:17.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:17.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:18.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:18.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:19.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:19.109Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:20.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:20.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:21.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:21.125Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:22.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:22.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:23.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:23.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:24.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:24.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:25.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:25.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:26.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:26.115Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:27.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:27.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:28.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:28.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:29.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:29.109Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:30.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:30.103Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:31.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:31.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:32.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:32.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:33.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:33.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:34.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:34.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:35.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:35.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:36.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:36.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:37.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:37.118Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:38.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:38.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:39.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:39.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:40.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:40.113Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:41.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:41.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:42.073Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:42.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:43.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:43.144Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:44.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:44.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:45.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:45.125Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:46.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:46.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:47.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:47.125Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:48.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:48.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:49.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:49.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:50.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:50.134Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:51.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:51.107Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:52.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:52.144Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:53.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:53.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:54.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:54.134Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:55.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:55.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:56.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:56.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:57.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:57.122Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:58.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:58.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:28:59.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:28:59.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:00.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:00.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:01.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:01.111Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:02.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:02.103Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:03.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:03.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:04.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:04.138Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:05.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:05.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:06.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:06.165Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:07.075Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:07.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:08.074Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:08.129Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:09.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:09.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:10.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:10.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:11.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:11.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:12.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:12.111Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:13.079Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:13.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:14.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:14.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:15.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:15.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:16.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:16.138Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:17.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:17.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:18.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:18.138Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:19.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:19.123Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:20.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:20.144Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:21.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:21.133Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:22.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:22.112Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:23.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:23.117Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:24.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:24.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:25.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:25.147Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:26.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:26.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:27.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:27.127Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:28.081Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:28.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:29.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:29.143Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:30.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:30.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:31.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:31.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:32.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:32.130Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:33.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:33.120Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:34.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:34.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:35.079Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:35.148Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:36.086Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:36.156Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:37.079Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:37.138Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:38.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:38.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:39.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:39.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:40.081Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:40.143Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:41.081Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:41.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:42.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:42.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:43.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:43.144Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:44.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:44.109Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:45.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:45.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:46.079Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:46.143Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:47.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:47.151Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:48.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:48.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:49.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:49.128Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:50.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:50.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:51.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:51.146Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:52.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:52.147Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:53.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:53.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:54.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:54.115Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:55.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:55.112Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:56.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:56.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:57.079Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:57.151Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:58.079Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:58.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:29:59.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:29:59.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:00.081Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:00.147Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:01.079Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:01.126Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:02.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:02.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:03.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:03.142Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:04.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:04.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:05.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:05.114Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:06.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:06.163Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:07.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:07.140Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:08.080Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:08.137Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:09.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:09.132Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:10.083Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:10.141Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:11.079Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:11.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:12.081Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:12.136Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:13.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:13.140Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:14.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:14.139Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:15.081Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:15.113Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:16.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:16.117Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:17.081Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:17.146Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:18.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:18.140Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:19.078Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:19.131Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:20.082Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:20.143Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:21.081Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:21.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:22.081Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:22.124Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:23.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:23.135Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:24.077Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:24.144Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T12:30:25.076Z","trigger":"timer"}
+{"error":"could not locate WeCom region conversationTable in the window","ok":"false","source":"relocate","t":"2026-09-11T12:30:25.132Z"}
+{"screen_locked":"false","source":"lock","t":"2026-09-11T12:30:26.143Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:33:32.689Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:33:32.690Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:33:40.386Z"}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T12:33:40.580Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message count 3 -> 4","source":"poll","t":"2026-09-11T12:33:40.580Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message #3 added dir=outbound time=20:33","source":"poll","t":"2026-09-11T12:33:40.580Z","trigger":"ax:AXRowCountChanged"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:48:35.201Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:48:35.203Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T12:52:09.242Z"}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T12:52:09.429Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message count 4 -> 5","source":"poll","t":"2026-09-11T12:52:09.429Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message #4 added dir=outbound time=20:52","source":"poll","t":"2026-09-11T12:52:09.429Z","trigger":"ax:AXRowCountChanged"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T13:03:34.991Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T13:03:34.993Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T13:18:37.858Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T13:18:37.858Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T13:33:41.118Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T13:33:41.119Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T13:48:43.984Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T13:48:43.986Z"}
+{"event":"conversation #1 文件传输助手 changed timeLabel","source":"poll","t":"2026-09-11T13:52:23.016Z","trigger":"timer"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T14:03:47.016Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T14:03:47.017Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T14:18:50.191Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T14:18:50.194Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T14:33:53.089Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T14:33:53.108Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T14:48:56.075Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T14:48:56.076Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T15:03:59.119Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T15:03:59.120Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T15:19:02.281Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T15:19:02.283Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T15:34:05.137Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T15:34:05.138Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T15:49:05.228Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T15:49:05.229Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:00:01.297Z"}
+{"event":"message #0 changed timeLabel","source":"poll","t":"2026-09-11T16:00:01.497Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message #1 changed timeLabel","source":"poll","t":"2026-09-11T16:00:01.497Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message #3 changed timeLabel","source":"poll","t":"2026-09-11T16:00:01.497Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message #4 changed timeLabel","source":"poll","t":"2026-09-11T16:00:01.497Z","trigger":"ax:AXRowCountChanged"}
+{"event":"conversation #1 文件传输助手 changed timeLabel","source":"poll","t":"2026-09-11T16:00:23.024Z","trigger":"timer"}
+{"event":"conversation #2 «aa28a575» changed timeLabel","source":"poll","t":"2026-09-11T16:00:23.025Z","trigger":"timer"}
+{"event":"conversation #3 «c92d358a» changed timeLabel","source":"poll","t":"2026-09-11T16:00:23.025Z","trigger":"timer"}
+{"event":"conversation #4 «c5f1b630» changed timeLabel","source":"poll","t":"2026-09-11T16:00:23.025Z","trigger":"timer"}
+{"event":"conversation #5 «3f209d3d» changed timeLabel","source":"poll","t":"2026-09-11T16:00:23.025Z","trigger":"timer"}
+{"event":"conversation #6 «f24aa1bc» changed timeLabel","source":"poll","t":"2026-09-11T16:00:23.025Z","trigger":"timer"}
+{"event":"conversation #7 «2794fc6e» changed timeLabel","source":"poll","t":"2026-09-11T16:00:23.026Z","trigger":"timer"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:03:12.411Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:03:12.435Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:03:31.963Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:03:31.989Z"}
+{"event":"composer length 0 -> 17","source":"poll","t":"2026-09-11T16:03:32.004Z","trigger":"timer"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:03:42.110Z"}
+{"event":"composer length 17 -> 0","source":"poll","t":"2026-09-11T16:03:42.301Z","trigger":"ax:AXValueChanged"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T16:04:08.051Z","trigger":"timer"}
+{"ok":"true","source":"relocate","t":"2026-09-11T16:04:08.082Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T16:04:08.083Z","unsupported":""}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:19:11.022Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:19:11.044Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:32:02.664Z"}
+{"event":"composer length 0 -> 16","source":"poll","t":"2026-09-11T16:32:02.834Z","trigger":"ax:AXValueChanged"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:32:03.114Z"}
+{"event":"composer length 16 -> 0","source":"poll","t":"2026-09-11T16:32:03.283Z","trigger":"ax:AXValueChanged"}
+{"name":"AXFocusedWindowChanged","role":"AXWindow","source":"ax","t":"2026-09-11T16:32:03.548Z"}
+{"name":"AXFocusedUIElementChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:32:03.552Z"}
+{"name":"AXMainWindowChanged","role":"AXWindow","source":"ax","t":"2026-09-11T16:32:03.552Z"}
+{"name":"AXApplicationActivated","role":"AXApplication","source":"ax","t":"2026-09-11T16:32:03.552Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:32:04.082Z"}
+{"event":"composer length 0 -> 16","source":"poll","t":"2026-09-11T16:32:04.250Z","trigger":"ax:AXValueChanged"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:32:04.548Z"}
+{"name":"AXApplicationDeactivated","role":"AXApplication","source":"ax","t":"2026-09-11T16:32:04.583Z"}
+{"event":"composer length 16 -> 0","source":"poll","t":"2026-09-11T16:32:04.890Z","trigger":"ax:AXApplicationDeactivated"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:32:05.490Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:32:05.490Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:34:13.942Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:34:13.943Z"}
+{"name":"AXApplicationActivated","role":"AXApplication","source":"ax","t":"2026-09-11T16:42:57.932Z"}
+{"name":"AXApplicationDeactivated","role":"AXApplication","source":"ax","t":"2026-09-11T16:42:59.763Z"}
+{"name":"AXApplicationActivated","role":"AXApplication","source":"ax","t":"2026-09-11T16:43:00.820Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:01.415Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:01.416Z"}
+{"name":"AXWindowCreated","role":"AXWindow","source":"ax","t":"2026-09-11T16:43:01.436Z"}
+{"event":"composer length 0 -> 2","source":"poll","t":"2026-09-11T16:43:01.614Z","trigger":"ax:AXWindowCreated"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:01.677Z"}
+{"event":"composer length 2 -> 1","source":"poll","t":"2026-09-11T16:43:01.858Z","trigger":"ax:AXValueChanged"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:02.918Z"}
+{"event":"composer length 1 -> 0","source":"poll","t":"2026-09-11T16:43:03.003Z","trigger":"timer"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:03.214Z"}
+{"name":"AXWindowCreated","role":"AXWindow","source":"ax","t":"2026-09-11T16:43:03.236Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:03.347Z"}
+{"event":"composer length 0 -> 2","source":"poll","t":"2026-09-11T16:43:03.528Z","trigger":"ax:AXValueChanged"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:03.637Z"}
+{"event":"composer length 2 -> 4","source":"poll","t":"2026-09-11T16:43:03.824Z","trigger":"ax:AXValueChanged"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:04.719Z"}
+{"event":"composer length 4 -> 5","source":"poll","t":"2026-09-11T16:43:04.904Z","trigger":"ax:AXValueChanged"}
+{"event":"composer length 5 -> 6","source":"poll","t":"2026-09-11T16:43:05.021Z","trigger":"timer"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:05.021Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:05.057Z"}
+{"event":"composer length 6 -> 2","source":"poll","t":"2026-09-11T16:43:05.238Z","trigger":"ax:AXValueChanged"}
+{"name":"AXWindowCreated","role":"AXWindow","source":"ax","t":"2026-09-11T16:43:08.407Z"}
+{"event":"message #0 changed direction","source":"poll","t":"2026-09-11T16:43:08.581Z","trigger":"ax:AXWindowCreated"}
+{"event":"message #1 changed direction","source":"poll","t":"2026-09-11T16:43:08.581Z","trigger":"ax:AXWindowCreated"}
+{"event":"message #2 changed direction","source":"poll","t":"2026-09-11T16:43:08.581Z","trigger":"ax:AXWindowCreated"}
+{"event":"message #3 changed direction","source":"poll","t":"2026-09-11T16:43:08.581Z","trigger":"ax:AXWindowCreated"}
+{"event":"message #4 changed direction","source":"poll","t":"2026-09-11T16:43:08.581Z","trigger":"ax:AXWindowCreated"}
+{"name":"AXWindowCreated","role":"AXWindow","source":"ax","t":"2026-09-11T16:43:11.343Z"}
+{"event":"message #0 changed direction","source":"poll","t":"2026-09-11T16:43:11.516Z","trigger":"ax:AXWindowCreated"}
+{"event":"message #1 changed direction","source":"poll","t":"2026-09-11T16:43:11.516Z","trigger":"ax:AXWindowCreated"}
+{"event":"message #2 changed direction","source":"poll","t":"2026-09-11T16:43:11.516Z","trigger":"ax:AXWindowCreated"}
+{"event":"message #3 changed direction","source":"poll","t":"2026-09-11T16:43:11.516Z","trigger":"ax:AXWindowCreated"}
+{"event":"message #4 changed direction","source":"poll","t":"2026-09-11T16:43:11.516Z","trigger":"ax:AXWindowCreated"}
+{"name":"AXFocusedUIElementChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:14.131Z"}
+{"name":"AXUIElementDestroyed","role":"?","source":"ax","t":"2026-09-11T16:43:14.162Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:14.162Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T16:43:14.330Z","trigger":"ax:AXSelectedRowsChanged"}
+{"ok":"true","source":"relocate","t":"2026-09-11T16:43:14.357Z"}
+{"added":"23","source":"subscribe","t":"2026-09-11T16:43:14.358Z","unsupported":""}
+{"name":"AXFocusedUIElementChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:14.972Z"}
+{"name":"AXUIElementDestroyed","role":"?","source":"ax","t":"2026-09-11T16:43:15.005Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T16:43:15.025Z","trigger":"timer"}
+{"ok":"true","source":"relocate","t":"2026-09-11T16:43:15.051Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T16:43:15.052Z","unsupported":""}
+{"event":"conversation #1 文件传输助手 changed timeLabel","source":"poll","t":"2026-09-11T16:43:15.180Z","trigger":"ax:AXUIElementDestroyed"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:16.568Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:16.569Z"}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T16:43:16.766Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message count 5 -> 6","source":"poll","t":"2026-09-11T16:43:16.767Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message #5 added dir=outbound time=0:43","source":"poll","t":"2026-09-11T16:43:16.767Z","trigger":"ax:AXRowCountChanged"}
+{"event":"composer length 2 -> 0","source":"poll","t":"2026-09-11T16:43:16.767Z","trigger":"ax:AXRowCountChanged"}
+{"name":"AXFocusedUIElementChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:20.769Z"}
+{"name":"AXUIElementDestroyed","role":"?","source":"ax","t":"2026-09-11T16:43:20.963Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:20.965Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T16:43:20.980Z","trigger":"timer"}
+{"ok":"true","source":"relocate","t":"2026-09-11T16:43:21.027Z"}
+{"added":"23","source":"subscribe","t":"2026-09-11T16:43:21.028Z","unsupported":""}
+{"event":"active 文件传输助手 -> «c5f1b630»","source":"poll","t":"2026-09-11T16:43:21.167Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"conversation #1 文件传输助手 changed selected","source":"poll","t":"2026-09-11T16:43:21.167Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"conversation #4 «c5f1b630» changed selected","source":"poll","t":"2026-09-11T16:43:21.167Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"message count 6 -> 5","source":"poll","t":"2026-09-11T16:43:21.167Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"message #0 changed text,timeLabel","source":"poll","t":"2026-09-11T16:43:21.167Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"message #1 changed text,timeLabel,direction","source":"poll","t":"2026-09-11T16:43:21.167Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"message #2 changed text,timeLabel,direction","source":"poll","t":"2026-09-11T16:43:21.167Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"message #3 changed text,timeLabel,direction","source":"poll","t":"2026-09-11T16:43:21.167Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"message #4 changed text,timeLabel,direction","source":"poll","t":"2026-09-11T16:43:21.167Z","trigger":"ax:AXSelectedRowsChanged"}
+{"name":"AXUIElementDestroyed","role":"?","source":"ax","t":"2026-09-11T16:43:21.641Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:21.733Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T16:43:21.914Z","trigger":"ax:AXSelectedRowsChanged"}
+{"ok":"true","source":"relocate","t":"2026-09-11T16:43:21.954Z"}
+{"added":"23","source":"subscribe","t":"2026-09-11T16:43:21.955Z","unsupported":""}
+{"event":"active «c5f1b630» -> «c92d358a»","source":"poll","t":"2026-09-11T16:43:21.993Z","trigger":"timer"}
+{"event":"conversation #3 «c92d358a» changed selected","source":"poll","t":"2026-09-11T16:43:21.993Z","trigger":"timer"}
+{"event":"conversation #4 «c5f1b630» changed selected","source":"poll","t":"2026-09-11T16:43:21.993Z","trigger":"timer"}
+{"event":"message count 5 -> 4","source":"poll","t":"2026-09-11T16:43:21.993Z","trigger":"timer"}
+{"event":"message #0 changed text,timeLabel","source":"poll","t":"2026-09-11T16:43:21.993Z","trigger":"timer"}
+{"event":"message #1 changed text,timeLabel","source":"poll","t":"2026-09-11T16:43:21.993Z","trigger":"timer"}
+{"event":"message #2 changed text,timeLabel","source":"poll","t":"2026-09-11T16:43:21.993Z","trigger":"timer"}
+{"event":"message #3 changed text,timeLabel","source":"poll","t":"2026-09-11T16:43:21.993Z","trigger":"timer"}
+{"name":"AXUIElementDestroyed","role":"?","source":"ax","t":"2026-09-11T16:43:22.204Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:22.245Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T16:43:22.423Z","trigger":"ax:AXSelectedRowsChanged"}
+{"ok":"true","source":"relocate","t":"2026-09-11T16:43:22.454Z"}
+{"added":"23","source":"subscribe","t":"2026-09-11T16:43:22.455Z","unsupported":""}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T16:43:23.076Z","trigger":"timer"}
+{"ok":"true","source":"relocate","t":"2026-09-11T16:43:23.102Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T16:43:23.103Z","unsupported":""}
+{"event":"active «c92d358a» -> 文件传输助手","source":"poll","t":"2026-09-11T16:43:23.994Z","trigger":"timer"}
+{"event":"conversation #1 文件传输助手 changed selected","source":"poll","t":"2026-09-11T16:43:23.994Z","trigger":"timer"}
+{"event":"conversation #3 «c92d358a» changed selected","source":"poll","t":"2026-09-11T16:43:23.994Z","trigger":"timer"}
+{"event":"message count 4 -> 6","source":"poll","t":"2026-09-11T16:43:23.994Z","trigger":"timer"}
+{"event":"message #0 changed text,timeLabel","source":"poll","t":"2026-09-11T16:43:23.994Z","trigger":"timer"}
+{"event":"message #1 changed text,timeLabel,direction","source":"poll","t":"2026-09-11T16:43:23.994Z","trigger":"timer"}
+{"event":"message #2 changed text,timeLabel,direction","source":"poll","t":"2026-09-11T16:43:23.994Z","trigger":"timer"}
+{"event":"message #3 changed text,timeLabel,direction","source":"poll","t":"2026-09-11T16:43:23.994Z","trigger":"timer"}
+{"event":"message #4 added dir=outbound time=昨天 20:52","source":"poll","t":"2026-09-11T16:43:23.994Z","trigger":"timer"}
+{"event":"message #5 added dir=outbound time=0:43","source":"poll","t":"2026-09-11T16:43:23.994Z","trigger":"timer"}
+{"name":"AXFocusedUIElementChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:28.270Z"}
+{"name":"AXFocusedUIElementChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:28.317Z"}
+{"name":"AXUIElementDestroyed","role":"?","source":"ax","t":"2026-09-11T16:43:28.332Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:28.340Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:28.361Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T16:43:28.531Z","trigger":"ax:AXSelectedRowsChanged"}
+{"ok":"true","source":"relocate","t":"2026-09-11T16:43:28.562Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T16:43:28.563Z","unsupported":""}
+{"event":"active 文件传输助手 -> «2794fc6e»","source":"poll","t":"2026-09-11T16:43:28.990Z","trigger":"timer"}
+{"event":"conversation #1 文件传输助手 changed selected","source":"poll","t":"2026-09-11T16:43:28.990Z","trigger":"timer"}
+{"event":"conversation #7 «2794fc6e» changed selected","source":"poll","t":"2026-09-11T16:43:28.990Z","trigger":"timer"}
+{"event":"message count 6 -> 2","source":"poll","t":"2026-09-11T16:43:28.990Z","trigger":"timer"}
+{"event":"message #0 changed text,timeLabel,direction","source":"poll","t":"2026-09-11T16:43:28.991Z","trigger":"timer"}
+{"event":"message #1 changed text,timeLabel,direction","source":"poll","t":"2026-09-11T16:43:28.991Z","trigger":"timer"}
+{"name":"AXFocusedUIElementChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:29.815Z"}
+{"name":"AXFocusedUIElementChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:29.874Z"}
+{"name":"AXUIElementDestroyed","role":"?","source":"ax","t":"2026-09-11T16:43:29.878Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:29.878Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:29.878Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T16:43:29.980Z","trigger":"timer"}
+{"ok":"true","source":"relocate","t":"2026-09-11T16:43:30.046Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T16:43:30.047Z","unsupported":""}
+{"event":"active «2794fc6e» -> -","source":"poll","t":"2026-09-11T16:43:30.059Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"conversation #7 «2794fc6e» changed selected","source":"poll","t":"2026-09-11T16:43:30.059Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"conversation #8 «946c4b20» changed badge,selected","source":"poll","t":"2026-09-11T16:43:30.059Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"message count 2 -> 1","source":"poll","t":"2026-09-11T16:43:30.059Z","trigger":"ax:AXSelectedRowsChanged"}
+{"event":"message #0 changed text,timeLabel,direction","source":"poll","t":"2026-09-11T16:43:30.059Z","trigger":"ax:AXSelectedRowsChanged"}
+{"name":"AXFocusedUIElementChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:43:32.991Z"}
+{"name":"AXFocusedUIElementChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T16:43:33.025Z"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T16:43:33.037Z","trigger":"timer"}
+{"ok":"true","source":"relocate","t":"2026-09-11T16:43:33.063Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T16:43:33.064Z","unsupported":""}
+{"event":"active - -> 文件传输助手","source":"poll","t":"2026-09-11T16:43:33.195Z","trigger":"ax:AXFocusedUIElementChanged"}
+{"event":"conversation #1 文件传输助手 changed selected","source":"poll","t":"2026-09-11T16:43:33.195Z","trigger":"ax:AXFocusedUIElementChanged"}
+{"event":"conversation #8 «946c4b20» changed selected","source":"poll","t":"2026-09-11T16:43:33.196Z","trigger":"ax:AXFocusedUIElementChanged"}
+{"event":"message count 1 -> 6","source":"poll","t":"2026-09-11T16:43:33.196Z","trigger":"ax:AXFocusedUIElementChanged"}
+{"event":"message #0 changed text,timeLabel","source":"poll","t":"2026-09-11T16:43:33.196Z","trigger":"ax:AXFocusedUIElementChanged"}
+{"event":"message #1 added dir=outbound time=昨天 20:01","source":"poll","t":"2026-09-11T16:43:33.196Z","trigger":"ax:AXFocusedUIElementChanged"}
+{"event":"message #2 added dir=outbound time=-","source":"poll","t":"2026-09-11T16:43:33.196Z","trigger":"ax:AXFocusedUIElementChanged"}
+{"event":"message #3 added dir=outbound time=昨天 20:33","source":"poll","t":"2026-09-11T16:43:33.196Z","trigger":"ax:AXFocusedUIElementChanged"}
+{"event":"message #4 added dir=outbound time=昨天 20:52","source":"poll","t":"2026-09-11T16:43:33.196Z","trigger":"ax:AXFocusedUIElementChanged"}
+{"event":"message #5 added dir=outbound time=0:43","source":"poll","t":"2026-09-11T16:43:33.196Z","trigger":"ax:AXFocusedUIElementChanged"}
+{"name":"AXApplicationDeactivated","role":"AXApplication","source":"ax","t":"2026-09-11T16:43:48.052Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:49:17.091Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T16:49:17.093Z"}
+{"event":"conversation #8 «946c4b20» changed badge","source":"poll","t":"2026-09-11T16:49:17.278Z","trigger":"ax:AXSelectedRowsChanged"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T17:04:19.862Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T17:04:19.862Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T17:08:45.290Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T17:08:45.433Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T17:08:45.433Z"}
+{"error":"AX API failure -25201 during get AXRole","source":"error","t":"2026-09-11T17:08:45.607Z","trigger":"ax:AXRowCountChanged"}
+{"ok":"true","source":"relocate","t":"2026-09-11T17:08:45.650Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T17:08:45.651Z","unsupported":""}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T17:08:45.983Z","trigger":"timer"}
+{"event":"message count 6 -> 7","source":"poll","t":"2026-09-11T17:08:45.983Z","trigger":"timer"}
+{"event":"message #6 added dir=outbound time=1:08","source":"poll","t":"2026-09-11T17:08:45.983Z","trigger":"timer"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T17:19:23.048Z","trigger":"timer"}
+{"ok":"true","source":"relocate","t":"2026-09-11T17:19:23.077Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T17:19:23.077Z","unsupported":""}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T17:24:04.086Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T17:24:04.193Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T17:24:04.194Z"}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T17:24:04.384Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message count 7 -> 8","source":"poll","t":"2026-09-11T17:24:04.384Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message #7 added dir=outbound time=1:24","source":"poll","t":"2026-09-11T17:24:04.384Z","trigger":"ax:AXRowCountChanged"}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T17:24:05.066Z","trigger":"timer"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T17:25:06.266Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T17:25:06.371Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T17:25:06.371Z"}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T17:25:06.562Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message count 8 -> 9","source":"poll","t":"2026-09-11T17:25:06.562Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message #8 added dir=outbound time=-","source":"poll","t":"2026-09-11T17:25:06.562Z","trigger":"ax:AXRowCountChanged"}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T17:25:07.063Z","trigger":"timer"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T17:34:23.307Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T17:34:23.310Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T17:35:20.490Z"}
+{"name":"AXValueChanged","role":"AXTextArea","source":"ax","t":"2026-09-11T17:35:20.598Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T17:35:20.598Z"}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T17:35:20.772Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message count 9 -> 10","source":"poll","t":"2026-09-11T17:35:20.772Z","trigger":"ax:AXRowCountChanged"}
+{"event":"message #9 added dir=outbound time=1:35","source":"poll","t":"2026-09-11T17:35:20.772Z","trigger":"ax:AXRowCountChanged"}
+{"event":"conversation #1 文件传输助手 changed preview","source":"poll","t":"2026-09-11T17:35:21.045Z","trigger":"timer"}
+{"error":"invalid or stale AX element","source":"error","t":"2026-09-11T17:49:26.099Z","trigger":"timer"}
+{"ok":"true","source":"relocate","t":"2026-09-11T17:49:26.173Z"}
+{"added":"24","source":"subscribe","t":"2026-09-11T17:49:26.174Z","unsupported":""}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T18:04:29.057Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T18:04:29.058Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T18:19:32.052Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T18:19:32.076Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T18:34:35.161Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T18:34:35.162Z"}
+{"event":"conversation #1 文件传输助手 changed timeLabel","source":"poll","t":"2026-09-11T18:35:23.101Z","trigger":"timer"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T18:49:38.132Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T18:49:38.133Z"}
+{"name":"AXRowCountChanged","role":"AXTable","source":"ax","t":"2026-09-11T19:04:41.248Z"}
+{"name":"AXSelectedRowsChanged","role":"AXTable","source":"ax","t":"2026-09-11T19:04:41.248Z"}
+{"errors":"381","events":"123","polls":"28871","source":"summary","t":"2026-09-11T19:15:37.183Z"}

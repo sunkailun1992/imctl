@@ -1,0 +1,23 @@
+{"role":"AXTable","frame":{"x":311,"y":0,"width":1609,"height":1000},"actions":[],"settable":["AXSelectedRows"],"extra":{},"truncated":false,"children":[
+ {"role":"AXRow","subrole":"AXTableRow","frame":{"x":311,"y":28,"width":1609,"height":84},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[
+  {"role":"AXCell","frame":{"x":311,"y":28,"width":1609,"height":84},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[
+   {"role":"AXStaticText","value":{"string":"17:03"},"frame":{"x":1099,"y":35,"width":33,"height":18},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]},
+   {"role":"AXTextArea","value":{"string":"hello from the controller"},"frame":{"x":1651,"y":75,"width":243,"height":22},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]}]}]},
+ {"role":"AXRow","subrole":"AXTableRow","frame":{"x":311,"y":112,"width":1609,"height":368},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[
+  {"role":"AXCell","frame":{"x":311,"y":112,"width":1609,"height":368},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[
+   {"role":"AXStaticText","value":{"string":"17:38"},"frame":{"x":1099,"y":119,"width":33,"height":18},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]},
+   {"role":"AXImage","description":"wwsecurity play action play 40","frame":{"x":1792,"y":291,"width":42,"height":42},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]},
+   {"role":"AXStaticText","value":{"string":"01:14"},"frame":{"x":1863,"y":447,"width":32,"height":18},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]}]}]},
+ {"role":"AXRow","subrole":"AXTableRow","frame":{"x":311,"y":480,"width":1609,"height":82},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[
+  {"role":"AXCell","frame":{"x":311,"y":480,"width":1609,"height":82},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[
+   {"role":"AXImage","description":"file word emphasized","frame":{"x":1851,"y":499,"width":42,"height":42},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]},
+   {"role":"AXStaticText","value":{"string":"report.docx"},"frame":{"x":1657,"y":499,"width":169,"height":20},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]},
+   {"role":"AXStaticText","value":{"string":"14K"},"frame":{"x":1657,"y":525,"width":24,"height":18},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]}]}]},
+ {"role":"AXRow","subrole":"AXTableRow","frame":{"x":311,"y":562,"width":1609,"height":82},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[
+  {"role":"AXCell","frame":{"x":311,"y":562,"width":1609,"height":82},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[
+   {"role":"AXImage","description":"file pdf emphasized","frame":{"x":390,"y":581,"width":42,"height":42},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]},
+   {"role":"AXStaticText","value":{"string":"invoice.pdf"},"frame":{"x":445,"y":581,"width":142,"height":20},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]},
+   {"role":"AXStaticText","value":{"string":"74K"},"frame":{"x":445,"y":607,"width":24,"height":18},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]}]}]},
+ {"role":"AXRow","subrole":"AXTableRow","frame":{"x":311,"y":644,"width":1609,"height":356},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[
+  {"role":"AXCell","frame":{"x":311,"y":644,"width":1609,"height":356},"actions":[],"settable":[],"extra":{},"truncated":false,"children":[]}]}
+]}

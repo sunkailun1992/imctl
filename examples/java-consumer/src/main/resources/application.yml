@@ -1,0 +1,17 @@
+# Values come from the environment; broker credentials never live in this file.
+consumer:
+  mqtt-url: ${IMCTL_MQTT_URL:}
+  mqtt-username: ${IMCTL_MQTT_USERNAME:}
+  mqtt-password: ${IMCTL_MQTT_PASSWORD:}
+  instance: ${IMCTL_INSTANCE:java-1}
+  shared-group: ${IMCTL_SHARED_GROUP:imctl-consumers}
+  welcome-states: ${CONSUMER_WELCOME_STATES:}          # comma list of `state` channels whose scans get a welcome message
+  group-allowlist: ${CONSUMER_GROUP_ALLOWLIST:}        # comma list of chat_ids the AI may answer in (empty = none)
+  customer-allowlist: ${CONSUMER_CUSTOMER_ALLOWLIST:}  # comma list of external_userids the AI may answer
+  join-way-url: ${CONSUMER_JOINWAY_URL:}               # group join QR link attached to welcome messages
+  staff-userid: ${CONSUMER_STAFF_USERID:}
+  silence-minutes: ${CONSUMER_SILENCE_MINUTES:30}
+  history-limit: ${CONSUMER_HISTORY_LIMIT:20}
+  ai-base-url: ${AI_BASE_URL:}                          # OpenAI-compatible chat/completions endpoint; empty = echo policy
+  ai-api-key: ${AI_API_KEY:}
+  ai-model: ${AI_MODEL:}

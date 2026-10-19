@@ -1,0 +1,8 @@
+imctl —— macOS 企业微信消息端控制器
+
+本安装包把 imctl.app 放到 应用程序 文件夹：
+  · imctl 控制台（菜单栏应用）：状态、会话、发送、事件、策略、设置、诊断
+  · imctl 命令行（系统级安装时同时链接到 /usr/local/bin/imctl）
+  · imctld 守护进程（由控制台或 imctl agent install 安装为登录项）
+
+安装包本身不修改 launchd，也不申请任何系统权限。

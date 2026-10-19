@@ -1,0 +1,2635 @@
+{
+  "actions" : [
+    "AXRaise"
+  ],
+  "children" : [
+    {
+      "actions" : [
+
+      ],
+      "children" : [
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 128
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 129
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 632
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 633
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 576
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 577
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 296
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 297
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 520
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 521
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 240
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 241
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 464
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 465
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 184
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 185
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 800
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 801
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 1192
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 1193
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 688
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 689
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 744
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 745
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 408
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 409
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 4,
+            "width" : 2,
+            "x" : -1,
+            "y" : 352
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 2,
+            "width" : 2,
+            "x" : -1,
+            "y" : 353
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "description" : "",
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 38,
+            "width" : 38,
+            "x" : 11,
+            "y" : 35
+          },
+          "role" : "AXImage",
+          "roleDescription" : "图像",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        },
+        {
+          "actions" : [
+            "AXPress"
+          ],
+          "children" : [
+
+          ],
+          "enabled" : true,
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 38,
+            "width" : 62,
+            "x" : 11,
+            "y" : 35
+          },
+          "role" : "AXButton",
+          "roleDescription" : "按钮",
+          "settable" : [
+            "AXFocused"
+          ],
+          "title" : "",
+          "truncated" : false
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+
+          ],
+          "enabled" : false,
+          "extra" : {
+            "AXNumberOfCharacters" : "0"
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 1200,
+            "width" : 0,
+            "x" : 60,
+            "y" : 0
+          },
+          "role" : "AXSplitter",
+          "roleDescription" : "分离器",
+          "selected" : false,
+          "settable" : [
+            "AXValue"
+          ],
+          "truncated" : false,
+          "value" : {
+            "number" : 60
+          }
+        },
+        {
+          "actions" : [
+
+          ],
+          "children" : [
+            {
+              "actions" : [
+                "AXPress"
+              ],
+              "children" : [
+
+              ],
+              "enabled" : true,
+              "extra" : {
+
+              },
+              "focused" : false,
+              "frame" : {
+                "height" : 34,
+                "width" : 34,
+                "x" : 261,
+                "y" : 15
+              },
+              "help" : "«144bfe6c»",
+              "role" : "AXButton",
+              "roleDescription" : "按钮",
+              "settable" : [
+                "AXFocused"
+              ],
+              "title" : "",
+              "truncated" : false
+            },
+            {
+              "actions" : [
+                "AXShowMenu",
+                "AXConfirm"
+              ],
+              "children" : [
+
+              ],
+              "enabled" : true,
+              "extra" : {
+                "AXNumberOfCharacters" : "0"
+              },
+              "focused" : false,
+              "frame" : {
+                "height" : 34,
+                "width" : 180,
+                "x" : 75,
+                "y" : 15
+              },
+              "help" : "",
+              "role" : "AXTextField",
+              "roleDescription" : "文本栏",
+              "settable" : [
+                "AXValue",
+                "AXFocused"
+              ],
+              "truncated" : false
+            },
+            {
+              "actions" : [
+                "AXScrollLeftByPage",
+                "AXScrollRightByPage",
+                "AXScrollUpByPage",
+                "AXScrollDownByPage"
+              ],
+              "children" : [
+                {
+                  "actions" : [
+                    "AXShowMenu"
+                  ],
+                  "children" : [
+                    {
+                      "actions" : [
+
+                      ],
+                      "children" : [
+                        {
+                          "actions" : [
+
+                          ],
+                          "children" : [
+
+                          ],
+                          "enabled" : true,
+                          "extra" : {
+
+                          },
+                          "focused" : true,
+                          "frame" : {
+                            "height" : 0,
+                            "width" : 250,
+                            "x" : 60,
+                            "y" : 64
+                          },
+                          "role" : "AXCell",
+                          "roleDescription" : "单元格",
+                          "selected" : false,
+                          "settable" : [
+
+                          ],
+                          "truncated" : false
+                        }
+                      ],
+                      "extra" : {
+
+                      },
+                      "frame" : {
+                        "height" : 0,
+                        "width" : 250,
+                        "x" : 60,
+                        "y" : 64
+                      },
+                      "role" : "AXRow",
+                      "roleDescription" : "表格行",
+                      "selected" : false,
+                      "settable" : [
+
+                      ],
+                      "subrole" : "AXTableRow",
+                      "truncated" : false
+                    },
+                    {
+                      "actions" : [
+
+                      ],
+                      "children" : [
+                        {
+                          "actions" : [
+
+                          ],
+                          "children" : [
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "description" : "«dcb79e3c»",
+                              "enabled" : true,
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 42,
+                                "width" : 42,
+                                "x" : 75,
+                                "y" : 75
+                              },
+                              "role" : "AXImage",
+                              "roleDescription" : "图像",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "6"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 20,
+                                "width" : 86,
+                                "x" : 129,
+                                "y" : 76
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "文件传输助手"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "15"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 124,
+                                "x" : 129,
+                                "y" : 97
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«65f4d80a»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 1,
+                                "width" : 218,
+                                "x" : 76,
+                                "y" : 127
+                              },
+                              "role" : "AXGroup",
+                              "roleDescription" : "组",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "2"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 26,
+                                "x" : 267,
+                                "y" : 97
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "昨天"
+                              }
+                            }
+                          ],
+                          "enabled" : true,
+                          "extra" : {
+
+                          },
+                          "focused" : true,
+                          "frame" : {
+                            "height" : 64,
+                            "width" : 250,
+                            "x" : 60,
+                            "y" : 64
+                          },
+                          "role" : "AXCell",
+                          "roleDescription" : "单元格",
+                          "selected" : false,
+                          "settable" : [
+
+                          ],
+                          "truncated" : false
+                        }
+                      ],
+                      "extra" : {
+
+                      },
+                      "frame" : {
+                        "height" : 64,
+                        "width" : 250,
+                        "x" : 60,
+                        "y" : 64
+                      },
+                      "role" : "AXRow",
+                      "roleDescription" : "表格行",
+                      "selected" : false,
+                      "settable" : [
+
+                      ],
+                      "subrole" : "AXTableRow",
+                      "truncated" : false
+                    },
+                    {
+                      "actions" : [
+
+                      ],
+                      "children" : [
+                        {
+                          "actions" : [
+
+                          ],
+                          "children" : [
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "description" : "«6378deea»",
+                              "enabled" : true,
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 42,
+                                "width" : 42,
+                                "x" : 75,
+                                "y" : 139
+                              },
+                              "role" : "AXImage",
+                              "roleDescription" : "图像",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "6"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 20,
+                                "width" : 86,
+                                "x" : 129,
+                                "y" : 140
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«a046c72b»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "12"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 112,
+                                "x" : 129,
+                                "y" : 161
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«d60b7f86»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 1,
+                                "width" : 218,
+                                "x" : 76,
+                                "y" : 191
+                              },
+                              "role" : "AXGroup",
+                              "roleDescription" : "组",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "3"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 38,
+                                "x" : 255,
+                                "y" : 161
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "星期五"
+                              }
+                            }
+                          ],
+                          "enabled" : true,
+                          "extra" : {
+
+                          },
+                          "focused" : true,
+                          "frame" : {
+                            "height" : 64,
+                            "width" : 250,
+                            "x" : 60,
+                            "y" : 128
+                          },
+                          "role" : "AXCell",
+                          "roleDescription" : "单元格",
+                          "selected" : false,
+                          "settable" : [
+
+                          ],
+                          "truncated" : false
+                        }
+                      ],
+                      "extra" : {
+
+                      },
+                      "frame" : {
+                        "height" : 64,
+                        "width" : 250,
+                        "x" : 60,
+                        "y" : 128
+                      },
+                      "role" : "AXRow",
+                      "roleDescription" : "表格行",
+                      "selected" : false,
+                      "settable" : [
+
+                      ],
+                      "subrole" : "AXTableRow",
+                      "truncated" : false
+                    },
+                    {
+                      "actions" : [
+
+                      ],
+                      "children" : [
+                        {
+                          "actions" : [
+
+                          ],
+                          "children" : [
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "description" : "",
+                              "enabled" : true,
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 42,
+                                "width" : 42,
+                                "x" : 75,
+                                "y" : 203
+                              },
+                              "role" : "AXImage",
+                              "roleDescription" : "图像",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "4"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 20,
+                                "width" : 58,
+                                "x" : 129,
+                                "y" : 204
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«a5b35ac0»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "39"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 112,
+                                "x" : 129,
+                                "y" : 225
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«bdd12b03»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 1,
+                                "width" : 218,
+                                "x" : 76,
+                                "y" : 255
+                              },
+                              "role" : "AXGroup",
+                              "roleDescription" : "组",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "3"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 38,
+                                "x" : 255,
+                                "y" : 225
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "星期五"
+                              }
+                            }
+                          ],
+                          "enabled" : true,
+                          "extra" : {
+
+                          },
+                          "focused" : true,
+                          "frame" : {
+                            "height" : 64,
+                            "width" : 250,
+                            "x" : 60,
+                            "y" : 192
+                          },
+                          "role" : "AXCell",
+                          "roleDescription" : "单元格",
+                          "selected" : false,
+                          "settable" : [
+
+                          ],
+                          "truncated" : false
+                        }
+                      ],
+                      "extra" : {
+
+                      },
+                      "frame" : {
+                        "height" : 64,
+                        "width" : 250,
+                        "x" : 60,
+                        "y" : 192
+                      },
+                      "role" : "AXRow",
+                      "roleDescription" : "表格行",
+                      "selected" : false,
+                      "settable" : [
+
+                      ],
+                      "subrole" : "AXTableRow",
+                      "truncated" : false
+                    },
+                    {
+                      "actions" : [
+
+                      ],
+                      "children" : [
+                        {
+                          "actions" : [
+
+                          ],
+                          "children" : [
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "description" : "«89d25ead»",
+                              "enabled" : true,
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 42,
+                                "width" : 42,
+                                "x" : 75,
+                                "y" : 267
+                              },
+                              "role" : "AXImage",
+                              "roleDescription" : "图像",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "4"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 20,
+                                "width" : 58,
+                                "x" : 129,
+                                "y" : 268
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«610276ad»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "19"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 112,
+                                "x" : 129,
+                                "y" : 289
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«bcd4cec2»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 1,
+                                "width" : 218,
+                                "x" : 76,
+                                "y" : 319
+                              },
+                              "role" : "AXGroup",
+                              "roleDescription" : "组",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "3"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 38,
+                                "x" : 255,
+                                "y" : 289
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "星期五"
+                              }
+                            }
+                          ],
+                          "enabled" : true,
+                          "extra" : {
+
+                          },
+                          "focused" : true,
+                          "frame" : {
+                            "height" : 64,
+                            "width" : 250,
+                            "x" : 60,
+                            "y" : 256
+                          },
+                          "role" : "AXCell",
+                          "roleDescription" : "单元格",
+                          "selected" : false,
+                          "settable" : [
+
+                          ],
+                          "truncated" : false
+                        }
+                      ],
+                      "extra" : {
+
+                      },
+                      "frame" : {
+                        "height" : 64,
+                        "width" : 250,
+                        "x" : 60,
+                        "y" : 256
+                      },
+                      "role" : "AXRow",
+                      "roleDescription" : "表格行",
+                      "selected" : false,
+                      "settable" : [
+
+                      ],
+                      "subrole" : "AXTableRow",
+                      "truncated" : false
+                    },
+                    {
+                      "actions" : [
+
+                      ],
+                      "children" : [
+                        {
+                          "actions" : [
+
+                          ],
+                          "children" : [
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "description" : "«ed88d57f»",
+                              "enabled" : true,
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 42,
+                                "width" : 42,
+                                "x" : 75,
+                                "y" : 331
+                              },
+                              "role" : "AXImage",
+                              "roleDescription" : "图像",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "2"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 20,
+                                "width" : 30,
+                                "x" : 129,
+                                "y" : 332
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«21f63e3e»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "22"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 112,
+                                "x" : 129,
+                                "y" : 353
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«df0513fd»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 1,
+                                "width" : 218,
+                                "x" : 76,
+                                "y" : 383
+                              },
+                              "role" : "AXGroup",
+                              "roleDescription" : "组",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "3"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 38,
+                                "x" : 255,
+                                "y" : 353
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "星期五"
+                              }
+                            }
+                          ],
+                          "enabled" : true,
+                          "extra" : {
+
+                          },
+                          "focused" : true,
+                          "frame" : {
+                            "height" : 64,
+                            "width" : 250,
+                            "x" : 60,
+                            "y" : 320
+                          },
+                          "role" : "AXCell",
+                          "roleDescription" : "单元格",
+                          "selected" : false,
+                          "settable" : [
+
+                          ],
+                          "truncated" : false
+                        }
+                      ],
+                      "extra" : {
+
+                      },
+                      "frame" : {
+                        "height" : 64,
+                        "width" : 250,
+                        "x" : 60,
+                        "y" : 320
+                      },
+                      "role" : "AXRow",
+                      "roleDescription" : "表格行",
+                      "selected" : false,
+                      "settable" : [
+
+                      ],
+                      "subrole" : "AXTableRow",
+                      "truncated" : false
+                    },
+                    {
+                      "actions" : [
+
+                      ],
+                      "children" : [
+                        {
+                          "actions" : [
+
+                          ],
+                          "children" : [
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "description" : "",
+                              "enabled" : true,
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 42,
+                                "width" : 42,
+                                "x" : 75,
+                                "y" : 395
+                              },
+                              "role" : "AXImage",
+                              "roleDescription" : "图像",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "9"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 20,
+                                "width" : 128,
+                                "x" : 129,
+                                "y" : 396
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«3064763c»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "11"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 112,
+                                "x" : 129,
+                                "y" : 417
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«ccc29324»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 1,
+                                "width" : 218,
+                                "x" : 76,
+                                "y" : 447
+                              },
+                              "role" : "AXGroup",
+                              "roleDescription" : "组",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "3"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 38,
+                                "x" : 255,
+                                "y" : 417
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "星期五"
+                              }
+                            }
+                          ],
+                          "enabled" : true,
+                          "extra" : {
+
+                          },
+                          "focused" : true,
+                          "frame" : {
+                            "height" : 64,
+                            "width" : 250,
+                            "x" : 60,
+                            "y" : 384
+                          },
+                          "role" : "AXCell",
+                          "roleDescription" : "单元格",
+                          "selected" : false,
+                          "settable" : [
+
+                          ],
+                          "truncated" : false
+                        }
+                      ],
+                      "extra" : {
+
+                      },
+                      "frame" : {
+                        "height" : 64,
+                        "width" : 250,
+                        "x" : 60,
+                        "y" : 384
+                      },
+                      "role" : "AXRow",
+                      "roleDescription" : "表格行",
+                      "selected" : false,
+                      "settable" : [
+
+                      ],
+                      "subrole" : "AXTableRow",
+                      "truncated" : false
+                    },
+                    {
+                      "actions" : [
+
+                      ],
+                      "children" : [
+                        {
+                          "actions" : [
+
+                          ],
+                          "children" : [
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "description" : "",
+                              "enabled" : true,
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 42,
+                                "width" : 42,
+                                "x" : 75,
+                                "y" : 459
+                              },
+                              "role" : "AXImage",
+                              "roleDescription" : "图像",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "4"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 20,
+                                "width" : 58,
+                                "x" : 129,
+                                "y" : 460
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«cd8e8eb4»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "49"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 112,
+                                "x" : 129,
+                                "y" : 481
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«0be02c74»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 1,
+                                "width" : 218,
+                                "x" : 76,
+                                "y" : 511
+                              },
+                              "role" : "AXGroup",
+                              "roleDescription" : "组",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "3"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 38,
+                                "x" : 255,
+                                "y" : 481
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "星期五"
+                              }
+                            }
+                          ],
+                          "enabled" : true,
+                          "extra" : {
+
+                          },
+                          "focused" : true,
+                          "frame" : {
+                            "height" : 64,
+                            "width" : 250,
+                            "x" : 60,
+                            "y" : 448
+                          },
+                          "role" : "AXCell",
+                          "roleDescription" : "单元格",
+                          "selected" : false,
+                          "settable" : [
+
+                          ],
+                          "truncated" : false
+                        }
+                      ],
+                      "extra" : {
+
+                      },
+                      "frame" : {
+                        "height" : 64,
+                        "width" : 250,
+                        "x" : 60,
+                        "y" : 448
+                      },
+                      "role" : "AXRow",
+                      "roleDescription" : "表格行",
+                      "selected" : false,
+                      "settable" : [
+
+                      ],
+                      "subrole" : "AXTableRow",
+                      "truncated" : false
+                    },
+                    {
+                      "actions" : [
+
+                      ],
+                      "children" : [
+                        {
+                          "actions" : [
+
+                          ],
+                          "children" : [
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "description" : "",
+                              "enabled" : true,
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 42,
+                                "width" : 42,
+                                "x" : 75,
+                                "y" : 523
+                              },
+                              "role" : "AXImage",
+                              "roleDescription" : "图像",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "13"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 20,
+                                "width" : 136,
+                                "x" : 129,
+                                "y" : 524
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«2c572fe1»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "48"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 121.5,
+                                "x" : 129,
+                                "y" : 545
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«18955055»"
+                              }
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "extra" : {
+
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 1,
+                                "width" : 218,
+                                "x" : 76,
+                                "y" : 575
+                              },
+                              "role" : "AXGroup",
+                              "roleDescription" : "组",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false
+                            },
+                            {
+                              "actions" : [
+
+                              ],
+                              "children" : [
+
+                              ],
+                              "enabled" : true,
+                              "extra" : {
+                                "AXNumberOfCharacters" : "4"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 18,
+                                "width" : 28.5,
+                                "x" : 264.5,
+                                "y" : 545
+                              },
+                              "role" : "AXStaticText",
+                              "roleDescription" : "文本",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "8\/28"
+                              }
+                            },
+                            {
+                              "actions" : [
+                                "AXShowMenu"
+                              ],
+                              "children" : [
+
+                              ],
+                              "extra" : {
+                                "AXNumberOfCharacters" : "3"
+                              },
+                              "focused" : false,
+                              "frame" : {
+                                "height" : 12,
+                                "width" : 20,
+                                "x" : 270,
+                                "y" : 528
+                              },
+                              "role" : "AXTextArea",
+                              "roleDescription" : "文本输入区",
+                              "settable" : [
+
+                              ],
+                              "truncated" : false,
+                              "value" : {
+                                "string" : "«52c7c016»"
+                              }
+                            }
+                          ],
+                          "enabled" : true,
+                          "extra" : {
+
+                          },
+                          "focused" : true,
+                          "frame" : {
+                            "height" : 64,
+                            "width" : 250,
+                            "x" : 60,
+                            "y" : 512
+                          },
+                          "role" : "AXCell",
+                          "roleDescription" : "单元格",
+                          "selected" : false,
+                          "settable" : [
+
+                          ],
+                          "truncated" : false
+                        }
+                      ],
+                      "extra" : {
+
+                      },
+                      "frame" : {
+                        "height" : 64,
+                        "width" : 250,
+                        "x" : 60,
+                        "y" : 512
+                      },
+                      "role" : "AXRow",
+                      "roleDescription" : "表格行",
+                      "selected" : false,
+                      "settable" : [
+
+                      ],
+                      "subrole" : "AXTableRow",
+                      "truncated" : false
+                    },
+                    {
+                      "actions" : [
+
+                      ],
+                      "children" : [
+
+                      ],
+                      "extra" : {
+
+                      },
+                      "frame" : {
+                        "height" : 1136,
+                        "width" : 250,
+                        "x" : 60,
+                        "y" : 64
+                      },
+                      "identifier" : "col1",
+                      "role" : "AXColumn",
+                      "roleDescription" : "栏",
+                      "selected" : false,
+                      "settable" : [
+
+                      ],
+                      "truncated" : false
+                    }
+                  ],
+                  "enabled" : true,
+                  "extra" : {
+                    "AXSelectedRows" : "<0 elements>"
+                  },
+                  "focused" : true,
+                  "frame" : {
+                    "height" : 1138,
+                    "width" : 252,
+                    "x" : 59,
+                    "y" : 63
+                  },
+                  "role" : "AXTable",
+                  "roleDescription" : "表格",
+                  "settable" : [
+                    "AXSelectedRows",
+                    "AXFocused"
+                  ],
+                  "truncated" : false
+                },
+                {
+                  "actions" : [
+
+                  ],
+                  "children" : [
+
+                  ],
+                  "enabled" : false,
+                  "extra" : {
+
+                  },
+                  "focused" : false,
+                  "frame" : {
+                    "height" : 1138,
+                    "width" : 17,
+                    "x" : 294,
+                    "y" : 63
+                  },
+                  "role" : "AXScrollBar",
+                  "roleDescription" : "滚动条",
+                  "settable" : [
+                    "AXValue"
+                  ],
+                  "truncated" : false,
+                  "value" : {
+                    "number" : 0
+                  }
+                }
+              ],
+              "extra" : {
+
+              },
+              "focused" : false,
+              "frame" : {
+                "height" : 1136,
+                "width" : 250,
+                "x" : 60,
+                "y" : 64
+              },
+              "role" : "AXScrollArea",
+              "roleDescription" : "滚动区",
+              "settable" : [
+                "AXFocused"
+              ],
+              "truncated" : false
+            },
+            {
+              "actions" : [
+
+              ],
+              "children" : [
+
+              ],
+              "enabled" : false,
+              "extra" : {
+                "AXNumberOfCharacters" : "0"
+              },
+              "focused" : false,
+              "frame" : {
+                "height" : 1200,
+                "width" : 1,
+                "x" : 310,
+                "y" : 0
+              },
+              "role" : "AXSplitter",
+              "roleDescription" : "分离器",
+              "selected" : false,
+              "settable" : [
+                "AXValue"
+              ],
+              "truncated" : false,
+              "value" : {
+                "number" : 250
+              }
+            },
+            {
+              "actions" : [
+
+              ],
+              "children" : [
+
+              ],
+              "description" : "",
+              "enabled" : true,
+              "extra" : {
+
+              },
+              "focused" : false,
+              "frame" : {
+                "height" : 122,
+                "width" : 122,
+                "x" : 1054,
+                "y" : 539
+              },
+              "role" : "AXImage",
+              "roleDescription" : "图像",
+              "settable" : [
+
+              ],
+              "truncated" : false
+            }
+          ],
+          "extra" : {
+
+          },
+          "focused" : false,
+          "frame" : {
+            "height" : 1200,
+            "width" : 1860,
+            "x" : 60,
+            "y" : 0
+          },
+          "role" : "AXSplitGroup",
+          "roleDescription" : "分离组",
+          "settable" : [
+
+          ],
+          "truncated" : false
+        }
+      ],
+      "extra" : {
+
+      },
+      "focused" : false,
+      "frame" : {
+        "height" : 1200,
+        "width" : 1920,
+        "x" : 0,
+        "y" : 0
+      },
+      "role" : "AXSplitGroup",
+      "roleDescription" : "分离组",
+      "settable" : [
+
+      ],
+      "truncated" : false
+    }
+  ],
+  "extra" : {
+
+  },
+  "focused" : false,
+  "frame" : {
+    "height" : 1200,
+    "width" : 1920,
+    "x" : 0,
+    "y" : 0
+  },
+  "role" : "AXWindow",
+  "roleDescription" : "标准窗口",
+  "settable" : [
+    "AXMinimized"
+  ],
+  "subrole" : "AXStandardWindow",
+  "title" : "«eb3a74c3»",
+  "truncated" : false
+}

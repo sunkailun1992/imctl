@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>4.0.4</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>com.kellen</groupId>
+  <artifactId>wecom-token-proxy</artifactId>
+  <version>0.1.0</version>
+  <name>wecom-token-proxy</name>
+  <description>Token-injecting proxy between imctl controllers and the WeCom open platform; relays WeCom callbacks to MQTT.</description>
+
+  <properties>
+    <java.version>17</java.version>
+    <hivemq.version>1.3.7</hivemq.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.hivemq</groupId>
+      <artifactId>hivemq-mqtt-client</artifactId>
+      <version>${hivemq.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>

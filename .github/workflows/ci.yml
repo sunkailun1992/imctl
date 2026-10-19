@@ -1,0 +1,124 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  swift:
+    name: swift
+    runs-on: macos-latest
+    timeout-minutes: 30
+    env:
+      IMCTL_LIVE: "0"
+      IMCTL_LIVE_VISION: "0"
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check the bundled toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+          python3 - <<'PY'
+          import re
+          import subprocess
+
+          version = subprocess.check_output(["swift", "--version"], text=True)
+          match = re.search(r"Swift version (\d+)\.(\d+)", version)
+          if match is None or tuple(map(int, match.groups())) < (6, 2):
+              raise SystemExit("The locked dependencies require Swift 6.2 or later.")
+          PY
+      - name: Build
+        run: swift build
+      - name: Run non-live tests
+        run: swift test
+
+  secrets:
+    name: secrets
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Deliberately narrow: fail on recognizable credential formats and PEM key
+      # payloads, without printing their contents. This does not replace privacy
+      # review or the broader warning-only scripts/check-secrets.sh scan.
+      - name: Reject high-confidence secrets
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          import re
+          import subprocess
+
+          patterns = {
+              "github-token": r"(?<![A-Za-z0-9_])gh[pousr]_[A-Za-z0-9]{36,255}(?![A-Za-z0-9_])",
+              "github-fine-grained-token": r"(?<![A-Za-z0-9_])github_pat_[A-Za-z0-9_]{70,255}(?![A-Za-z0-9_])",
+              "google-api-key": r"(?<![A-Za-z0-9_-])AIza[0-9A-Za-z_-]{35}(?![A-Za-z0-9_-])",
+              "alicloud-access-key-id": r"(?<![A-Za-z0-9])LTAI[A-Za-z0-9]{16,20}(?![A-Za-z0-9])",
+              "aws-access-key-id": r"(?<![A-Z0-9])(?:AKIA|ASIA)[A-Z0-9]{16}(?![A-Z0-9])",
+              "hex-api-key": r"(?<![A-Za-z0-9_-])sk-[0-9a-fA-F]{32}(?![A-Za-z0-9_-])",
+              "long-api-key": r"(?<![A-Za-z0-9_-])sk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{40,}(?![A-Za-z0-9_-])",
+              "private-key": r"-----BEGIN (?P<kind>(?:RSA |EC |DSA |OPENSSH |ENCRYPTED )?PRIVATE KEY)-----[ \t]*\r?\n(?:(?:Proc-Type|DEK-Info):[^\r\n]*\r?\n)*(?:[ \t]*\r?\n)*[ \t]*(?:[A-Za-z0-9+/=][ \t\r\n]*){64,}-----END (?P=kind)-----",
+          }
+          rules = {name: re.compile(pattern) for name, pattern in patterns.items()}
+
+          # Construct synthetic shapes in memory so the source never contains a
+          # working-looking key. These checks also catch accidental rule removal.
+          samples = {
+              "github-token": "gh" + "p_" + "A" * 36,
+              "github-fine-grained-token": "github_" + "pat_" + "A" * 82,
+              "google-api-key": "AI" + "za" + "A" * 35,
+              "alicloud-access-key-id": "LT" + "AI" + "A" * 20,
+              "aws-access-key-id": "AK" + "IA" + "A" * 16,
+              "hex-api-key": "sk" + "-" + "a1" * 16,
+              "long-api-key": "sk" + "-" + "A" * 48,
+              "private-key": "-----BEGIN " + "PRIVATE KEY-----\n" + "A" * 64 + "\n-----END " + "PRIVATE KEY-----",
+          }
+          if set(rules) != set(samples):
+              raise SystemExit("Secret scanner self-check: rule set changed without samples.")
+          for name, sample in samples.items():
+              if rules[name].search(sample) is None:
+                  raise SystemExit(f"Secret scanner self-check failed: {name}")
+          encrypted = "-----BEGIN " + "RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC," + "A" * 32 + "\n\n" + "A" * 96 + "\n-----END " + "RSA PRIVATE KEY-----"
+          if rules["private-key"].search(encrypted) is None:
+              raise SystemExit("Secret scanner self-check failed: encrypted PEM metadata")
+          for sample in ("<API_KEY>", "sk-test-only", "LTAIEXAMPLE", "BEGIN PRIVATE KEY"):
+              if any(rule.search(sample) for rule in rules.values()):
+                  raise SystemExit("Secret scanner self-check rejected a documentation placeholder.")
+
+          paths = subprocess.check_output(["git", "ls-files", "-z"]).split(b"\0")
+          hits = 0
+          scanned = 0
+          for raw in paths:
+              if not raw:
+                  continue
+              path = Path(os.fsdecode(raw))
+              # Scan a symlink's stored target, never files outside the checkout.
+              text = os.readlink(path) if path.is_symlink() else path.read_bytes().decode("utf-8", errors="replace")
+              scanned += 1
+              for name, rule in rules.items():
+                  for match in rule.finditer(text):
+                      line = text.count("\n", 0, match.start()) + 1
+                      print(f"{str(path)!r}:{line}: {name}")
+                      hits += 1
+          if scanned == 0:
+              raise SystemExit("Secret scanner read no tracked files.")
+          if hits:
+              raise SystemExit(f"Secret scan failed: {hits} match(es); remove or revoke secrets before publishing.")
+          print(f"Secret scan passed for {scanned} tracked files (limited high-confidence patterns).")
+          PY

@@ -1,0 +1,29 @@
+# Every real value comes from the environment; this file only names the keys.
+# Never put corpsecret, callback keys, bearer tokens or broker credentials here.
+server:
+  port: ${PORT:8080}
+
+wecom:
+  corp-id: ${WECOM_CORP_ID:}
+  corp-secret: ${WECOM_CORP_SECRET:}
+  agent-id: ${WECOM_AGENT_ID:0}
+  callback-token: ${WECOM_CALLBACK_TOKEN:}
+  callback-aes-key: ${WECOM_CALLBACK_AES_KEY:}
+  api-base: ${WECOM_API_BASE:https://qyapi.weixin.qq.com/cgi-bin}
+
+proxy:
+  bearer-tokens: ${PROXY_BEARER_TOKENS:}
+  allowed-paths: ${PROXY_ALLOWED_PATHS:}
+  rate-limit-per-minute: ${PROXY_RATE_LIMIT_PER_MINUTE:120}
+  data-dir: ${PROXY_DATA_DIR:./data}
+
+mqtt:
+  url: ${MQTT_URL:}
+  username: ${MQTT_USERNAME:}
+  password: ${MQTT_PASSWORD:}
+  client-id: ${MQTT_CLIENT_ID:wecom-token-proxy}
+  topic-prefix: ${MQTT_TOPIC_PREFIX:wecom}
+
+logging:
+  level:
+    com.kellen.wecomproxy: INFO

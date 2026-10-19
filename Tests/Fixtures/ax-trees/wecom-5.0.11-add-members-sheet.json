@@ -1,0 +1,590 @@
+{
+  "actions": [],
+  "children": [
+    {
+      "actions": [],
+      "children": [
+        {
+          "actions": [],
+          "children": [
+            {
+              "actions": [],
+              "children": [
+                {
+                  "actions": [],
+                  "children": [],
+                  "enabled": true,
+                  "extra": {},
+                  "frame": {
+                    "height": 34,
+                    "width": 274,
+                    "x": 663,
+                    "y": 343
+                  },
+                  "role": "AXTextField",
+                  "settable": [
+                    "AXValue",
+                    "AXFocused",
+                    "AXSelectedText"
+                  ],
+                  "truncated": false,
+                  "value": {
+                    "string": ""
+                  }
+                },
+                {
+                  "actions": [],
+                  "children": [
+                    {
+                      "actions": [],
+                      "children": [
+                        {
+                          "actions": [],
+                          "children": [
+                            {
+                              "actions": [],
+                              "children": [
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "description": "icon org exteranl folder w",
+                                  "enabled": true,
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 22,
+                                    "width": 22,
+                                    "x": 663,
+                                    "y": 395
+                                  },
+                                  "role": "AXImage",
+                                  "settable": [],
+                                  "truncated": false
+                                },
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 20,
+                                    "width": 56,
+                                    "x": 692,
+                                    "y": 396
+                                  },
+                                  "role": "AXTextArea",
+                                  "settable": [],
+                                  "truncated": false,
+                                  "value": {
+                                    "string": "我的客户"
+                                  }
+                                }
+                              ],
+                              "enabled": true,
+                              "extra": {},
+                              "frame": {
+                                "height": 36,
+                                "width": 322,
+                                "x": 640,
+                                "y": 388
+                              },
+                              "role": "AXCell",
+                              "settable": [],
+                              "truncated": false
+                            }
+                          ],
+                          "extra": {},
+                          "frame": {
+                            "height": 36,
+                            "width": 322,
+                            "x": 640,
+                            "y": 388
+                          },
+                          "role": "AXRow",
+                          "settable": [],
+                          "truncated": false
+                        },
+                        {
+                          "actions": [],
+                          "children": [
+                            {
+                              "actions": [],
+                              "children": [
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "description": "avatar company",
+                                  "enabled": true,
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 22,
+                                    "width": 22,
+                                    "x": 663,
+                                    "y": 431
+                                  },
+                                  "role": "AXImage",
+                                  "settable": [],
+                                  "truncated": false
+                                },
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 20,
+                                    "width": 56,
+                                    "x": 692,
+                                    "y": 432
+                                  },
+                                  "role": "AXTextArea",
+                                  "settable": [],
+                                  "truncated": false,
+                                  "value": {
+                                    "string": "甲公司"
+                                  }
+                                }
+                              ],
+                              "enabled": true,
+                              "extra": {},
+                              "frame": {
+                                "height": 36,
+                                "width": 322,
+                                "x": 640,
+                                "y": 424
+                              },
+                              "role": "AXCell",
+                              "settable": [],
+                              "truncated": false
+                            }
+                          ],
+                          "extra": {},
+                          "frame": {
+                            "height": 36,
+                            "width": 322,
+                            "x": 640,
+                            "y": 424
+                          },
+                          "role": "AXRow",
+                          "settable": [],
+                          "truncated": false
+                        },
+                        {
+                          "actions": [],
+                          "children": [
+                            {
+                              "actions": [],
+                              "children": [
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "enabled": true,
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 22,
+                                    "width": 22,
+                                    "x": 723,
+                                    "y": 467
+                                  },
+                                  "role": "AXImage",
+                                  "settable": [],
+                                  "truncated": false
+                                },
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 20,
+                                    "width": 28,
+                                    "x": 752,
+                                    "y": 468
+                                  },
+                                  "role": "AXTextArea",
+                                  "settable": [],
+                                  "truncated": false,
+                                  "value": {
+                                    "string": "李四"
+                                  }
+                                },
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "description": "checkbox selected disabled",
+                                  "enabled": true,
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 18,
+                                    "width": 18,
+                                    "x": 695,
+                                    "y": 469
+                                  },
+                                  "role": "AXImage",
+                                  "settable": [],
+                                  "truncated": false
+                                },
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "description": "icon virtual corp creator",
+                                  "enabled": true,
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 14,
+                                    "width": 14,
+                                    "x": 679,
+                                    "y": 471
+                                  },
+                                  "role": "AXImage",
+                                  "settable": [],
+                                  "truncated": false
+                                }
+                              ],
+                              "enabled": true,
+                              "extra": {},
+                              "frame": {
+                                "height": 36,
+                                "width": 322,
+                                "x": 640,
+                                "y": 460
+                              },
+                              "role": "AXCell",
+                              "settable": [],
+                              "truncated": false
+                            }
+                          ],
+                          "extra": {},
+                          "frame": {
+                            "height": 36,
+                            "width": 322,
+                            "x": 640,
+                            "y": 460
+                          },
+                          "role": "AXRow",
+                          "settable": [],
+                          "truncated": false
+                        },
+                        {
+                          "actions": [],
+                          "children": [
+                            {
+                              "actions": [],
+                              "children": [
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "enabled": true,
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 22,
+                                    "width": 22,
+                                    "x": 723,
+                                    "y": 503
+                                  },
+                                  "role": "AXImage",
+                                  "settable": [],
+                                  "truncated": false
+                                },
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 20,
+                                    "width": 28,
+                                    "x": 752,
+                                    "y": 504
+                                  },
+                                  "role": "AXTextArea",
+                                  "settable": [],
+                                  "truncated": false,
+                                  "value": {
+                                    "string": "王五"
+                                  }
+                                }
+                              ],
+                              "enabled": true,
+                              "extra": {},
+                              "frame": {
+                                "height": 36,
+                                "width": 322,
+                                "x": 640,
+                                "y": 496
+                              },
+                              "role": "AXCell",
+                              "settable": [],
+                              "truncated": false
+                            }
+                          ],
+                          "extra": {},
+                          "frame": {
+                            "height": 36,
+                            "width": 322,
+                            "x": 640,
+                            "y": 496
+                          },
+                          "role": "AXRow",
+                          "settable": [],
+                          "truncated": false
+                        },
+                        {
+                          "actions": [],
+                          "children": [
+                            {
+                              "actions": [],
+                              "children": [
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "enabled": true,
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 22,
+                                    "width": 22,
+                                    "x": 723,
+                                    "y": 539
+                                  },
+                                  "role": "AXImage",
+                                  "settable": [],
+                                  "truncated": false
+                                },
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 20,
+                                    "width": 28,
+                                    "x": 752,
+                                    "y": 540
+                                  },
+                                  "role": "AXTextArea",
+                                  "settable": [],
+                                  "truncated": false,
+                                  "value": {
+                                    "string": "赵六"
+                                  }
+                                },
+                                {
+                                  "actions": [],
+                                  "children": [],
+                                  "enabled": true,
+                                  "extra": {},
+                                  "frame": {
+                                    "height": 18,
+                                    "width": 50,
+                                    "x": 837,
+                                    "y": 540
+                                  },
+                                  "role": "AXStaticText",
+                                  "settable": [],
+                                  "truncated": false,
+                                  "value": {
+                                    "string": "@微信"
+                                  }
+                                }
+                              ],
+                              "enabled": true,
+                              "extra": {},
+                              "frame": {
+                                "height": 36,
+                                "width": 322,
+                                "x": 640,
+                                "y": 532
+                              },
+                              "role": "AXCell",
+                              "settable": [],
+                              "truncated": false
+                            }
+                          ],
+                          "extra": {},
+                          "frame": {
+                            "height": 36,
+                            "width": 322,
+                            "x": 640,
+                            "y": 532
+                          },
+                          "role": "AXRow",
+                          "settable": [],
+                          "truncated": false
+                        }
+                      ],
+                      "enabled": true,
+                      "extra": {},
+                      "frame": {
+                        "height": 494,
+                        "width": 324,
+                        "x": 639,
+                        "y": 387
+                      },
+                      "role": "AXOutline",
+                      "settable": [
+                        "AXSelectedRows"
+                      ],
+                      "truncated": false
+                    }
+                  ],
+                  "extra": {},
+                  "frame": {
+                    "height": 492,
+                    "width": 322,
+                    "x": 640,
+                    "y": 388
+                  },
+                  "role": "AXScrollArea",
+                  "settable": [],
+                  "truncated": false
+                }
+              ],
+              "extra": {},
+              "frame": {
+                "height": 560,
+                "width": 320,
+                "x": 640,
+                "y": 320
+              },
+              "role": "AXGroup",
+              "settable": [],
+              "truncated": false
+            },
+            {
+              "actions": [],
+              "children": [],
+              "enabled": false,
+              "extra": {},
+              "frame": {
+                "height": 560,
+                "width": 1,
+                "x": 960,
+                "y": 320
+              },
+              "role": "AXSplitter",
+              "settable": [
+                "AXValue"
+              ],
+              "truncated": false,
+              "value": {
+                "number": 320
+              }
+            },
+            {
+              "actions": [],
+              "children": [
+                {
+                  "actions": [],
+                  "children": [],
+                  "enabled": true,
+                  "extra": {},
+                  "frame": {
+                    "height": 24,
+                    "width": 271,
+                    "x": 985,
+                    "y": 351
+                  },
+                  "role": "AXStaticText",
+                  "settable": [],
+                  "truncated": false,
+                  "value": {
+                    "string": "添加群成员"
+                  }
+                },
+                {
+                  "actions": [],
+                  "children": [],
+                  "enabled": false,
+                  "extra": {},
+                  "frame": {
+                    "height": 418,
+                    "width": 321,
+                    "x": 960,
+                    "y": 387
+                  },
+                  "role": "AXTable",
+                  "settable": [
+                    "AXSelectedRows"
+                  ],
+                  "truncated": false
+                },
+                {
+                  "actions": [
+                    "AXPress"
+                  ],
+                  "children": [],
+                  "enabled": false,
+                  "extra": {},
+                  "frame": {
+                    "height": 34,
+                    "width": 134,
+                    "x": 1125,
+                    "y": 825
+                  },
+                  "role": "AXButton",
+                  "settable": [],
+                  "title": "确定",
+                  "truncated": false
+                },
+                {
+                  "actions": [
+                    "AXPress"
+                  ],
+                  "children": [],
+                  "enabled": true,
+                  "extra": {},
+                  "frame": {
+                    "height": 34,
+                    "width": 134,
+                    "x": 982,
+                    "y": 825
+                  },
+                  "role": "AXButton",
+                  "settable": [
+                    "AXFocused"
+                  ],
+                  "title": "取消",
+                  "truncated": false
+                }
+              ],
+              "extra": {},
+              "frame": {
+                "height": 560,
+                "width": 319,
+                "x": 961,
+                "y": 320
+              },
+              "role": "AXGroup",
+              "settable": [],
+              "truncated": false
+            }
+          ],
+          "extra": {},
+          "frame": {
+            "height": 560,
+            "width": 640,
+            "x": 640,
+            "y": 320
+          },
+          "role": "AXSplitGroup",
+          "settable": [],
+          "truncated": false
+        }
+      ],
+      "extra": {},
+      "frame": {
+        "height": 560,
+        "width": 640,
+        "x": 640,
+        "y": 320
+      },
+      "role": "AXSheet",
+      "settable": [],
+      "truncated": false
+    }
+  ],
+  "extra": {},
+  "frame": {
+    "height": 1200,
+    "width": 1920,
+    "x": 0,
+    "y": 0
+  },
+  "role": "AXWindow",
+  "settable": [],
+  "truncated": false
+}

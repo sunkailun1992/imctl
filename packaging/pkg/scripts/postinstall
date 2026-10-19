@@ -1,0 +1,12 @@
+#!/bin/sh
+# Runs as root for a system install ($2 = /) or as the user for a home install
+# ($2 = ~). Only links the CLI; launchd and Accessibility are set up from
+# imctl 控制台 inside the user's session, never from the installer.
+APP="$2/Applications/imctl.app"
+CLI="$APP/Contents/MacOS/imctl"
+if [ -x "$CLI" ]; then
+  if [ -w /usr/local/bin ] || { [ "$(id -u)" = "0" ] && mkdir -p /usr/local/bin; }; then
+    ln -sfn "$CLI" /usr/local/bin/imctl
+  fi
+fi
+exit 0

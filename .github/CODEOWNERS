@@ -1,0 +1,4 @@
+# Owner approval is required for all changes, including the governance and CI.
+# Enforcement also needs the GitHub ruleset's required code owner review setting.
+*           @sunkailun1992
+/.github/   @sunkailun1992

@@ -2854,14 +2854,21 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
                       let role = try child.role()
                       return role != AXRole.sheet && role != AXRole.popover && role != "AXDialog"
                   }) else { throw AIPlannerVisionError.staleView }
+            let app: AXElement?
             if window.backend.name == "live" {
-                let app = AXApp.byPID(anchor.windowPID, backend: window.backend)
-                let windows = try app.elements(AXAttribute.windows)
-                guard windows.count == 1, windows[0].handle == window.handle else {
-                    throw AIPlannerVisionError.staleView
-                }
-                if let focused = try app.element(AXAttribute.focusedWindow),
-                   focused.handle != window.handle { throw AIPlannerVisionError.staleView }
+                app = AXApp.byPID(anchor.windowPID, backend: window.backend)
+            } else {
+                // App-rooted fakes exercise the same window-set guard. Legacy
+                // window-only fixtures have no application window collection.
+                let root = try self.rootProvider()
+                app = try root.role() == AXRole.application ? root : nil
+            }
+            if let app {
+                try Self.verifyGroupNameWindowSet(app: app, window: window,
+                                                  pid: anchor.windowPID, frame: windowFrame,
+                                                  fieldFrame: fieldFrame,
+                                                  conversationTableFrame: tableFrame,
+                                                  viewportFrame: viewport)
             }
             return (fresh, candidates[0])
         }

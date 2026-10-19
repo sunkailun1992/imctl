@@ -284,6 +284,8 @@ B35 仅复用上一节进入「新的客户」时的**只读、可逆选行前�
 
 1.0.18-dev：客户端可能在 `AXValue` 写入时就改名，因此显式改名的 checkpoint 提前到第一次写值前。若随后新鲜 AX 证据同时证明原窗口、原编辑字段及原选中会话行未变，字段和唯一原行均已显示请求的新名，且策略、屏幕录制授权和视觉设置仍有效，则直接返回成功，不再确认或失焦；这也可核对由旧标题失效引起的 `staleView`。模型 stop / 非法选择、同名歧义、换行、换窗口、换字段或授权撤销均不得据此报成功。未能证实时保留 `unknown`，同幂等键回放、不自动重试。源码 / fake 测试不代表该视觉分支已经完成真实客户端验收，现场证据见对应门报告。
 
+1.0.19-dev：群名被动观察可识别一个严格匹配的 macOS 视窗分享指示器（`WindowSharingSessionButton`）。它必须与原主窗同 PID，结构和相对几何符合已校准模式，完全位于会话表左侧或上方的主窗左上非命令区，且不遮挡会话表、消息视口或群名字段；其他附窗 / 对话框仍拒绝。该规则只做只读窗口集合核对，不操作分享控件、不改变单帧范围、视觉授权或改名的 checkpoint / 幂等语义。见 [B55 门报告](../gates/2026-10-19-b55-group-name-window-sharing.md)。
+
 ### 6.34 `policy.get`
 
 无参数。返回本机 `policy.json` 的全部内容：`{allowedTitles, allowedTypes{group, customer, internal}, allowedChatIds, allowedExternalUserIds, contactRequests{autoAccept, allowNames, greetingContains, autoGroup, groupDefaultMembers, groupNameSuffix, groupNameTemplate, maxAcceptsPerHour}, remoteEdits, gateReads, contactAdd{maxAddsPerHour, maxSearchesPerHour}, sendFile{allowedHosts, maxBytes}, allowAll}`（B9：控制台「策略」页的读取走同一条路；`sendFile` 是 `message.sendFile` 的 `url` 源域名白名单与单文件字节上限，经 `policy.set{allowHosts, denyHosts}` 或 `imctl policy hosts` 修改；`allowAll` 见 §6.35 与 §5「目标、策略与会话类型」——B14 用户 2026-09-22「全部放开」，默认 false，只经本机 `imctl policy all` / 控制台开关，`policy.set` 不接受）。

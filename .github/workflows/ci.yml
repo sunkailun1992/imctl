@@ -43,7 +43,10 @@ jobs:
       - name: Build
         run: swift build
       - name: Run non-live tests
-        run: swift test
+        # Shared runners can starve the global queues used by timeout/concurrency
+        # probes when unrelated test cases all run at once. Each test still
+        # exercises its own concurrency and retains the same timing assertions.
+        run: swift test --no-parallel
 
   secrets:
     name: secrets

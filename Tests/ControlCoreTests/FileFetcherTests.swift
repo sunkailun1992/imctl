@@ -6,20 +6,46 @@ import Testing
 final class StubURLProtocol: URLProtocol {
     struct Script { var status: Int; var headers: [String: String]; var body: Data; var redirectTo: URL?; var stall: Bool = false }
     nonisolated(unsafe) static var scripts: [String: Script] = [:]
-    nonisolated(unsafe) static var requests: [URL] = []
-    nonisolated(unsafe) static var cancelled: [URL] = []
-    /// Guards `requests` / `cancelled`: `stopLoading()` runs on URLSession's own (non-test) queue, which can
-    /// otherwise race a test's read right after `fetch(url:)` returns — the intermittent failure this once
-    /// produced on `aStalledSourceTimesOutCancelsTheTaskAndKeepsNothing`.
-    private static let stateLock = NSLock()
-    static func recordRequest(_ url: URL) { stateLock.lock(); requests.append(url); stateLock.unlock() }
-    static func recordCancel(_ url: URL) { stateLock.lock(); cancelled.append(url); stateLock.unlock() }
+    nonisolated(unsafe) private static var requests: [URL] = []
+    nonisolated(unsafe) private static var cancelled: [URL] = []
+    /// Protects callback records and waits for a specific source's event. A locked snapshot alone cannot
+    /// prove `stopLoading()` has run: URLSession's completion delegate can finish before that callback.
+    private static let stateCondition = NSCondition()
+    static func recordRequest(_ url: URL) {
+        stateCondition.lock(); defer { stateCondition.unlock() }
+        requests.append(url)
+        stateCondition.broadcast()
+    }
+    static func recordCancel(_ url: URL) {
+        stateCondition.lock(); defer { stateCondition.unlock() }
+        cancelled.append(url)
+        stateCondition.broadcast()
+    }
+    static func resetRecordedEvents() {
+        stateCondition.lock(); defer { stateCondition.unlock() }
+        requests.removeAll(); cancelled.removeAll()
+    }
+    private enum Event { case start, cancel }
+    private static func wait(for event: Event, url: URL, until deadline: Date) -> Bool {
+        stateCondition.lock(); defer { stateCondition.unlock() }
+        while !(event == .start ? requests : cancelled).contains(url) {
+            guard Date() < deadline else { return false }
+            _ = stateCondition.wait(until: deadline)
+        }
+        return true
+    }
+    static func waitForStart(of url: URL, until deadline: Date) -> Bool {
+        wait(for: .start, url: url, until: deadline)
+    }
+    static func waitForCancel(of url: URL, until deadline: Date) -> Bool {
+        wait(for: .cancel, url: url, until: deadline)
+    }
     /// Lock-guarded read of `cancelled`; tests must read through this, never the raw array, so a read never races
     /// `stopLoading()`'s append on URLSession's queue.
-    static var cancelledURLs: [URL] { stateLock.lock(); defer { stateLock.unlock() }; return cancelled }
+    static var cancelledURLs: [URL] { stateCondition.lock(); defer { stateCondition.unlock() }; return cancelled }
     /// Lock-guarded read of `requests`, mirroring `cancelledURLs`: `startLoading()` runs on URLSession's own
     /// queue too, so a test reading the raw array right after `fetch(url:)` returns has the same race.
-    static var requestedURLs: [URL] { stateLock.lock(); defer { stateLock.unlock() }; return requests }
+    static var requestedURLs: [URL] { stateCondition.lock(); defer { stateCondition.unlock() }; return requests }
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() {
@@ -54,7 +80,7 @@ struct FileFetcherTests {
         config.protocolClasses = [StubURLProtocol.self]
         f.sessionConfiguration = config
         f.timeout = 5
-        StubURLProtocol.scripts = [:]; StubURLProtocol.requests = []; StubURLProtocol.cancelled = []
+        StubURLProtocol.scripts = [:]; StubURLProtocol.resetRecordedEvents()
         return (f, outbox)
     }
 
@@ -220,14 +246,19 @@ struct FileFetcherTests {
     @Test func aStalledSourceTimesOutCancelsTheTaskAndKeepsNothing() throws {
         let (f, outbox) = try fetcher()
         f.timeout = 0.5
-        StubURLProtocol.scripts["https://cdn.example/stall.pdf"] = .init(status: 200, headers: [:], body: Data(), redirectTo: nil, stall: true)
+        let source = try #require(URL(string: "https://cdn.example/stall.pdf"))
+        StubURLProtocol.scripts[source.absoluteString] = .init(status: 200, headers: [:], body: Data(), redirectTo: nil, stall: true)
         let started = Date()
-        do { _ = try f.fetch(url: URL(string: "https://cdn.example/stall.pdf")!, fileName: nil, policy: policy); Issue.record("expected SOURCE_UNREACHABLE") }
+        let deadline = started.addingTimeInterval(16)
+        do { _ = try f.fetch(url: source, fileName: nil, policy: policy); Issue.record("expected SOURCE_UNREACHABLE") }
         catch let e as ControlError { #expect(e.code == "SOURCE_UNREACHABLE" && e.message.contains("no answer")) }
         // Worst case on the timeout path: the semaphore wait (timeout + 5 = 5.5 s here) plus the post-cancel
-        // completion wait (a flat 5 s) = 10.5 s; padded for scheduling slack under load.
+        // completion wait (a flat 5 s) = 10.5 s. Both URLProtocol events share the original 16 s total bound;
+        // startLoading records the start during the synchronous fetch, so we never wait before starting it.
+        #expect(StubURLProtocol.waitForStart(of: source, until: deadline))
+        #expect(StubURLProtocol.waitForCancel(of: source, until: deadline))
         #expect(Date().timeIntervalSince(started) < 16)
         #expect(((try? FileManager.default.contentsOfDirectory(atPath: outbox.path)) ?? []).isEmpty)
-        #expect(StubURLProtocol.cancelledURLs.contains { $0.absoluteString == "https://cdn.example/stall.pdf" })
+        #expect(StubURLProtocol.cancelledURLs.contains(source))
     }
 }

@@ -13,6 +13,21 @@ struct AIPlannerStepDecisionTests {
         return (fake, window, observation)
     }
 
+    private static func groupNameObservation() throws -> (FakeAXBackend, AXElement, AIPlannerObservation) {
+        let (fake, window) = AIPlannerObservationTests.fixture()
+        let field = try #require(fake.element(atPath: [2]))
+        fake.mutate(field.handle, attribute: AXAttribute.role, to: .string(AXRole.textField))
+        fake.mutate(field.handle, attribute: AXAttribute.frame,
+                    to: .rect(CGRect(x: 137, y: 36, width: 85, height: 18)))
+        fake.mutate(field.handle, attribute: AXAttribute.value, to: .string("合成原群名"))
+        let observation = try AIPlannerObservation.capture(
+            window: window, expectedPID: fake.pid, allowedKinds: [.writeText],
+            eligibleHandles: [field.handle], capture: { _, _ in AIPlannerObservationTests.shot() })
+        #expect(observation.candidates.count == 1 && observation.candidates[0].kind == .writeText
+                && observation.candidates[0].role == AXRole.textField)
+        return (fake, window, observation)
+    }
+
     static func context(_ steps: Set<AIPlannerStep> = [.press, .verify, .stop]) throws -> AIPlannerStepContext {
         try AIPlannerStepContext(method: .messageSend, allowedSteps: steps, phase: .commit,
                                  lastEvidence: .pendingConfirmation, goal: .control(.sendButton))
@@ -198,6 +213,155 @@ struct AIPlannerStepDecisionTests {
                                              settings: AIPlannerVisionClientTests.settings())
             #expect(decision == AIPlannerStepDecision(step: .stop, candidateID: nil))
         }
+    }
+
+    @Test func groupNamePromptKeepsBothObservationRoundsPassiveAndScopedToTheHeader() throws {
+        let (fake, _, observation) = try Self.groupNameObservation()
+        for provider in [CloudVisionProvider.qwen, .gemini] {
+            for (phase, evidence) in [(AIPlannerPhase.prepare, AIPlannerEvidence.inputReady),
+                                      (.verify, .postconditionPresent)] {
+                let context = try AIPlannerStepContext(
+                    method: .groupRename, allowedSteps: [.verify, .reobserve, .stop],
+                    phase: phase, lastEvidence: evidence, goal: .control(.groupNameField))
+                var calls = 0
+                let client = AIPlannerStepClient { request in
+                    calls += 1
+                    let body = try #require(try JSONSerialization.jsonObject(with: request.httpBody!) as? [String: Any])
+                    let prompt: String
+                    if provider == .qwen {
+                        let messages = try #require(body["messages"] as? [[String: Any]])
+                        let parts = try #require(messages.first?["content"] as? [[String: Any]])
+                        prompt = try #require(parts.first?["text"] as? String)
+                        let image = try #require(parts.last?["image_url"] as? [String: Any])
+                        #expect((image["url"] as? String)?.hasPrefix("data:image/jpeg;base64,") == true)
+                    } else {
+                        let contents = try #require(body["contents"] as? [[String: Any]])
+                        let parts = try #require(contents.first?["parts"] as? [[String: Any]])
+                        prompt = try #require(parts.first?["text"] as? String)
+                        let image = try #require(parts.last?["inline_data"] as? [String: Any])
+                        #expect(image["mime_type"] as? String == "image/jpeg")
+                    }
+                    let lower = prompt.lowercased()
+                    #expect(prompt.contains("group.rename") && prompt.contains("Current phase is \(phase.rawValue)"))
+                    #expect(prompt.contains("Allowed next steps are only: reobserve, stop, verify"))
+                    #expect(lower.contains("read-only") && lower.contains("observation anchor"))
+                    #expect(!prompt.contains("Actionable AX candidate boxes"))
+                    #expect(prompt.contains("\(observation.candidates[0].id) writeText ["))
+                    #expect(lower.contains("capability") && lower.contains("cannot choose writetext"))
+                    #expect(lower.contains("sidebar") && lower.contains("conversation messages")
+                            && lower.contains("lower chat composer"))
+                    #expect(lower.contains("normal") && lower.contains("alternative group-name editor"))
+                    #expect(lower.contains("active group header") && lower.contains("conflicting dialog")
+                            && lower.contains("stop"))
+                    #expect(!prompt.contains("Stop if another group or editor is visibly apparent"))
+                    #expect(!prompt.contains("A single offered candidate by itself is not proof"))
+                    #expect(prompt.contains("never claim success"))
+                    // Return a veto even for the clearer prompt: observation
+                    // wording must not convert stop into a verification.
+                    return (Self.body("{\"step\":\"stop\"}", provider: provider), Self.http(request))
+                }
+                let decision = try client.decide(observation: observation, context: context,
+                                                 settings: AIPlannerVisionClientTests.settings(provider))
+                #expect(decision == AIPlannerStepDecision(step: .stop, candidateID: nil) && calls == 1)
+            }
+        }
+        #expect(fake.recordedActions.isEmpty && fake.recordedSets.isEmpty)
+    }
+
+    @Test func groupNameObservationDecisionsKeepThePassiveStepAndNilCandidateContract() throws {
+        let (fake, window, observation) = try Self.groupNameObservation()
+        let candidateID = observation.candidates[0].id
+        let invalid = [
+            "{\"step\":\"writeText\",\"candidate_id\":\"\(candidateID)\"}",
+            "{\"step\":\"press\",\"candidate_id\":\"\(candidateID)\"}",
+            "{\"step\":\"verify\",\"candidate_id\":\"\(candidateID)\"}",
+            "{\"step\":\"reobserve\",\"candidate_id\":\"\(candidateID)\"}",
+            "{\"step\":\"stop\",\"candidate_id\":\"\(candidateID)\"}",
+            "{\"step\":\"verify\",\"candidate_id\":null}",
+            "{\"step\":\"verify\",\"x\":170,\"y\":20}",
+            "{\"step\":\"verify\",\"reason\":\"synthetic extra field\"}",
+        ]
+        for provider in [CloudVisionProvider.qwen, .gemini] {
+            for (phase, evidence) in [(AIPlannerPhase.prepare, AIPlannerEvidence.inputReady),
+                                      (.verify, .postconditionPresent)] {
+                let context = try AIPlannerStepContext(
+                    method: .groupRename, allowedSteps: [.verify, .reobserve, .stop],
+                    phase: phase, lastEvidence: evidence, goal: .control(.groupNameField))
+                #expect(context.allowedSteps == [.verify, .reobserve, .stop])
+                for step in [AIPlannerStep.verify, .reobserve, .stop] {
+                    var calls = 0
+                    let client = AIPlannerStepClient { request in
+                        calls += 1
+                        return (Self.body("{\"step\":\"\(step.rawValue)\"}", provider: provider), Self.http(request))
+                    }
+                    let decision = try client.decide(observation: observation, context: context,
+                                                     settings: AIPlannerVisionClientTests.settings(provider))
+                    #expect(decision == AIPlannerStepDecision(step: step, candidateID: nil) && calls == 1)
+                    #expect(try decision.revalidatedCandidate(observation: observation, window: window) == nil)
+                }
+                for output in invalid {
+                    var calls = 0
+                    let client = AIPlannerStepClient { request in
+                        calls += 1
+                        return (Self.body(output, provider: provider), Self.http(request))
+                    }
+                    #expect(throws: AIPlannerVisionError.invalidChoice) {
+                        try client.decide(observation: observation, context: context,
+                                          settings: AIPlannerVisionClientTests.settings(provider))
+                    }
+                    #expect(calls == 1)
+                }
+            }
+        }
+        #expect(fake.recordedActions.isEmpty && fake.recordedSets.isEmpty)
+    }
+
+    @Test func groupNameObservationWordingDoesNotEscapeItsMethodPhaseOrPassiveScope() throws {
+        let (fake, _, observation) = try Self.groupNameObservation()
+        let passive: Set<AIPlannerStep> = [.verify, .reobserve, .stop]
+        let cases: [(RPCMethod, AIPlannerPhase, AIPlannerEvidence, Set<AIPlannerStep>)] = [
+            (.messageSend, .prepare, .inputReady, passive),
+            (.groupCreate, .prepare, .inputReady, passive),
+            (.groupRename, .locate, .targetVisible, passive),
+            (.groupRename, .choose, .inputReady, passive),
+            (.groupRename, .commit, .pendingConfirmation, passive),
+            (.groupRename, .prepare, .inputReady, passive.union([.writeText])),
+            (.groupRename, .verify, .postconditionPresent, passive.union([.writeText])),
+        ]
+        for provider in [CloudVisionProvider.qwen, .gemini] {
+            for (method, phase, evidence, allowed) in cases {
+                // These contexts are valid at the method ceiling; a shared UI
+                // goal alone must not grant the B37 passive-observation wording.
+                let context = try AIPlannerStepContext(
+                    method: method, allowedSteps: allowed, phase: phase,
+                    lastEvidence: evidence, goal: .control(.groupNameField))
+                var calls = 0
+                let client = AIPlannerStepClient { request in
+                    calls += 1
+                    let body = try #require(try JSONSerialization.jsonObject(with: request.httpBody!) as? [String: Any])
+                    let prompt: String
+                    if provider == .qwen {
+                        let messages = try #require(body["messages"] as? [[String: Any]])
+                        let parts = try #require(messages.first?["content"] as? [[String: Any]])
+                        prompt = try #require(parts.first?["text"] as? String)
+                    } else {
+                        let contents = try #require(body["contents"] as? [[String: Any]])
+                        let parts = try #require(contents.first?["parts"] as? [[String: Any]])
+                        prompt = try #require(parts.first?["text"] as? String)
+                    }
+                    #expect(prompt.contains("Actionable AX candidate boxes"))
+                    #expect(!prompt.contains("Read-only AX observation anchor box"))
+                    #expect(!prompt.contains("Normal sidebar conversation rows"))
+                    #expect(!prompt.contains("not alternative group-name editors"))
+                    #expect(!prompt.contains("local AX capability of this observation anchor"))
+                    return (Self.body("{\"step\":\"stop\"}", provider: provider), Self.http(request))
+                }
+                let decision = try client.decide(observation: observation, context: context,
+                                                 settings: AIPlannerVisionClientTests.settings(provider))
+                #expect(decision == AIPlannerStepDecision(step: .stop, candidateID: nil) && calls == 1)
+            }
+        }
+        #expect(fake.recordedActions.isEmpty && fake.recordedSets.isEmpty)
     }
 
     @Test func exactNewCustomersAXEvidenceGuidesSelectionAndFreshVerification() throws {

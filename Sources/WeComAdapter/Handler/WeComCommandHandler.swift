@@ -232,7 +232,7 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
         visualRounds += 1
     }
 
-    private func assertVisualBudget(for method: RPCMethod) throws {
+    func assertVisualBudget(for method: RPCMethod) throws {
         guard desktopCommandOrigin == .external, desktopCommandMethod == method,
               visualEnabled(), Date().timeIntervalSince(visualStartedAt) < visualDuration(for: method) else {
             throw AIPlannerVisionError.timeout
@@ -1074,8 +1074,10 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
                 installGroupNameVisualObservation(on: &action, target: resolved, requestedName: name)
             }
             let out = try withoutEscaping(checkpoint, afterSubmit) { before, after in
-                try action.renameGroup(to: name, window: try WeComWindowLocator.mainWindow(from: try rootProvider()),
-                                       hooks: SubmitHooks(beforeIrreversible: before, afterIrreversible: after))
+                try withVisibleGroupNameWindow(target: resolved, actions: action) { window in
+                    try action.renameGroup(to: name, window: window,
+                                           hooks: SubmitHooks(beforeIrreversible: before, afterIrreversible: after))
+                }
             }
             return ["title": out.details["title"] ?? "", "renamed": out.details["renamed"] ?? "false", "requestedName": name]
         }

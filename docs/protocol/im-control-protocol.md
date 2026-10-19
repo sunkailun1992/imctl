@@ -288,6 +288,8 @@ B35 仅复用上一节进入「新的客户」时的**只读、可逆选行前�
 
 1.0.20-dev：仅澄清 `group.rename` 群名准备 / 验证被动轮的视觉提示：候选是只读观察锚点，`writeText` 仅标记本机 AX 能力；正常侧栏、聊天消息与下方输入框不属于替代群名编辑器。活动群冲突、候选越出标题区、竞争群名编辑器或遮挡标题的冲突弹窗仍须停止，不确定时仍可停止。模型只允许 `verify / reobserve / stop`，不得带候选 ID、写值、确认或宣告成功；协议字段、解析、AX、策略、checkpoint、幂等与授权不变。该提示歧义已由代码确认，但尚未证明是此前真实 `stop` 的原因，真实改名仍待验收，见 [B56 门报告](../gates/2026-10-19-b56-group-name-passive-prompt.md)。
 
+1.0.21-dev：若原主窗因位于另一 Space 而明确返回空 `AXWindows`，外部群改名的 B37 路径会在任何群名写入或模型请求前，先核对原主窗、focused window、唯一选中行与精确目标，再用一次 `AXFrontmost=true` 请求恢复可见窗口列表。等待有界，并逐轮核对策略、pause、辅助功能 / 录屏授权、视觉设置、命令预算与原窗口 / 行 / 标题 / 几何；任何变化停止。取得同一主窗后仍须通过完整 B37 / B55，不能把空集合、未知 AX 回覆或额外对话框当成通过证据。动作结束后尝试归还原前景；该准备步骤不改 checkpoint、幂等、模型停止权或抓图范围。尚未完成真实改名验收，见 [B57 门报告](../gates/2026-10-19-b57-group-name-visible-window.md)。
+
 ### 6.34 `policy.get`
 
 无参数。返回本机 `policy.json` 的全部内容：`{allowedTitles, allowedTypes{group, customer, internal}, allowedChatIds, allowedExternalUserIds, contactRequests{autoAccept, allowNames, greetingContains, autoGroup, groupDefaultMembers, groupNameSuffix, groupNameTemplate, maxAcceptsPerHour}, remoteEdits, gateReads, contactAdd{maxAddsPerHour, maxSearchesPerHour}, sendFile{allowedHosts, maxBytes}, allowAll}`（B9：控制台「策略」页的读取走同一条路；`sendFile` 是 `message.sendFile` 的 `url` 源域名白名单与单文件字节上限，经 `policy.set{allowHosts, denyHosts}` 或 `imctl policy hosts` 修改；`allowAll` 见 §6.35 与 §5「目标、策略与会话类型」——B14 用户 2026-09-22「全部放开」，默认 false，只经本机 `imctl policy all` / 控制台开关，`policy.set` 不接受）。

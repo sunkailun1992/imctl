@@ -4,7 +4,7 @@ macOS 消息端控制器（IM Control Protocol）。一个 Swift 常驻进程（
 
 这是按 [Apache-2.0](LICENSE) 发布的个人开源项目，与腾讯、企业微信没有隶属或官方授权关系。使用者需自行确认账号、组织和相关平台允许的使用范围，并对自己的操作与数据处理负责。
 
-欢迎通过 issue 和 PR 参与。开发说明、协议和安全边界都在本仓库内，不需要访问维护者的私人知识库。所有改动经分支和 PR 提交，由 [@sunkailun1992](https://github.com/sunkailun1992) 本人审核后才可合入 `main`；详见 [贡献指南](CONTRIBUTING.md) 与 [维护规则](MAINTAINERS.md)。
+欢迎通过 issue 和 PR 参与。开发说明、协议和安全边界都在本仓库内，不需要访问维护者的私人知识库。所有改动经分支和 PR 提交；第三方 GitHub 账号的 PR 由 [@sunkailun1992](https://github.com/sunkailun1992) 本人审核，本人账号与 AI 在已授权任务内的协作按维护规则中的例外处理，仍须当前版本必要 CI 全部通过、评审对话解决。详见 [贡献指南](CONTRIBUTING.md) 与 [维护规则](MAINTAINERS.md)。
 
 个人项目。当前阶段：**阶段 2**（阶段 0 五道门已有结论；发送、幂等、崩溃恢复、本地传输与 MQTT 5 边缘接入已在文件传输助手 + EMQX 上端到端验证；B3 起 `imctld` 由 AX 通知驱动观察、`message.observed` 带 `origin` 接管信号、`message.history` 可回读历史、`event.replay` 供消费方对账，见 `docs/gates/`）。LaunchAgent 安装、EMQX 凭据/ACL、Java 消费方三项等用户决定：命令与文档已备好（`docs/ops/`、`docs/protocol/`）。
 
@@ -96,7 +96,7 @@ imctl mqtt call group.joinway.create --params '{"chatIds":["<chat_id>"],"autoCre
 ## 参与开发
 
 - [CONTRIBUTING.md](CONTRIBUTING.md)：开发环境、检查命令、fork / 分支 / PR 流程、AI 协作与脱敏要求。
-- [MAINTAINERS.md](MAINTAINERS.md)：本人审核、合并与发布权限，以及 GitHub 规则的目标。
+- [MAINTAINERS.md](MAINTAINERS.md)：第三方审核、本人账号的协作例外、合并与发布权限，以及 GitHub 规则的目标。
 - [AGENTS.md](AGENTS.md)：AI 工具入口与工程边界；这些安全约束同样适用于人工贡献。
 - [SECURITY.md](SECURITY.md)：漏洞报告与支持范围。
 

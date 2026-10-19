@@ -136,7 +136,7 @@ bash scripts/check-secrets.sh               # warning-only 扫描疑似 secret /
 - 提交信息和 PR 标题使用英文 Conventional Commits，前缀 `feat(scope)` / `fix(scope)` / `test` / `docs(gates|specs|ops|protocol|ai-coding)` / `chore` 等，正文写清结果与验证方式；有 AI 参与时署名实际参与的模型。PR 描述可用中文或英文，按 `.github/pull_request_template.md` 填写。
 - 提交前：`IMCTL_LIVE=0 IMCTL_LIVE_VISION=0 swift test` 通过、`bash scripts/check-secrets.sh` 告警逐条人工判断、`git diff --check` 通过、`git status --short` 无 `.raw.json` / 临时文件 / 本机路径。CI 的 `secrets` 是另一项高可信格式检查，不能代替广泛扫描和个人信息复核。
 - 开工、提交前、推送前先 `git fetch`；未推送的本地提交跟进最新上游后重跑验证，已推送的分支通过追加提交或合并 `main` 跟进，禁止强推（含 `--force-with-lease`）。遇到他人的未提交改动或无法解决的冲突就报告，不覆盖。
-- 全库 CODEOWNER 为 @sunkailun1992。本人对具体 PR / 版本批准、所需 CI 通过且评审对话解决后才可合并；追加可审查的新提交须重新审核。AI 不得代替本人 approve，未取得上述明确批准不得合并，即使持有 owner 凭据也不例外。具体权限与 owner 自己 PR 的处理见 `MAINTAINERS.md`；GitHub 规则实际是否生效以仓库设置为准。
+- 全库 CODEOWNER 为 @sunkailun1992。第三方 GitHub 账号的 PR 须本人对具体版本批准、所需 CI 通过且评审对话解决后才可合并；追加可审查的新提交须重新审核。AI 不代替本人 approve；本人账号与 AI 在已授权任务内的协作按根目录 `MAINTAINERS.md` 的例外处理，当前版本必要 CI 全部通过、评审对话解决后可直接合并，新增提交后重新核对最新 CI。持有 owner 凭据本身不构成任务授权。具体权限见 `MAINTAINERS.md`；GitHub 规则实际是否生效以仓库设置为准。
 - 一个门报告一个提交；规范与代码可同一提交但交付说明分开写。
 - 不改写已推送历史；历史中的敏感内容（如早期计划里的 broker 地址）是否改写由用户决定。
 - 外部贡献者不自行修改发布版本、打发布标签或发布安装包；提交内容按 Apache-2.0 授权，见 `CONTRIBUTING.md`。

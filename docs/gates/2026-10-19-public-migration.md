@@ -1,4 +1,4 @@
-# 完整公开迁移与本机重装（2026-10-19）— 已完成
+# 完整公开迁移与本机重装（2026-10-19）— 公开与重装完成，CI 排程修正待审核
 
 ## 用户决定
 
@@ -43,6 +43,7 @@
 - Actions 默认 token 只读，不允许工作流 approve PR；所有外部贡献者的工作流执行需维护者批准。CI 不访问真实客户端或配置，不签名、安装或发布。
 - 仅允许 squash merge，合并后删工作分支，自动合并关闭。
 - 私密漏洞报告、Dependabot 安全更新、secret scanning 与 push protection 已启用。首次自动依赖 PR 的状态实读为 `REVIEW_REQUIRED` / `BLOCKED`，没有自动合入。
+- 新启用的依赖扫描报出 Java 消费方示例的 13 条既有 Jackson 告警（5 high / 8 medium），均位于 `examples/java-consumer/pom.xml`。自动 [PR #1](https://github.com/sunkailun1992/imctl/pull/1) 仅把 `jackson.version` 从 2.18.2 升至 2.18.11，逐项覆盖 13 条告警的最低修复版本；尚未合并。该 POM 不参与 Mac App 构建。本机没有 Maven / wrapper，未声称已完成 Java 测试；Swift CI 也不能代替 Java 验证。
 
 ## 构建、安装与功能
 
@@ -54,4 +55,8 @@
 - 新版离线体检 `ready:true`：daemon、企微读取、辅助功能、屏幕录制、MQTT、视觉 / OSS 配置和智能体接入正常。未配置的官方 API、未启用的自动接受功能继续保持原状态。
 - 上述体检为本地状态核对，不代表新做了云端上传、发送、加人或所有功能的真实业务验收。真实群改名往返共 2 次的授权仍待用户确认，尚未执行；不能声称已通过真实视觉改名验收。
 
-公开提交的云端 CI 结果见 [首次公开 CI](https://github.com/sunkailun1992/imctl/actions/runs/39193799853)。提交本报告时应核对实际结果，后续 PR 仍按上述本人审核流程处理。
+## 首次云端 CI 与排程修正
+
+[首次公开 CI](https://github.com/sunkailun1992/imctl/actions/runs/39193799853) 的 secrets 和 Swift build 通过，1,183 项测试执行完成，但 9 项测试 / 11 个 issue 因背景佇列与短时间上限失败。本次群名 B37 全套 16 项通过，不能因此把云端全套写成通过。许多快测同时耗时约 51 秒，失败集中于 readiness、MCP、MQTT 与 socket 的背景探针，首要怀疑是共享 runner 上大量测试并行导致排程压力。
+
+本 PR 将 CI 的测试命令改为 `swift test --no-parallel`，按 [Swift Testing 官方说明](https://developer.apple.com/documentation/testing/parallelization) 关闭不同测试间的并行；每项测试本身的并发探针、超时和断言保持不变，不跳过任何测试，不改运行时实现。本机默认并行全套已通过；串行与后续云端结果以 PR checks 为准。此项变更与验收记录通过 PR 由本人审核，未绕过 main 规则。

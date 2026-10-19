@@ -52,6 +52,8 @@ open out/imctl.app                                                              
 
 ## 验证
 
+B59 开发时本机已安装 1.0.22/build 7，一次获准请求通过群名稳定检查但在 prepare/round 1 被模型 stop，零名称写入、实际改名仍 0/2。1.0.23-dev 修正合成像素已证实的整窗 JPEG 上下翻转；它不改变模型否决或权限。安装、签章与受限现场最终结果见 [B59 门报告](../gates/2026-10-19-b59-window-image-orientation.md) 关联 PR 的回执，不能将离线方向通过视为群名已改成功。
+
 B58 开发时本机已安装 1.0.21/build 6，与 B57 公开合并源码树一致；一次获准请求仍在 B37 prepare/round 0 零写入失败，真实群名修改尚未验收。1.0.22-dev 先补固定拒绝类别，不能将诊断或候选构建等同于修复成功；后续安装与受限验证的最终回执见 [B58 门报告](../gates/2026-10-19-b58-group-name-guard-diagnosis.md) 所链接的 PR。
 
 `codesign --verify --deep --strict out/imctl.app`；`pkgutil --payload-files out/imctl-<v>.pkg`；装后 `~/Applications/imctl.app/Contents/MacOS/imctl version`；`imctl call controller.describe`。

@@ -24,7 +24,8 @@ public enum IMCTLVersion {
     /// 1.0.20-dev (2026-10-19): clarify passive group-title observation anchors and background editors while retaining the model's stop veto.
     /// 1.0.21-dev (2026-10-19): prepare an off-Space group window with one bounded AXFrontmost request before the unchanged visual and window-set guards.
     /// 1.0.22-dev (2026-10-19): report fixed, content-free group-title guard reasons without changing rejection or reconciliation.
-    public static let string = "1.0.22-dev"
+    /// 1.0.23-dev (2026-10-19): preserve top-left window image orientation so JPEG pixels align with AX observation boxes.
+    public static let string = "1.0.23-dev"
     /// Code-signing identifier; must stay stable so TCC (Accessibility)
     /// authorization survives rebuilds.
     public static let bundleIdentifier = "com.sunkailun.imctl"

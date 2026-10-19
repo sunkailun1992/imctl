@@ -38,10 +38,9 @@ enum AIPlannerWindowImage {
                                       bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
         context.setFillColor(CGColor(gray: 0.15, alpha: 1))
         context.fill(CGRect(x: 0, y: 0, width: outputWidth, height: outputHeight))
-        // Pixel and AX coordinates use a top-left origin; bitmap contexts use
-        // bottom-left. Match the B16 control crop's single upright transform.
-        context.translateBy(x: 0, y: CGFloat(outputHeight))
-        context.scaleBy(x: 1, y: -1)
+        // Preserve the cropped CGImage's row order when drawing into another
+        // bitmap. A negative Y scale would invert the JPEG while AX boxes
+        // continue to use top-left coordinates.
         context.interpolationQuality = .high
         context.draw(clipped, in: CGRect(x: 0, y: 0, width: outputWidth, height: outputHeight))
         guard let image = context.makeImage() else { return nil }

@@ -292,6 +292,8 @@ B35 仅复用上一节进入「新的客户」时的**只读、可逆选行前�
 
 1.0.22-dev：群名 B37 的原 `staleView` 错误消息可附固定的 `[guardReason=...]` 类别，帮助区分标题字段、窗口集合等原检查；未定位的 observation 内部失败保持 `unclassified`。分类不含标题、正文、几何、PID、句柄或模型原文，不改变错误码、`diagnosis`、拒绝条件、早生效核对、checkpoint、幂等或模型停止权。诊断分类不是操作成功或重试许可，见 [B58 门报告](../gates/2026-10-19-b58-group-name-guard-diagnosis.md)。
 
+1.0.23-dev：修正共享整窗 JPEG 编码中的多余垂直翻转，让图像内容与原有左上原点 AX 候选框一致；向内取整裁切、窗口范围、缩放/大小限制、模型提示与严格解析、stop、AX 后验、策略、checkpoint 和幂等均不变。修复通过非对称合成像素及假请求 payload 验证，真实命令结果仍以客户端后验为准，见 [B59 门报告](../gates/2026-10-19-b59-window-image-orientation.md)。
+
 ### 6.34 `policy.get`
 
 无参数。返回本机 `policy.json` 的全部内容：`{allowedTitles, allowedTypes{group, customer, internal}, allowedChatIds, allowedExternalUserIds, contactRequests{autoAccept, allowNames, greetingContains, autoGroup, groupDefaultMembers, groupNameSuffix, groupNameTemplate, maxAcceptsPerHour}, remoteEdits, gateReads, contactAdd{maxAddsPerHour, maxSearchesPerHour}, sendFile{allowedHosts, maxBytes}, allowAll}`（B9：控制台「策略」页的读取走同一条路；`sendFile` 是 `message.sendFile` 的 `url` 源域名白名单与单文件字节上限，经 `policy.set{allowHosts, denyHosts}` 或 `imctl policy hosts` 修改；`allowAll` 见 §6.35 与 §5「目标、策略与会话类型」——B14 用户 2026-09-22「全部放开」，默认 false，只经本机 `imctl policy all` / 控制台开关，`policy.set` 不接受）。

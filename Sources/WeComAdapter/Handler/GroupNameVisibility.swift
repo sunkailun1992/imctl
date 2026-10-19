@@ -8,6 +8,7 @@ extension WeComCommandHandler {
     /// original window and selected group to survive before B37/B55 run.
     /// Empty or unknown window collections never substitute for those guards.
     func withVisibleGroupNameWindow<T>(target: ResolvedTarget, actions: WeComActions,
+                                       restoreFocus: () -> Bool = { true },
                                        _ body: (AXElement) throws -> T) throws -> T {
         let root = try rootProvider()
         let window = try WeComWindowLocator.mainWindow(from: root)
@@ -25,7 +26,7 @@ extension WeComCommandHandler {
 
         beginVisualStep(.control(.groupNameField), phase: .prepare)
         var restore: (() -> Void)?
-        defer { restore?() }
+        defer { if restoreFocus() { restore?() } }
         func windowHandles() throws -> [AXElementHandle] {
             guard case .elements(let handles)? = try app.attribute(AXAttribute.windows) else {
                 throw AIPlannerVisionError.staleView
@@ -117,8 +118,9 @@ extension WeComCommandHandler {
         } catch let error as AIPlannerVisionError {
             throw visualEnded("group title window preparation: \(error)", outcome: error.logName)
         }
-        // Keep foreground ownership through the entire original action. Its
-        // own draft recovery and B37/B55 checks finish before focus is returned.
+        // Keep foreground ownership through the entire original action. The
+        // caller suppresses focus restoration after an uncertain value write;
+        // blur could commit a pending name even when the desktop row is stale.
         return try body(window)
     }
 }

@@ -25,7 +25,8 @@ public enum IMCTLVersion {
     /// 1.0.21-dev (2026-10-19): prepare an off-Space group window with one bounded AXFrontmost request before the unchanged visual and window-set guards.
     /// 1.0.22-dev (2026-10-19): report fixed, content-free group-title guard reasons without changing rejection or reconciliation.
     /// 1.0.23-dev (2026-10-19): preserve top-left window image orientation so JPEG pixels align with AX observation boxes.
-    public static let string = "1.0.23-dev"
+    /// 1.0.24-dev (2026-10-19): allow owned group-title width changes after fixed staging; never compensate or blur an uncertain rename.
+    public static let string = "1.0.24-dev"
     /// Code-signing identifier; must stay stable so TCC (Accessibility)
     /// authorization survives rebuilds.
     public static let bundleIdentifier = "com.sunkailun.imctl"

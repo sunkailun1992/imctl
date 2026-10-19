@@ -23,7 +23,8 @@ public enum IMCTLVersion {
     /// 1.0.19-dev (2026-10-19): recognize the bounded window-sharing indicator during passive group-title checks without accepting other dialogs.
     /// 1.0.20-dev (2026-10-19): clarify passive group-title observation anchors and background editors while retaining the model's stop veto.
     /// 1.0.21-dev (2026-10-19): prepare an off-Space group window with one bounded AXFrontmost request before the unchanged visual and window-set guards.
-    public static let string = "1.0.21-dev"
+    /// 1.0.22-dev (2026-10-19): report fixed, content-free group-title guard reasons without changing rejection or reconciliation.
+    public static let string = "1.0.22-dev"
     /// Code-signing identifier; must stay stable so TCC (Accessibility)
     /// authorization survives rebuilds.
     public static let bundleIdentifier = "com.sunkailun.imctl"

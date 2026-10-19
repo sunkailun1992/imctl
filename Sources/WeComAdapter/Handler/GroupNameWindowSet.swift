@@ -9,7 +9,8 @@ extension WeComCommandHandler {
     /// Its exact shape is an allowlisted accessory, never a new action target.
     static func verifyGroupNameWindowSet(app: AXElement, window: AXElement, pid: pid_t,
                                          frame: CGRect, fieldFrame: CGRect,
-                                         conversationTableFrame: CGRect, viewportFrame: CGRect) throws {
+                                         conversationTableFrame: CGRect, viewportFrame: CGRect,
+                                         onRejection: ((GroupNameVisualGuard) -> Void)? = nil) throws {
         func finitePositive(_ rect: CGRect) -> Bool {
             rect.minX.isFinite && rect.minY.isFinite && rect.width.isFinite && rect.height.isFinite
                 && rect.width > 0 && rect.height > 0
@@ -26,15 +27,18 @@ extension WeComCommandHandler {
               finitePositive(frame), finitePositive(fieldFrame),
               finitePositive(conversationTableFrame), finitePositive(viewportFrame),
               let currentFrame = try window.frame(), sameFrame(currentFrame, frame) else {
+            onRejection?(.identity)
             throw AIPlannerVisionError.staleView
         }
         let windows = try app.elements(AXAttribute.windows)
         guard (1...2).contains(windows.count),
               windows.filter({ $0.handle == window.handle }).count == 1,
               try app.element(AXAttribute.mainWindow)?.handle == window.handle else {
+            onRejection?(.windowSetCount)
             throw AIPlannerVisionError.staleView
         }
         if let focused = try app.element(AXAttribute.focusedWindow), focused.handle != window.handle {
+            onRejection?(.identity)
             throw AIPlannerVisionError.staleView
         }
         guard windows.count == 2 else { return }
@@ -46,10 +50,14 @@ extension WeComCommandHandler {
               try indicator.subrole() == "AXDialog",
               let indicatorFrame = try indicator.frame(),
               sameFrame(indicatorFrame, CGRect(x: frame.minX + 12, y: frame.minY + 4, width: 66, height: 20)) else {
+            onRejection?(.indicatorShape)
             throw AIPlannerVisionError.staleView
         }
         let children = try indicator.children()
-        guard children.count == 1 else { throw AIPlannerVisionError.staleView }
+        guard children.count == 1 else {
+            onRejection?(.indicatorButton)
+            throw AIPlannerVisionError.staleView
+        }
         let button = children[0]
         guard button.backend === window.backend,
               try button.pid() == pid, try button.role() == AXRole.button,
@@ -58,6 +66,7 @@ extension WeComCommandHandler {
               try button.children().isEmpty,
               let buttonFrame = try button.frame(),
               sameFrame(buttonFrame, indicatorFrame.insetBy(dx: -1, dy: -1)) else {
+            onRejection?(.indicatorButton)
             throw AIPlannerVisionError.staleView
         }
         let accessory = indicatorFrame.union(buttonFrame)
@@ -65,6 +74,7 @@ extension WeComCommandHandler {
               (accessory.maxX <= conversationTableFrame.minX || accessory.maxY <= conversationTableFrame.minY),
               !accessory.intersects(conversationTableFrame),
               !accessory.intersects(viewportFrame), !accessory.intersects(fieldFrame) else {
+            onRejection?(.accessoryOverlap)
             throw AIPlannerVisionError.staleView
         }
     }

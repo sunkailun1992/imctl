@@ -33,6 +33,7 @@ private final class GroupNameVisualState {
     var beforeVerified = false
     var afterVerified = false
     var reconcileStaleView = false
+    var guardReason: GroupNameVisualGuard = .unclassified
 }
 
 private struct GroupCreateVisualAnchor {
@@ -2826,6 +2827,8 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
         }
 
         func stableReader(allowAppliedTitle: Bool = false) throws -> (WeComReader, AXElement) {
+            state.guardReason = .unclassified
+            state.guardReason = .context
             guard let anchor = state.anchor else { throw AIPlannerVisionError.staleView }
             let fresh = try self.reader()
             let window = fresh.layout.window
@@ -2842,20 +2845,29 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
                   header == target.title || header == requestedName else {
                 throw AIPlannerVisionError.staleView
             }
+            state.guardReason = .headerTraversal
             let candidates = try headerFields(window: window, windowFrame: windowFrame,
                                               tableFrame: tableFrame, viewport: viewport)
-            guard candidates.count == 1, candidates[0].handle == anchor.fieldHandle,
-                  (try? candidates[0].isEnabled()) != false,
+            state.guardReason = .headerCandidate
+            guard candidates.count == 1, candidates[0].handle == anchor.fieldHandle else {
+                throw AIPlannerVisionError.staleView
+            }
+            state.guardReason = .headerField
+            guard (try? candidates[0].isEnabled()) != false,
                   try candidates[0].pid() == anchor.windowPID,
                   let fieldFrame = try candidates[0].frame(),
                   WeComActions.isInConversationHeader(fieldFrame, windowFrame: windowFrame, viewport: viewport,
                                                       conversationList: tableFrame),
                   Self.sameHistoryFrame(fieldFrame, anchor.fieldFrame),
-                  (fresh.layout.activeTitle?.handle == anchor.fieldHandle || fresh.layout.activeTitle == nil),
-                  try window.children().allSatisfy({ child in
+                  (fresh.layout.activeTitle?.handle == anchor.fieldHandle || fresh.layout.activeTitle == nil) else {
+                throw AIPlannerVisionError.staleView
+            }
+            state.guardReason = .directDialog
+            guard try window.children().allSatisfy({ child in
                       let role = try child.role()
                       return role != AXRole.sheet && role != AXRole.popover && role != "AXDialog"
                   }) else { throw AIPlannerVisionError.staleView }
+            state.guardReason = .unclassified
             let app: AXElement?
             if window.backend.name == "live" {
                 app = AXApp.byPID(anchor.windowPID, backend: window.backend)
@@ -2870,8 +2882,10 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
                                                   pid: anchor.windowPID, frame: windowFrame,
                                                   fieldFrame: fieldFrame,
                                                   conversationTableFrame: tableFrame,
-                                                  viewportFrame: viewport)
+                                                  viewportFrame: viewport,
+                                                  onRejection: { state.guardReason = $0 })
             }
+            state.guardReason = .unclassified
             return (fresh, candidates[0])
         }
 
@@ -2917,6 +2931,7 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
         }
 
         actions.visualObserveGroupName = { observed, field, stage, axVerify in
+            state.guardReason = .unclassified
             state.reconcileStaleView = false
             self.beginVisualStep(.control(.groupNameField), phase: stage == .beforeStaging ? .prepare : .verify)
             if stage == .beforeStaging {
@@ -2961,7 +2976,7 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
                                                         phase: phase, evidence: evidence)
                     }, verify: { try axVerify() })
             } catch let error as AIPlannerVisionError {
-                let ended = self.visualEnded("group title visual round: \(error)", outcome: error.logName)
+                let ended = self.visualEnded("group title visual round: \(error)\(state.guardReason.suffix(for: error))", outcome: error.logName)
                 let last = self.lastVisualRound
                 let allowedDecision = last == nil || (last?.method == .groupRename
                     && last?.goal == "groupNameField" && last?.phase == .verify
@@ -2977,6 +2992,7 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
             else { state.afterVerified = true }
         }
         actions.visualGroupNameStagingGate = {
+            state.guardReason = .unclassified
             do {
                 guard state.beforeVerified, !state.afterVerified,
                       let original = state.originalValue else { throw AIPlannerVisionError.invalidGoal }
@@ -2988,10 +3004,11 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
                     throw AIPlannerVisionError.staleView
                 }
             } catch let error as AIPlannerVisionError {
-                throw self.visualEnded("group title visual staging: \(error)", outcome: error.logName)
+                throw self.visualEnded("group title visual staging: \(error)\(state.guardReason.suffix(for: error))", outcome: error.logName)
             }
         }
         actions.visualGroupNameCommitGate = {
+            state.guardReason = .unclassified
             do {
                 guard state.afterVerified, let settings = state.settings else {
                     throw AIPlannerVisionError.invalidGoal
@@ -3003,7 +3020,7 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
                     throw AIPlannerVisionError.staleView
                 }
             } catch let error as AIPlannerVisionError {
-                let ended = self.visualEnded("group title visual commit: \(error)", outcome: error.logName)
+                let ended = self.visualEnded("group title visual commit: \(error)\(state.guardReason.suffix(for: error))", outcome: error.logName)
                 state.reconcileStaleView = state.afterVerified && error == .staleView
                 throw ended
             }

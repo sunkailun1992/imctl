@@ -167,10 +167,15 @@ public extension WeComActions {
                       try window.frame() == stagedWindowFrame,
                       try field.pid() == stagedWindowPID,
                       try field.role() == AXRole.textField,
-                      try field.frame() == stagedFieldFrame,
+                      let currentFieldFrame = try field.frame(),
+                      GroupNameFieldGeometry.samePlacement(currentFieldFrame, stagedFieldFrame),
                       try field.isSettable(AXAttribute.value),
                       try field.valueString() == name else { return false }
                 let fresh = try WeComReader(window: window)
+                guard let viewport = fresh.layout.messageViewportFrame(),
+                      Self.isInConversationHeader(currentFieldFrame, windowFrame: stagedWindowFrame,
+                                                  viewport: viewport,
+                                                  conversationList: fresh.layout.conversationTableFrame) else { return false }
                 let rows = try fresh.conversations()
                 let selected = rows.filter(\.selected)
                 let header = try fresh.activeConversationHeader()
@@ -182,39 +187,9 @@ public extension WeComActions {
             guard try matches(), try appliedGate(error) else { return false }
             return try matches()
         }
-        // AXValue is reversible only while the original group row, window and
-        // editor still prove ownership. A rejected model round must not leave
-        // a pending title that a later blur could commit behind a failed result.
-        func restoreStagedNameIfOwned() -> Bool {
-            do {
-                guard let stagedWindowFrame, let stagedFieldFrame,
-                      try window.pid() == stagedWindowPID,
-                      try window.frame() == stagedWindowFrame,
-                      try field.pid() == stagedWindowPID,
-                      try field.frame() == stagedFieldFrame,
-                      try field.role() == AXRole.textField,
-                      try field.isSettable(AXAttribute.value) else { return false }
-                let fresh = try WeComReader(window: window)
-                let selected = try fresh.conversations().filter(\.selected)
-                guard selected.count == 1, selected[0].title == oldTitle,
-                      selected[0].handle == originalRowHandle,
-                      fresh.layout.activeTitle?.handle == field.handle else { return false }
-                let current = try field.valueString()
-                guard current == name || current == originalFieldValue else { return false }
-                if current == name {
-                    try field.setAttribute(AXAttribute.value, to: .string(originalFieldValue))
-                }
-                let after = try WeComReader(window: window)
-                let afterSelected = try after.conversations().filter(\.selected)
-                let restoredValue = try field.valueString()
-                return afterSelected.count == 1 && afterSelected[0].title == oldTitle
-                    && afterSelected[0].handle == originalRowHandle
-                    && after.layout.activeTitle?.handle == field.handle
-                    && restoredValue == originalFieldValue
-            } catch {
-                return false
-            }
-        }
+        // A stale desktop row cannot prove that AXValue is only a draft: the
+        // server may already have applied it. After the checkpoint, never write
+        // the old name as compensation for a rejected observation or confirm.
         func prepareName() throws -> Bool {
             // A rename value write can itself take effect. Persist uncertainty
             // before it and recheck ownership after the checkpoint callback.
@@ -270,12 +245,6 @@ public extension WeComActions {
             if (try? appliedNameIsOwned(after: error)) == true {
                 appliedDuringPreparation = true
             } else {
-                if actionKind == .renameGroup, !restoreStagedNameIfOwned() {
-                    // The write may have taken effect or may still commit on blur.
-                    // Persist uncertainty before propagating the failure.
-                    try checkpointOnce()
-                    throw ActionError.verifyFailed("群名草稿未能安全恢复，结果待核对")
-                }
                 throw error
             }
         }
@@ -292,28 +261,25 @@ public extension WeComActions {
         }
         // Group creation retains its checkpoint immediately before confirm.
         try checkpointOnce()
-        do {
-            if actionKind == .renameGroup { try visualGroupNameCommitGate?() }
-            try visualActionGate?(actionKind, gateTitle)
-            try validateField(value: name, header: nil)
-            try field.perform(AXAction.confirm)
-        } catch {
-            if actionKind == .renameGroup { _ = restoreStagedNameIfOwned() }
-            throw error
-        }
+        if actionKind == .renameGroup { try visualGroupNameCommitGate?() }
+        try visualActionGate?(actionKind, gateTitle)
+        try validateField(value: name, header: nil)
+        try field.perform(AXAction.confirm)
         try hooks.afterIrreversible()
         let started = Date()
         let requireSelectedRow = actionKind == .renameGroup
         var listed = try waitForListTitle(name, window: window, deadline: started.addingTimeInterval(groupOpenTimeout / 2),
-                                          requireSelectedRow: requireSelectedRow)
+                                          requireSelectedRow: requireSelectedRow, requiredRowHandle: originalRowHandle)
         var how = "confirm"
         if !listed {
-            // Ending the edit session is what some fields commit on; the conversation table is a harmless focus target.
+            // Ending the edit session can commit the name. The original group
+            // and editor must still be owned before that fixed blur is allowed.
+            if actionKind == .renameGroup { try validateField(value: name, header: nil) }
             if let table = try? WeComLayout.locate(in: window).conversationTable, (try? table.isSettable(AXAttribute.focused)) == true {
                 try? table.setAttribute(AXAttribute.focused, to: .bool(true))
             }
             listed = try waitForListTitle(name, window: window, deadline: started.addingTimeInterval(groupOpenTimeout),
-                                          requireSelectedRow: requireSelectedRow)
+                                          requireSelectedRow: requireSelectedRow, requiredRowHandle: originalRowHandle)
             how = "confirm+blur"
         }
         let header = try? WeComReader(window: window).activeConversationHeader()?.raw
@@ -325,14 +291,17 @@ public extension WeComActions {
 
     /// True once the selected conversation row is titled `name`. Group creation
     /// also accepts an exact title when the new row has not acquired selection;
-    /// a rename cannot use that fallback because another row may have the name.
+    /// a rename binds its original row handle because another row may have the
+    /// same name after confirmation.
     func waitForListTitle(_ name: String, window: AXElement, deadline: Date,
-                          requireSelectedRow: Bool = false) throws -> Bool {
+                          requireSelectedRow: Bool = false,
+                          requiredRowHandle: AXElementHandle? = nil) throws -> Bool {
         while true {
             if let rows = try? WeComReader(window: window).conversations() {
                 let selected = rows.filter(\.selected)
                 if requireSelectedRow {
-                    if selected.count == 1 && selected[0].title == name { return true }
+                    if selected.count == 1 && selected[0].title == name
+                        && (requiredRowHandle == nil || selected[0].handle == requiredRowHandle) { return true }
                 } else if rows.contains(where: { $0.title == name && ($0.selected || selected.isEmpty) }) {
                     return true
                 }

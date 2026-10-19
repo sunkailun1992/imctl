@@ -32,6 +32,7 @@ private final class GroupNameVisualState {
     var settings: CloudVisionSettings?
     var beforeVerified = false
     var afterVerified = false
+    var afterStagingStarted = false
     var reconcileStaleView = false
     var guardReason: GroupNameVisualGuard = .unclassified
 }
@@ -1074,10 +1075,20 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
                visualEnabled(), visualSelect != nil {
                 installGroupNameVisualObservation(on: &action, target: resolved, requestedName: name)
             }
+            var checkpointBegan = false
+            var verifiedRename = false
             let out = try withoutEscaping(checkpoint, afterSubmit) { before, after in
-                try withVisibleGroupNameWindow(target: resolved, actions: action) { window in
-                    try action.renameGroup(to: name, window: window,
-                                           hooks: SubmitHooks(beforeIrreversible: before, afterIrreversible: after))
+                try withVisibleGroupNameWindow(target: resolved, actions: action,
+                    restoreFocus: { !checkpointBegan || verifiedRename }) { window in
+                    let outcome = try action.renameGroup(to: name, window: window,
+                        hooks: SubmitHooks(beforeIrreversible: {
+                            // The durable callback can persist and then throw.
+                            // Treat that boundary conservatively before invoking it.
+                            checkpointBegan = true
+                            try before()
+                        }, afterIrreversible: after))
+                    verifiedRename = outcome.verified
+                    return outcome
                 }
             }
             return ["title": out.details["title"] ?? "", "renamed": out.details["renamed"] ?? "false", "requestedName": name]
@@ -2858,9 +2869,21 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
                   let fieldFrame = try candidates[0].frame(),
                   WeComActions.isInConversationHeader(fieldFrame, windowFrame: windowFrame, viewport: viewport,
                                                       conversationList: tableFrame),
-                  Self.sameHistoryFrame(fieldFrame, anchor.fieldFrame),
                   (fresh.layout.activeTitle?.handle == anchor.fieldHandle || fresh.layout.activeTitle == nil) else {
                 throw AIPlannerVisionError.staleView
+            }
+            if allowAppliedTitle || state.afterStagingStarted {
+                guard state.beforeVerified,
+                      try candidates[0].valueString() == requestedName,
+                      GroupNameFieldGeometry.samePlacement(fieldFrame, anchor.fieldFrame, tolerance: 2) else {
+                    throw AIPlannerVisionError.staleView
+                }
+            } else {
+                // Before the fixed value write, width remains part of the frozen
+                // frame. Focus or a new header value cannot enable this exception.
+                guard Self.sameHistoryFrame(fieldFrame, anchor.fieldFrame) else {
+                    throw AIPlannerVisionError.staleView
+                }
             }
             state.guardReason = .directDialog
             guard try window.children().allSatisfy({ child in
@@ -2956,6 +2979,7 @@ public final class WeComCommandHandler: CheckpointedDesktopCommandHandler, Deskt
                 guard state.beforeVerified, !state.afterVerified else {
                     throw AIPlannerVisionError.invalidGoal
                 }
+                state.afterStagingStarted = true
             }
             let phase: AIPlannerPhase = stage == .beforeStaging ? .prepare : .verify
             let evidence: AIPlannerEvidence = stage == .beforeStaging ? .inputReady : .postconditionPresent

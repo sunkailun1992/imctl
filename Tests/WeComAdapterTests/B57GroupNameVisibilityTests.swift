@@ -213,6 +213,135 @@ struct B57GroupNameVisibilityTests {
         }
     }
 
+    @Test func handlerSecondRoundStopCannotCompensateTheNameOrRestoreFocus() throws {
+        let h = try Harness()
+        let requested = "B57 stopped staged name"
+        h.backend.revealAfterReads = 2
+        h.handler.configureActions = { actions in
+            actions.verifyTimeout = 0.03
+            actions.verifyInterval = 0.001
+            actions.frontmostPid = { 9999 }
+            actions.restoreFrontmost = { h.restored.append($0) }
+        }
+        var captures = 0, checkpoints = 0, after = 0
+        var phases: [AIPlannerPhase] = []
+        h.handler.reversibleRunnerFactory = {
+            AIPlannerReversibleRunner(beforeRound: { try h.handler.beginVisualRound() },
+                settingsProvider: { h.settings }, capture: { _, frame in
+                    captures += 1
+                    #expect(h.backend.visible && h.backend.activationAttempts == 1 && h.restored.isEmpty)
+                    return Self.shot(frame)
+                }, decide: { _, context, _ in
+                    try h.verifyExistingWindowGuard(h.window)
+                    phases.append(context.phase)
+                    return AIPlannerStepDecision(step: context.phase == .prepare ? .verify : .stop,
+                                                 candidateID: nil)
+                })
+        }
+        #expect(throws: ControlError.self) {
+            try h.handler.groupRename(target: h.target.title, name: requested,
+                checkpoint: { checkpoints += 1 }, afterSubmit: { after += 1 })
+        }
+        #expect(captures == 2 && phases == [.prepare, .verify] && checkpoints == 1 && after == 0)
+        #expect(h.handler.desktopCommandVisualEnd?.outcome == "stop")
+        #expect(h.handler.desktopCommandVisualEnd?.phase == "verify")
+        #expect(try h.field.valueString() == requested)
+        #expect(try WeComReader(window: h.window).activeConversationRow()?.title == h.target.title)
+        #expect(h.fake.recordedSets.filter {
+            $0.handle == h.field.handle && $0.attribute == AXAttribute.value
+        }.map(\.value) == [.string(requested)])
+        #expect(h.fake.recordedActions.isEmpty)
+        #expect(h.backend.activationAttempts == 1 && h.restored.isEmpty)
+    }
+
+    @Test func handlerCheckpointCallbackFailureCannotRestoreFocus() throws {
+        let h = try Harness()
+        let requested = "B57 checkpoint failure name"
+        let failure = ControlError.internalError("synthetic checkpoint failure")
+        h.backend.revealAfterReads = 2
+        h.handler.configureActions = { actions in
+            actions.verifyTimeout = 0.03
+            actions.verifyInterval = 0.001
+            actions.frontmostPid = { 9999 }
+            actions.restoreFrontmost = { h.restored.append($0) }
+        }
+        var captures = 0, checkpoints = 0, after = 0
+        var phases: [AIPlannerPhase] = []
+        h.handler.reversibleRunnerFactory = {
+            AIPlannerReversibleRunner(beforeRound: { try h.handler.beginVisualRound() },
+                settingsProvider: { h.settings }, capture: { _, frame in
+                    captures += 1
+                    #expect(h.backend.visible && h.backend.activationAttempts == 1 && h.restored.isEmpty)
+                    return Self.shot(frame)
+                }, decide: { _, context, _ in
+                    try h.verifyExistingWindowGuard(h.window)
+                    phases.append(context.phase)
+                    return AIPlannerStepDecision(step: .verify, candidateID: nil)
+                })
+        }
+        #expect(throws: failure) {
+            try h.handler.groupRename(target: h.target.title, name: requested, checkpoint: {
+                checkpoints += 1
+                throw failure
+            }, afterSubmit: { after += 1 })
+        }
+        #expect(captures == 1 && phases == [.prepare] && checkpoints == 1 && after == 0)
+        #expect(try h.field.valueString() == h.target.title)
+        #expect(try WeComReader(window: h.window).activeConversationRow()?.title == h.target.title)
+        #expect(h.fake.recordedSets.filter {
+            $0.handle == h.field.handle && $0.attribute == AXAttribute.value
+        }.isEmpty)
+        #expect(h.fake.recordedActions.isEmpty)
+        #expect(h.backend.activationAttempts == 1 && h.restored.isEmpty)
+    }
+
+    @Test func handlerAfterSubmitCrashCannotRestoreFocus() throws {
+        let h = try Harness()
+        let requested = "B57 submitted crash name"
+        h.backend.revealAfterReads = 2
+        h.handler.configureActions = { actions in
+            actions.verifyTimeout = 0.03
+            actions.verifyInterval = 0.001
+            actions.frontmostPid = { 9999 }
+            actions.restoreFrontmost = { h.restored.append($0) }
+        }
+        var captures = 0, checkpoints = 0, after = 0
+        var phases: [AIPlannerPhase] = []
+        h.handler.reversibleRunnerFactory = {
+            AIPlannerReversibleRunner(beforeRound: { try h.handler.beginVisualRound() },
+                settingsProvider: { h.settings }, capture: { _, frame in
+                    captures += 1
+                    #expect(h.backend.visible && h.backend.activationAttempts == 1 && h.restored.isEmpty)
+                    return Self.shot(frame)
+                }, decide: { _, context, _ in
+                    try h.verifyExistingWindowGuard(h.window)
+                    phases.append(context.phase)
+                    return AIPlannerStepDecision(step: .verify, candidateID: nil)
+                })
+        }
+        h.fake.reactions["action:\(AXAction.confirm)"] = {
+            #expect(checkpoints == 1 && after == 0 && h.restored.isEmpty)
+            h.fake.mutate(h.rowTitle, attribute: AXAttribute.value, to: .string(requested))
+        }
+        #expect(throws: CrashInjected.self) {
+            try h.handler.groupRename(target: h.target.title, name: requested,
+                checkpoint: { checkpoints += 1 }, afterSubmit: {
+                    after += 1
+                    throw CrashInjected()
+                })
+        }
+        #expect(captures == 2 && phases == [.prepare, .verify] && checkpoints == 1 && after == 1)
+        #expect(try h.field.valueString() == requested)
+        #expect(try WeComReader(window: h.window).activeConversationRow()?.title == requested)
+        #expect(h.fake.recordedSets.filter {
+            $0.handle == h.field.handle && $0.attribute == AXAttribute.value
+        }.map(\.value) == [.string(requested)])
+        #expect(h.fake.recordedActions.count == 1)
+        #expect(h.fake.recordedActions.first?.handle == h.field.handle)
+        #expect(h.fake.recordedActions.first?.action == AXAction.confirm)
+        #expect(h.backend.activationAttempts == 1 && h.restored.isEmpty)
+    }
+
     @Test func alreadyVisibleWindowDoesNotChangeFrontmostOrRestoreFocus() throws {
         let h = try Harness(visible: true)
         var bodies = 0

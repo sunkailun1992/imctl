@@ -580,19 +580,32 @@ struct GroupPickerTests {
     @Test func renameDoesNotAcceptAnUnselectedRowAsServerProof() throws {
         let fake = FakeAXBackend(root: try AXNode.load(from: Fixtures.root.appendingPathComponent("wecom-5.0.11-external-group.json")))
         let before = try #require(try WeComReader(window: fake.rootElement).activeConversationHeader())
+        let field = try #require(try WeComReader(window: fake.rootElement).layout.activeTitle)
         let row = try #require(try WeComReader(window: fake.rootElement).activeConversationRow())
         let rowTitle = try #require(row.handle.titleTextHandle(in: fake))
         let table = try WeComReader(window: fake.rootElement).layout.conversationTable
         var a = WeComActions(policy: ActionPolicy(allowedTargets: [before.title], enabled: [.renameGroup]))
         a.groupOpenTimeout = 0.04; a.verifyInterval = 0.005
+        var checkpoints = 0
         fake.reactions["action:\(AXAction.confirm)"] = {
             fake.mutate(rowTitle, attribute: AXAttribute.value, to: .string("新群名"))
             fake.mutate(table.handle, attribute: AXAttribute.selectedRows, to: .elements([]))
             fake.mutate(row.handle, attribute: AXAttribute.selected, to: .bool(false))
         }
-        let out = try a.renameGroup(to: "新群名", window: fake.rootElement)
-        #expect(!out.verified && out.details["renamed"] == "false")
+        // Once the original selected row is lost, a post-confirm blur would
+        // act on unproven ownership. Keep the checkpoint and original error.
+        #expect(throws: ActionError.actionUnavailable("群名输入框")) {
+            try a.renameGroup(to: "新群名", window: fake.rootElement,
+                hooks: SubmitHooks(beforeIrreversible: { checkpoints += 1 }))
+        }
+        #expect(checkpoints == 1)
         #expect(fake.recordedActions.map(\.action) == [AXAction.confirm])
+        #expect(fake.recordedSets.filter {
+            $0.handle == field.handle && $0.attribute == AXAttribute.value
+        }.map(\.value) == [.string("新群名")])
+        #expect(fake.recordedSets.filter {
+            $0.handle == table.handle && $0.attribute == AXAttribute.focused
+        }.isEmpty)
     }
 
     @Test func renameWithStaleSelectedConversationRecordsUncertainDraftWithoutConfirm() throws {
@@ -608,7 +621,9 @@ struct GroupPickerTests {
             fake.mutate(field.handle, attribute: AXAttribute.value, to: .string(before.raw))
             fake.mutate(rowTitle, attribute: AXAttribute.value, to: .string("另一群"))
         }
-        #expect(throws: ActionError.verifyFailed("群名草稿未能安全恢复，结果待核对")) {
+        // B60: a stale desktop row cannot prove the server rejected AXValue.
+        // Preserve the ownership error and checkpoint, without a compensating write.
+        #expect(throws: ActionError.actionUnavailable("群名输入框")) {
             try a.renameGroup(to: "新群名", window: fake.rootElement,
                               hooks: SubmitHooks(beforeIrreversible: { checkpoints += 1 }))
         }

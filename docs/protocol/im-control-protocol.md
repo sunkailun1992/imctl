@@ -294,6 +294,8 @@ B35 仅复用上一节进入「新的客户」时的**只读、可逆选行前�
 
 1.0.23-dev：修正共享整窗 JPEG 编码中的多余垂直翻转，让图像内容与原有左上原点 AX 候选框一致；向内取整裁切、窗口范围、缩放/大小限制、模型提示与严格解析、stop、AX 后验、策略、checkpoint 和幂等均不变。修复通过非对称合成像素及假请求 payload 验证，真实命令结果仍以客户端后验为准，见 [B59 门报告](../gates/2026-10-19-b59-window-image-orientation.md)。
 
+1.0.24-dev：固定名称 AXValue 写入后，同一群名字段可在原横/纵位置与高度、标题区域、唯一候选、字段/窗口/原会话身份不变且值精确匹配时调整宽度；prepare/写前仍冻结完整 frame，模型 stop、策略/权限/冻结设置及原选中行的新名后验不变。维护者手机端已证实服务端新名与桌面旧列表行可同时存在，因此首次 checkpoint 后验证或确认失败不自动补写原名、不追加 confirm 或失焦；保留原错误及不确定性，禁止自动重试。正常 confirm 后的列表后验绑定原群行句柄，原固定 blur 前也重查原会话/字段和值，失去选中或另一个同新名群不能作成功证据。B57 为窗口恢复前景的 defer 在该边界后发生错误或未验证结果时也停止，只有写前失败或已验证成功可归还原前景。协议参数、字段、错误码、checkpoint、幂等与群创建不变，见 [B60 门报告](../gates/2026-10-19-b60-group-name-field-resize.md)。
+
 ### 6.34 `policy.get`
 
 无参数。返回本机 `policy.json` 的全部内容：`{allowedTitles, allowedTypes{group, customer, internal}, allowedChatIds, allowedExternalUserIds, contactRequests{autoAccept, allowNames, greetingContains, autoGroup, groupDefaultMembers, groupNameSuffix, groupNameTemplate, maxAcceptsPerHour}, remoteEdits, gateReads, contactAdd{maxAddsPerHour, maxSearchesPerHour}, sendFile{allowedHosts, maxBytes}, allowAll}`（B9：控制台「策略」页的读取走同一条路；`sendFile` 是 `message.sendFile` 的 `url` 源域名白名单与单文件字节上限，经 `policy.set{allowHosts, denyHosts}` 或 `imctl policy hosts` 修改；`allowAll` 见 §6.35 与 §5「目标、策略与会话类型」——B14 用户 2026-09-22「全部放开」，默认 false，只经本机 `imctl policy all` / 控制台开关，`policy.set` 不接受）。

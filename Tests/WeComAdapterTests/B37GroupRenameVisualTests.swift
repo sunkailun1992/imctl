@@ -122,8 +122,10 @@ struct B37GroupRenameVisualTests {
             let fieldWrites = fake.recordedSets.filter {
                 $0.handle == field.handle && $0.attribute == AXAttribute.value
             }.map(\.value)
-            #expect(fieldWrites == (stopAt == 1 ? [] : [.string(Self.requested), .string(old)]))
-            #expect(try field.valueString() == old)
+            // B60 live evidence: the server can accept AXValue while the desktop
+            // row still shows the old name. A stop cannot authorize a second rename.
+            #expect(fieldWrites == (stopAt == 1 ? [] : [.string(Self.requested)]))
+            #expect(try field.valueString() == (stopAt == 1 ? old : Self.requested))
         }
     }
 
@@ -163,9 +165,13 @@ struct B37GroupRenameVisualTests {
                 try handler.groupRename(target: old, name: Self.requested,
                                         checkpoint: { checkpoints += 1 }, afterSubmit: {})
             }
-            let rollbackUncertain = drift == .selectedRow || drift == .editorValue
             #expect(captures == 2 && checkpoints == 1)
-            if !rollbackUncertain { #expect(try field.valueString() == old) }
+            // Revocation stops further operations; the old desktop row cannot
+            // prove that writing the original name would only restore a draft.
+            #expect(try field.valueString() == (drift == .editorValue ? "人工草稿" : Self.requested))
+            #expect(fake.recordedSets.filter {
+                $0.handle == field.handle && $0.attribute == AXAttribute.value
+            }.map(\.value) == [.string(Self.requested)])
             #expect(fake.recordedActions.filter { $0.action == AXAction.confirm }.isEmpty)
         }
     }

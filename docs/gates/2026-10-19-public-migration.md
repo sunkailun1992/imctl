@@ -53,10 +53,13 @@
 - 已安装 CLI / daemon / console 与公开源码构建产物的二进制哈希逐一一致。App 为 `1.0.18` / build `1`，守护进程为 `1.0.18-dev`；build 重新计数来自新的干净 Git 历史。
 - 原有配置文件内容哈希一致；没有复制密钥到仓库、删除运行数据或修改 TCC 数据库。
 - 新版离线体检 `ready:true`：daemon、企微读取、辅助功能、屏幕录制、MQTT、视觉 / OSS 配置和智能体接入正常。未配置的官方 API、未启用的自动接受功能继续保持原状态。
-- 上述体检为本地状态核对，不代表新做了云端上传、发送、加人或所有功能的真实业务验收。真实群改名往返共 2 次的授权仍待用户确认，尚未执行；不能声称已通过真实视觉改名验收。
+- 上述体检为本地状态核对。随后用户批准测试群改名后恢复共 2 次动作；首次请求的 prepare 模型返回 stop，checkpoint 为 0、群名未变。同键回放返回同一记录，没有换键重试或关闭守卫。模型进行 1 次现有许可范围内的单帧观察，另做只读画面核对；没有截图入库、发送消息或加人。真实改名后验分支尚未触发，不能声称通过。
 
 ## 首次云端 CI 与排程修正
 
 [首次公开 CI](https://github.com/sunkailun1992/imctl/actions/runs/39193799853) 的 secrets 和 Swift build 通过，1,183 项测试执行完成，但 9 项测试 / 11 个 issue 因背景佇列与短时间上限失败。本次群名 B37 全套 16 项通过，不能因此把云端全套写成通过。许多快测同时耗时约 51 秒，失败集中于 readiness、MCP、MQTT 与 socket 的背景探针，首要怀疑是共享 runner 上大量测试并行导致排程压力。
 
 本 PR 将 CI 的测试命令改为 `swift test --no-parallel`，按 [Swift Testing 官方说明](https://developer.apple.com/documentation/testing/parallelization) 关闭不同测试间的并行；每项测试本身的并发探针、超时和断言保持不变，不跳过任何测试，不改运行时实现。本机默认并行全套已通过；串行与后续云端结果以 PR checks 为准。此项变更与验收记录通过 PR 由本人审核，未绕过 main 规则。
+
+
+第二次 [串行 CI](https://github.com/sunkailun1992/imctl/actions/runs/39194672251) 证实原 9 项失败全部消失，1,183 项仍完整执行，仅剩 FileFetcher 的 URLProtocol 取消观察顺序问题：生产方法等待的 URLSession delegate 与测试检查的 stopLoading 不是同一事件，锁住数组不能保证取消回呼已完成。本 PR 再为测试 stub 增加按 URL 的 NSCondition 通知，测试在同一个原 16 秒总界限内等 start / cancel，不增加 sleep、不放宽超时、不修改正式下载实现，保留错误、取消、清空及总耗时全部断言。定向 12 项 FileFetcher 测试已通过；新 head 的全套与 CI 仍需重新核对。用户仅批准过旧 head `072936c`，新 head 需要本人重新审查后才可合并。

@@ -52,9 +52,11 @@ open out/imctl.app                                                              
 
 ## 验证
 
+B58 开发时本机已安装 1.0.21/build 6，与 B57 公开合并源码树一致；一次获准请求仍在 B37 prepare/round 0 零写入失败，真实群名修改尚未验收。1.0.22-dev 先补固定拒绝类别，不能将诊断或候选构建等同于修复成功；后续安装与受限验证的最终回执见 [B58 门报告](../gates/2026-10-19-b58-group-name-guard-diagnosis.md) 所链接的 PR。
+
 `codesign --verify --deep --strict out/imctl.app`；`pkgutil --payload-files out/imctl-<v>.pkg`；装后 `~/Applications/imctl.app/Contents/MacOS/imctl version`；`imctl call controller.describe`。
 
-`controller.describe` 的 `visionCaptureCount`、`visionRequestCount`、`visionHTTP200Count` 是守护进程级十进制累计值，可在一次显式命令前后读回核对是否实际截屏、发起模型请求以及官方端点是否返回 HTTP 200。HTTP 200 在响应解析前计，不证明模型选择、AX 后验或命令成功。响应不包含截图或模型原文；`setup --check` 的权限读回也不证明视觉链路已运行。
+`controller.describe` 的 `visionCaptureCount`、`visionRequestCount`、`visionHTTP200Count` 是守护进程级十进制累计值，可在一次显式命令前后读回核对是否实际截屏、发起模型请求以及官方端点是否返回 HTTP 200。`visionCaptureCount` 只累加取图、编码与截后 AX 复核全部完成的 observation；零值不排除曾取图后在复核失败。HTTP 200 在响应解析前计，不证明模型选择、AX 后验或命令成功。响应不包含截图或模型原文；`setup --check` 的权限读回也不证明视觉链路已运行。
 
 ## 卸载
 

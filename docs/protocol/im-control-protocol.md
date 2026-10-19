@@ -290,6 +290,8 @@ B35 仅复用上一节进入「新的客户」时的**只读、可逆选行前�
 
 1.0.21-dev：若原主窗因位于另一 Space 而明确返回空 `AXWindows`，外部群改名的 B37 路径会在任何群名写入或模型请求前，先核对原主窗、focused window、唯一选中行与精确目标，再用一次 `AXFrontmost=true` 请求恢复可见窗口列表。等待有界，并逐轮核对策略、pause、辅助功能 / 录屏授权、视觉设置、命令预算与原窗口 / 行 / 标题 / 几何；任何变化停止。取得同一主窗后仍须通过完整 B37 / B55，不能把空集合、未知 AX 回覆或额外对话框当成通过证据。动作结束后尝试归还原前景；该准备步骤不改 checkpoint、幂等、模型停止权或抓图范围。尚未完成真实改名验收，见 [B57 门报告](../gates/2026-10-19-b57-group-name-visible-window.md)。
 
+1.0.22-dev：群名 B37 的原 `staleView` 错误消息可附固定的 `[guardReason=...]` 类别，帮助区分标题字段、窗口集合等原检查；未定位的 observation 内部失败保持 `unclassified`。分类不含标题、正文、几何、PID、句柄或模型原文，不改变错误码、`diagnosis`、拒绝条件、早生效核对、checkpoint、幂等或模型停止权。诊断分类不是操作成功或重试许可，见 [B58 门报告](../gates/2026-10-19-b58-group-name-guard-diagnosis.md)。
+
 ### 6.34 `policy.get`
 
 无参数。返回本机 `policy.json` 的全部内容：`{allowedTitles, allowedTypes{group, customer, internal}, allowedChatIds, allowedExternalUserIds, contactRequests{autoAccept, allowNames, greetingContains, autoGroup, groupDefaultMembers, groupNameSuffix, groupNameTemplate, maxAcceptsPerHour}, remoteEdits, gateReads, contactAdd{maxAddsPerHour, maxSearchesPerHour}, sendFile{allowedHosts, maxBytes}, allowAll}`（B9：控制台「策略」页的读取走同一条路；`sendFile` 是 `message.sendFile` 的 `url` 源域名白名单与单文件字节上限，经 `policy.set{allowHosts, denyHosts}` 或 `imctl policy hosts` 修改；`allowAll` 见 §6.35 与 §5「目标、策略与会话类型」——B14 用户 2026-09-22「全部放开」，默认 false，只经本机 `imctl policy all` / 控制台开关，`policy.set` 不接受）。

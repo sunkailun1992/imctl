@@ -1,4 +1,4 @@
-# 完整公开迁移与本机重装（2026-10-19）— 公开与重装完成，CI 排程修正待审核
+# 完整公开迁移与本机重装（2026-10-19）— 公开与重装完成，迁移 PR 已合并，私有副本已清理
 
 ## 用户决定
 
@@ -8,7 +8,7 @@
 
 - 公开仓库：[sunkailun1992/imctl](https://github.com/sunkailun1992/imctl)，Apache-2.0。
 - 初始公开提交：`65694bc667afa533cc6363177a2c5da075f5b76e`；只有 1 笔干净历史，作者与提交者均使用公开 GitHub handle / noreply。
-- 原私有库改名 `imctl-private`，仍为 private；原有提交、标签与本地开发资料留在该私有副本，没有改写或强推。
+- 初始迁移时原私有库改名 `imctl-private`，旧历史没有公开、改写或强推；用户随后确认清理，GitHub 私有库与本机私有副本均已删除，见文末收口。
 - 初始公开树共 687 个文件，原有 677 个路径全部保留，新增 10 个修复规格 / 计划 / 门报告及公开协作文件。没有删除原有项目内容。
 - 从已审查私有快照导出后，逐个比对全部 687 个文件的 Git 路径、mode 和 blob id，全部一致。没有挑选部分模块，未携带旧 `.git`、运行数据、构建缓存或本机 IDE 元数据。
 
@@ -63,3 +63,13 @@
 
 
 第二次 [串行 CI](https://github.com/sunkailun1992/imctl/actions/runs/39194672251) 证实原 9 项失败全部消失，1,183 项仍完整执行，仅剩 FileFetcher 的 URLProtocol 取消观察顺序问题：生产方法等待的 URLSession delegate 与测试检查的 stopLoading 不是同一事件，锁住数组不能保证取消回呼已完成。本 PR 再为测试 stub 增加按 URL 的 NSCondition 通知，测试在同一个原 16 秒总界限内等 start / cancel，不增加 sleep、不放宽超时、不修改正式下载实现，保留错误、取消、清空及总耗时全部断言。定向 12 项 FileFetcher 测试已通过；新 head 的全套与 CI 仍需重新核对。用户仅批准过旧 head `072936c`，新 head 需要本人重新审查后才可合并。
+
+## 后续收口：审核、完整性与私有副本清理
+
+上节记录的是迁移 PR 当时的状态。用户之后明确批准新 head `acbd2f666de47b1f324ed74841affabad7afb4b5` 在 CI 全绿后合并。[最终 CI](https://github.com/sunkailun1992/imctl/actions/runs/39195632537) 的 Swift build、1,183 项 / 158 套件和 secrets 全部通过；[PR #2](https://github.com/sunkailun1992/imctl/pull/2) 随后以 `2e657aebca9a5934bc0e2ed09693147abb3cafee` 合并。合并提交使用 GitHub noreply 邮箱，本机公开项目也固定使用该公开提交身份。
+
+用户要求确认完整迁移后删除私有项目。删除前再次同步并独立核对：私有最终 main `0d5638210a03d3fb3d0e1e333336de7cf6bb8ecb` 与公开初始 `65694bc` 的全部 687 个 path / mode / type / blob 精确一致；公开 `main 2e657ae` 为 688 个文件，零删档，差异仅 CI、测试同步及门报告。7 个旧本机工作分支的代码均已按同 patch 整合，不存在未迁移功能；两份仓库无 tracked 未提交修改或 stash。
+
+用户在 GitHub 最后删除步骤再次明确确认后，`imctl-private` 已删除，页面显示成功、API 返回 404；本机同名私有目录也已删除。清理包含旧 Git 历史、可重建构建缓存、Eclipse 元数据与被忽略的中间任务 / review 报告，后者不是正式文档的备份。公开项目、已安装 App 及其运行配置和数据均保留。
+
+重装后再次只读检查仍为 `1.0.18-dev / build 1`、`ready:true`、无运行中命令。用户的新改名错误在写值前因额外视窗分享指示器被 B37 单窗检查拒绝，实际改名次数仍为 0；后续窄修复另见 [B55 门报告](2026-10-19-b55-group-name-window-sharing.md)，不能把迁移或安装完成当成群名功能已通过真实验收。

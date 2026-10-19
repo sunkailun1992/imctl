@@ -4,7 +4,7 @@ import Testing
 @Suite("IMCTLVersion")
 struct IMCTLVersionTests {
     @Test func versionIsTheCurrentPatchRelease() {
-        #expect(IMCTLVersion.string == "1.0.18-dev")
+        #expect(IMCTLVersion.string == "1.0.19-dev")
     }
 
     @Test func bundleIdentifierIsStable() {

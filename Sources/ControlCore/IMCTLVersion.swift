@@ -20,7 +20,8 @@ public enum IMCTLVersion {
     /// 1.0.16-dev (2026-10-12): B53 — setup wizard, readiness page and confirmed quick fixes; `imctl doctor --fix`.
     /// 1.0.17-dev (2026-10-13): B54 — the standalone verification window's invite prompt; visual rounds logged; command records carry a diagnosis when a visual round ended them.
     /// 1.0.18-dev (2026-10-19): reconcile a group rename applied by AXValue before visual verification; preserve the checkpoint before the first value write.
-    public static let string = "1.0.18-dev"
+    /// 1.0.19-dev (2026-10-19): recognize the bounded window-sharing indicator during passive group-title checks without accepting other dialogs.
+    public static let string = "1.0.19-dev"
     /// Code-signing identifier; must stay stable so TCC (Accessibility)
     /// authorization survives rebuilds.
     public static let bundleIdentifier = "com.sunkailun.imctl"

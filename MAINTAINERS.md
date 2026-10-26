@@ -1,40 +1,45 @@
 # 维护与合并规则
 
-## 维护者
+## English summary
 
-当前仓库所有者与最终审核者为 [@sunkailun1992](https://github.com/sunkailun1992)。其他开发者可以 fork、提交分支、issue 和 PR；被授予 write 权限也不代表可以绕过本人审核或直接更新 `main`。
+- Maintainer: @sunkailun1992 (repository admin and the only code owner).
+- The maintainer and the maintainer's own local Claude/Codex sessions may merge to `main` directly after the local checks pass, then watch CI. Cloud sessions push `claude/…` branches only. Everyone else opens a PR that needs CI green, the maintainer's review and approval, and every review conversation resolved.
+- Only squash merges; no force pushes or deletions of `main`; agents never change the ruleset or repository permissions.
+- Merging never implies running the real WeCom client, installing services, turning on cloud vision or publishing a release; each needs its own explicit approval.
 
-`.github/CODEOWNERS` 将全库交由 @sunkailun1992 负责，包括协作规则与工作流本身。新增其他代码所有者、协作者或管理员，须由本人明确决定。
+## 名单
 
-## 审核和合并
+| GitHub | 角色 |
+|---|---|
+| [@sunkailun1992](https://github.com/sunkailun1992) | 仓库管理员、维护者、全库代码所有者 |
 
-- 所有正常开发改动通过分支和 PR 进入 `main`，一个 PR 解决一个明确问题。
-- 第三方 GitHub 账号提交的 PR，合并前需要 @sunkailun1992 本人对具体 PR / 版本批准、必要 CI 通过、评审对话解决；追加可审查的新提交后重新审核。第三方被授予 write 权限也不适用下述协作例外。
-- 本人 2026-10-19 授权的协作例外：由本人 GitHub 账号发起、本人和 AI 共同开发且处于用户已授权任务范围内的 PR，在当前版本必要 CI 全部通过、评审对话解决后，AI 可直接合并，无需逐 PR / head 再询问批准。新增提交后必须重新核对最新版本的 CI，不能沿用旧版本的检查结果。
-- AI 不代替本人 approve，不伪造审核，也不把 owner 凭据视为任意任务授权；第三方账号的 PR 仍须本人明确审核批准。
-- 采用 squash，合并后删除工作分支。贡献者不升发布版本、不打发布标签、不发布安装包。
-- GitHub 不允许作者批准自己的 PR。上述本人账号的授权协作可使用现有的仅限 PR 例外完成合并，仍不得跳过 CI、直接推送或强推 `main`。现有规则若阻挡合并，应报告阻挡，不自行变更权限或规则集。
+`.github/CODEOWNERS` 将全库交由 @sunkailun1992 负责，包括协作规则与工作流本身。新增其他代码所有者、协作者或管理员，须由本人明确决定；被授予 write 权限也不代表可以绕过本人审核。
+
+## 合并规则
+
+- 维护者本人，以及维护者本机用维护者账号运行的 Claude / Codex 会话，可以直接合并到 `main`：合并前本机验证命令全过（`swift build`、`IMCTL_LIVE=0 IMCTL_LIVE_VISION=0 swift test`、`bash scripts/check-secrets.sh` 逐条判断、`git diff --check`），合并后看 CI，红了马上修。
+- 云端会话只推 `claude/<主题>` 分支，由维护者或本机会话审过后合并。
+- 其他人的 PR（含被授予 write 权限的协作者）：CI 全绿、维护者审核确认是有益的改动并批准、评审对话全部解决之后，由维护者 squash 合并；追加可审查的新提交后重新审核。
+- 只允许 squash；禁止强推和删除 `main`；任何代理都不得修改 ruleset 或仓库权限。AI 不代替本人 approve，不伪造审核。
+- 直接合并只省掉 PR 这一步，不省掉验证、门报告和用户决定：发送路径、策略与白名单、按键、权限面、视觉上传、凭据等极高风险改动，仍按 [工程门禁](docs/ai-coding/AI_ENGINEERING_GUARDRAILS.md) 先取得用户决定、补活体门报告。
 
 ## GitHub 目标设置
 
-下表记录目标策略。文档和 `CODEOWNERS` 本身不能开启分支保护；实际生效的内容以 [GitHub Rules](https://github.com/sunkailun1992/imctl/rules) 和仓库 Settings 为准，维护者启用或变更后应核对。
+下表记录目标策略。文档和 `CODEOWNERS` 本身不能开启分支保护；实际生效的内容以 [GitHub Rules](https://github.com/sunkailun1992/imctl/rules) 和仓库 Settings 为准，由维护者本人设置后核对。
 
 | 项目 | 目标 |
 |---|---|
 | 分支 | `main`，规则 active |
-| 进入方式 | 必须 PR；禁止协作者直接推送 |
-| 审核 | 第三方账号 PR 至少 1 个 approval，并强制代码所有者批准；全库 CODEOWNER 只有 @sunkailun1992；本人账号的授权协作按上述例外处理 |
-| 新提交 | 第三方账号 PR 的旧批准作废；所有 PR 重新核对当前版本 CI，评审对话全部解决 |
+| 进入方式 | 其他人必须 PR；仓库管理员设为「始终绕过」，供维护者本人与本机 AI 会话直接合并 |
+| 审核 | 其他人的 PR 至少 1 个 approval，并强制代码所有者批准；全库 CODEOWNER 只有 @sunkailun1992 |
+| 新提交 | 其他人 PR 的旧批准作废；评审对话全部解决 |
 | 合并方式 | 只允许 squash |
-| CI | `.github/workflows/ci.yml` 的 `swift` 与 `secrets`，实际 check context 经首次运行核实后设为必需 |
+| CI | `.github/workflows/ci.yml` 的 `swift` 与 `secrets` 设为必需检查；直接合并后也要看结果 |
 | 强推与删除 | 禁止强推和删除 `main`；不使用 `--force` 或 `--force-with-lease` |
-| 例外 | 本人账号的授权协作仅使用 PR 合并例外，不允许 `always` 直接推送例外；不放宽 CI、第三方审核或其他操作授权 |
 | 发布 | 只有本人另行批准的具体版本才可发布；CI 不签名、安装或发布 |
 
-`CODEOWNERS` 自动请求审核与「强制代码所有者批准」是两项设置，必须同时具备。只有「1 个 approval」不能保证是本人批准。若仓库另行限制只有本人能更新 `main`，需在规则集中配置更新限制；一般写权限和提交 PR 的能力不因此取消。
-
-CI、禁强推与禁删除可与评审例外分开配置，以免使用 owner 的 PR 例外时一并跳过这些门禁。任何管理员都可能修改仓库设置，GitHub 也不能区分本人操作与使用同一账号凭据的 AI；因此规则之外仍必须遵守本文件的第三方人工审核要求及本人账号与 AI 的任务授权边界。
+`CODEOWNERS` 自动请求审核与「强制代码所有者批准」是两项设置，必须同时具备；只有「1 个 approval」不能保证是本人批准。「始终绕过」只用于维护者一侧的直接合并，不用于强推、删除或跳过他人改动的审核。
 
 ## 安全与发布
 
-安全问题按 [SECURITY.md](SECURITY.md) 私下报告。公开 issue、PR、验收记录和安装包均需脱敏；发布前核对源代码、测试结果、包内容、签名与权限说明。运行真实企微、安装常驻服务或开启云端视觉属于单独授权的本机操作，不因 PR 或 CI 通过而自动执行。
+安全问题按 [SECURITY.md](SECURITY.md) 私下报告。公开 issue、PR、验收记录和安装包均需脱敏；发布前核对源代码、测试结果、包内容、签名与权限说明。运行真实企微、安装常驻服务或开启云端视觉属于单独授权的本机操作，不因合并或 CI 通过而自动执行。

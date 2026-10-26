@@ -59,7 +59,7 @@ AGENTS.md
 - 只做目录整理、README 或规范调整时，不提升 `IMCTLVersion`。
 - 发现疑似密钥、broker 地址或真实联系人内容时，只报告文件与行号，不自动替换或改写 git 历史（是否改写历史由用户决定）。
 - 规范更新和代码修改可以同一次提交，但交付说明必须区分"工程规范"和"运行时改动"。
-- 所有正常开发经工作分支和 PR；第三方 GitHub 账号的 PR 由 @sunkailun1992 本人对具体版本审核批准。AI 不代替本人 approve；本人账号与 AI 在已授权任务内的协作按根目录 `MAINTAINERS.md` 的例外处理，当前版本必要 CI 全部通过、评审对话解决后可直接合并。流程见根目录 `CONTRIBUTING.md` 和 `MAINTAINERS.md`。
+- 维护者本人与维护者本机的 Claude / Codex 会话可以直接合并到 `main`（本机验证全过、合并后看 CI）；云端会话只推 `claude/<主题>` 分支；其他人走 PR，由 @sunkailun1992 本人审核批准。AI 不代替本人 approve。流程见根目录 `CONTRIBUTING.md` 和 `MAINTAINERS.md`。
 
 ## 当前标准布局
 

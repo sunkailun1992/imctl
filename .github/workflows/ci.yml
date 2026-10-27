@@ -47,6 +47,12 @@ jobs:
         # probes when unrelated test cases all run at once. Each test still
         # exercises its own concurrency and retains the same timing assertions.
         run: swift test --no-parallel
+      - name: Run non-live tests with batching fakes
+        # FakeAXBackend then answers batched AX reads like the live client, so
+        # every suite also covers the batched read path imctld takes.
+        env:
+          IMCTL_FAKE_BATCH: "1"
+        run: swift test --no-parallel
 
   secrets:
     name: secrets

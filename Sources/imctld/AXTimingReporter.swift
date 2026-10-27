@@ -17,9 +17,11 @@ final class AXTimingReporter {
     let timings: AXCallTimings
     /// Live batched reads that came back empty (WeCom could not batch); nil when unknown.
     var batchFallbacks: (() -> Int)?
+    /// B62: true once the live backend switched batching off; nil when unknown.
+    var batchingDisabled: (() -> Bool)?
     private let reportURL: URL
     private let log: (String) -> Void
-    private let nowMs: () -> Int64
+    private let clockMs: () -> Int64
     private let lock = NSLock()
     private var minuteStartMs: Int64?
     private var slowLinesThisMinute = 0
@@ -28,19 +30,30 @@ final class AXTimingReporter {
     private var lastSummaryMs: Int64
     private var lastWriteProblem: String?
 
-    init(timings: AXCallTimings, reportURL: URL, log: @escaping (String) -> Void, nowMs: @escaping () -> Int64 = Clock.nowMs) {
+    /// `clockMs` paces the windows; a monotonic clock, so a wall-clock change cannot stall them.
+    init(timings: AXCallTimings, reportURL: URL, log: @escaping (String) -> Void,
+         clockMs: @escaping () -> Int64 = AXTimingReporter.monotonicMs) {
         self.timings = timings
         self.reportURL = reportURL
         self.log = log
-        self.nowMs = nowMs
-        lastSummaryMs = nowMs()
+        self.clockMs = clockMs
+        lastSummaryMs = clockMs()
+    }
+
+    /// Milliseconds since boot, never going backwards.
+    static func monotonicMs() -> Int64 { Int64(DispatchTime.now().uptimeNanoseconds / 1_000_000) }
+
+    /// A window is due once `every` has passed, or at once if the clock went backwards.
+    private static func isDue(now: Int64, since: Int64?, every: Int64) -> Bool {
+        guard let since else { return true }
+        return now < since || now - since >= every
     }
 
     /// `MeasuredAXBackend.onSlowCall`; may run on any queue.
     func noteSlowCall(_ sample: AXCallSample) {
-        let now = nowMs()
+        let now = clockMs()
         lock.lock()
-        if minuteStartMs.map({ now - $0 >= 60_000 }) ?? true {
+        if Self.isDue(now: now, since: minuteStartMs, every: 60_000) {
             minuteStartMs = now
             slowLinesThisMinute = 0
         }
@@ -59,16 +72,17 @@ final class AXTimingReporter {
             "polls": poll?.count ?? 0, "pollP50Ms": poll?.p50Ms ?? 0, "pollP95Ms": poll?.p95Ms ?? 0, "pollMaxMs": poll?.maxMs ?? 0,
         ]
         if let batchFallbacks { summary["batchFallbacks"] = batchFallbacks() }
+        if let batchingDisabled { summary["batchingDisabled"] = batchingDisabled() }
         return summary
     }
 
     /// Called with every state write (every 5 s); writes the report and the summary when due.
     func tick() {
-        let now = nowMs()
+        let now = clockMs()
         lock.lock()
-        let reportDue = lastReportMs.map { now - $0 >= Self.reportIntervalMs } ?? true
+        let reportDue = Self.isDue(now: now, since: lastReportMs, every: Self.reportIntervalMs)
         if reportDue { lastReportMs = now }
-        let summaryDue = now - lastSummaryMs >= Self.summaryIntervalMs
+        let summaryDue = Self.isDue(now: now, since: lastSummaryMs, every: Self.summaryIntervalMs)
         var suppressed = 0
         if summaryDue {
             lastSummaryMs = now
@@ -86,7 +100,10 @@ final class AXTimingReporter {
                 lastWriteProblem = problem
             }
         }
-        if summaryDue { log(Self.summaryLine(timings.report(), suppressedSlowLines: suppressed, batchFallbacks: batchFallbacks?())) }
+        if summaryDue {
+            log(Self.summaryLine(timings.report(), suppressedSlowLines: suppressed,
+                                 batchFallbacks: batchFallbacks?(), batchingDisabled: batchingDisabled?() ?? false))
+        }
     }
 
     func writeReport() throws {
@@ -104,10 +121,12 @@ final class AXTimingReporter {
         return "ax: slow \(what) \(Int((Double(sample.nanos) / 1_000_000).rounded())) ms \(sample.outcome) on \(sample.thread)"
     }
 
-    static func summaryLine(_ report: AXCallTimingReport, suppressedSlowLines: Int, batchFallbacks: Int? = nil) -> String {
+    static func summaryLine(_ report: AXCallTimingReport, suppressedSlowLines: Int, batchFallbacks: Int? = nil,
+                            batchingDisabled: Bool = false) -> String {
         var line = "ax: summary calls=\(report.calls) ms=\(format(report.totalMs)) timeouts=\(report.timeouts)"
             + " slow=\(report.slowCalls) suppressed=\(suppressedSlowLines)"
         if let batchFallbacks { line += " fallbacks=\(batchFallbacks)" }
+        if batchingDisabled { line += " batching=off" }
         if let poll = report.scopes.first(where: { $0.name == pollScope }) {
             line += " poll n=\(poll.count) p50=\(format(poll.p50Ms)) p95=\(format(poll.p95Ms)) max=\(format(poll.maxMs)) failed=\(poll.failures)"
         }

@@ -82,10 +82,12 @@ public final class MeasuredAXBackend: AXBackend {
     }
 
     /// `main` on the main queue, otherwise the current dispatch queue's label
-    /// (the executor, socket and readiness queues are labelled), else `other`.
+    /// (the executor, socket and readiness queues are labelled). GCD's global
+    /// queues and plain threads report `com.apple.root.*`; those read `other`.
     public static func currentThreadLabel() -> String {
         let label = String(cString: __dispatch_queue_get_label(nil))
         if label == "com.apple.main-thread" { return "main" }
+        if label.hasPrefix("com.apple.root.") { return "other" }
         if !label.isEmpty { return label }
         return Thread.isMainThread ? "main" : "other"
     }

@@ -20,6 +20,7 @@ struct WeComLayoutTests {
 
     @Test func skipsFrameReadsForUnrelatedRoles() throws {
         let fake = try Fixtures.mainWindow()
+        fake.batchesReads = false   // asserts the single-read path, whatever IMCTL_FAKE_BATCH says
         let window = try WeComWindowLocator.mainWindow(from: fake.rootElement)
         let unrelatedRoles: Set<String> = [AXRole.group, AXRole.row, AXRole.cell, AXRole.scrollBar]
         let unrelatedHandles = Set(window.descendants().filter {

@@ -70,6 +70,7 @@
 swift build
 swift test                       # 单测 + 守卫测试（ForbiddenAPITests）；live 套件默认跳过
 IMCTL_LIVE=0 IMCTL_LIVE_VISION=0 swift test # CI / 普通贡献：显式关闭真实客户端和云端视觉测试
+IMCTL_LIVE=0 IMCTL_LIVE_VISION=0 IMCTL_FAKE_BATCH=1 swift test # CI 第二轮：fake 按批次回应，覆盖守护进程的批次读路径
 IMCTL_LIVE=1 swift test          # 需要真实企微客户端与辅助功能授权
 bash scripts/check-secrets.sh    # warning-only：疑似 secret、IP、本机绝对路径
 scripts/build-signed.sh          # 稳定身份重签（TCC 授权跨重建保持）

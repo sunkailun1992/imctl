@@ -20,7 +20,7 @@ public final class LiveAXBackend: AXBackend {
         func hash(into hasher: inout Hasher) { hasher.combine(CFHash(element)) }
     }
 
-    private func handle(_ element: AXUIElement) -> AXElementHandle { AXElementHandle(id: Ref(element)) }
+    private static func handle(_ element: AXUIElement) -> AXElementHandle { AXElementHandle(id: Ref(element)) }
 
     private func ref(_ handle: AXElementHandle) throws -> AXUIElement {
         guard let r = handle.id.base as? Ref else { throw AXKitError.invalidElement }
@@ -38,7 +38,7 @@ public final class LiveAXBackend: AXBackend {
     public func applicationElement(pid: pid_t) -> AXElementHandle {
         let element = AXUIElementCreateApplication(pid)
         AXUIElementSetMessagingTimeout(element, timeout)
-        return handle(element)
+        return Self.handle(element)
     }
 
     public func attributeNames(of element: AXElementHandle) throws -> [String] {
@@ -54,7 +54,7 @@ public final class LiveAXBackend: AXBackend {
         if err == .noValue { return nil }
         try check(err, operation: "get", subject: name)
         guard let value else { return nil }
-        return convert(value)
+        return Self.convert(value)
     }
 
     /// B61: one `AXUIElementCopyMultipleAttributeValues` round trip; per-attribute
@@ -63,20 +63,30 @@ public final class LiveAXBackend: AXBackend {
     public func attributes(_ names: [String], of element: AXElementHandle) throws -> [String: AXAttributeResult] {
         var unique: [String] = []
         for name in names where !unique.contains(name) { unique.append(name) }
-        guard !unique.isEmpty else { return [:] }
+        guard !unique.isEmpty, !batchingDisabled else { return [:] }
         var values: CFArray?
         let err = AXUIElementCopyMultipleAttributeValues(try ref(element), unique as CFArray, AXCopyMultipleAttributeOptions(), &values)
-        switch Self.batchCallDisposition(err) {
+        switch Self.batchCallDisposition(err, names: unique) {
         case .proceed: break
         case .fallBack: noteFallback(); return [:]
         case .fail(let error): throw error
         }
-        guard let items = values as? [AnyObject], items.count == unique.count else {
+        guard let items = values as? [AnyObject], let results = Self.mapBatchItems(items, names: unique) else {
             noteFallback()
             return [:]
         }
+        latchLock.lock()
+        latch.noteSuccess()
+        latchLock.unlock()
+        return results
+    }
+
+    /// The array of one batched read mapped onto its names, as single reads would map
+    /// each value; nil when its length does not match (the caller reads on access).
+    static func mapBatchItems(_ items: [AnyObject], names: [String]) -> [String: AXAttributeResult]? {
+        guard items.count == names.count else { return nil }
         var results: [String: AXAttributeResult] = [:]
-        for (name, item) in zip(unique, items) {
+        for (name, item) in zip(names, items) {
             let typeID = CFGetTypeID(item)
             if typeID == CFNullGetTypeID() {
                 results[name] = .success(nil)
@@ -84,7 +94,7 @@ public final class LiveAXBackend: AXBackend {
                 // The CFTypeID check is the guard, as in `convert`.
                 var code = AXError.success
                 _ = AXValueGetValue(item as! AXValue, .axError, &code)
-                results[name] = Self.itemResult(code: code, name: name)
+                results[name] = itemResult(code: code, name: name)
             } else {
                 results[name] = .success(convert(item))
             }
@@ -92,21 +102,51 @@ public final class LiveAXBackend: AXBackend {
         return results
     }
 
-    private let fallbackLock = NSLock()
-    private var fallbacks = 0
+    /// B62: stops batching for the rest of the process when the client never answers a
+    /// batch (fallbacks only, no success); each element would otherwise pay one wasted
+    /// round trip before its on-access reads. One success keeps batching on.
+    struct BatchLatch: Equatable {
+        static let fallbacksBeforeDisabling = 50
+        private(set) var successes = 0
+        private(set) var fallbacks = 0
+        private(set) var disabled = false
+
+        mutating func noteSuccess() { successes += 1 }
+
+        /// True exactly once: for the fallback that disables batching.
+        mutating func noteFallback() -> Bool {
+            fallbacks += 1
+            guard !disabled, successes == 0, fallbacks >= Self.fallbacksBeforeDisabling else { return false }
+            disabled = true
+            return true
+        }
+    }
+
+    private let latchLock = NSLock()
+    private var latch = BatchLatch()
+    /// Called once, when batching is switched off; the daemon logs it.
+    public var onBatchingDisabled: (() -> Void)?
 
     /// Batched reads this backend answered with an empty result (the element could not
     /// batch, or the array was malformed); the probe and the daemon report it.
     public var batchFallbacks: Int {
-        fallbackLock.lock()
-        defer { fallbackLock.unlock() }
-        return fallbacks
+        latchLock.lock()
+        defer { latchLock.unlock() }
+        return latch.fallbacks
+    }
+
+    /// True once `BatchLatch` switched batching off: every attribute is then read on access.
+    public var batchingDisabled: Bool {
+        latchLock.lock()
+        defer { latchLock.unlock() }
+        return latch.disabled
     }
 
     private func noteFallback() {
-        fallbackLock.lock()
-        fallbacks += 1
-        fallbackLock.unlock()
+        latchLock.lock()
+        let disabledNow = latch.noteFallback()
+        latchLock.unlock()
+        if disabledNow { onBatchingDisabled?() }
     }
 
     /// What a batched call's own status means for the read.
@@ -119,10 +159,11 @@ public final class LiveAXBackend: AXBackend {
         case fail(AXKitError)
     }
 
-    static func batchCallDisposition(_ err: AXError) -> BatchCallDisposition {
+    /// A whole-batch timeout names the requested attributes (code constants), as a single read names its one.
+    static func batchCallDisposition(_ err: AXError, names: [String]) -> BatchCallDisposition {
         switch err {
         case .success: return .proceed
-        case .cannotComplete: return .fail(.cannotComplete("get multiple attributes"))
+        case .cannotComplete: return .fail(.cannotComplete("get \(names.joined(separator: ","))"))
         case .invalidUIElement: return .fail(.invalidElement)
         case .apiDisabled: return .fail(.notTrusted)
         default: return .fallBack
@@ -198,7 +239,7 @@ public final class LiveAXBackend: AXBackend {
 
     // MARK: CFTypeRef <-> AXAttributeValue
 
-    private func convert(_ value: CFTypeRef) -> AXAttributeValue {
+    private static func convert(_ value: CFTypeRef) -> AXAttributeValue {
         let typeID = CFGetTypeID(value)
         // CF types cannot be conditionally cast; the CFTypeID check above is
         // the guard, so the forced casts below are sound.
@@ -238,7 +279,7 @@ public final class LiveAXBackend: AXBackend {
         return .unknown(description)
     }
 
-    private func convertAXValue(_ axValue: AXValue) -> AXAttributeValue {
+    private static func convertAXValue(_ axValue: AXValue) -> AXAttributeValue {
         switch AXValueGetType(axValue) {
         case .cgPoint:
             var point = CGPoint.zero

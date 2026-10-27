@@ -51,6 +51,10 @@ struct RunCommand: ParsableCommand {
         let backend = MeasuredAXBackend(base: liveBackend, timings: axTimings)
         backend.onSlowCall = axReporter.noteSlowCall
         axReporter.batchFallbacks = { liveBackend.batchFallbacks }
+        axReporter.batchingDisabled = { liveBackend.batchingDisabled }
+        liveBackend.onBatchingDisabled = {
+            log.info("ax: batched reads switched off after \(liveBackend.batchFallbacks) fallbacks without a success; attributes are read on access")
+        }
         let bundleID = bundle
         let handler = WeComCommandHandler(
             rootProvider: { try AXApp.byBundleID(bundleID, backend: backend) },

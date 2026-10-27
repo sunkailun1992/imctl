@@ -141,6 +141,7 @@ struct MeasuredAXBackendTests {
 
     @Test func batchModeOverANonBatchingBackendRecordsAFallback() throws {
         let fake = FakeAXBackend(root: SampleTree.make())
+        fake.batchesReads = false   // asserts the single-read path, whatever IMCTL_FAKE_BATCH says
         let (backend, timings) = Self.measured(fake, batchReads: true)
         #expect(try backend.attributes([AXAttribute.role], of: fake.rootHandle).isEmpty)
         #expect(timings.report().operations.first?.outcomes == ["fallback": 1])
@@ -171,9 +172,23 @@ struct MeasuredAXBackendTests {
         }
     }
 
-    @Test func threadLabelNamesTheMainThread() {
-        #expect(Thread.isMainThread ? MeasuredAXBackend.currentThreadLabel() == "main" : true)
+    @MainActor @Test func theMainThreadReadsMain() {
+        #expect(Thread.isMainThread)
+        #expect(MeasuredAXBackend.currentThreadLabel() == "main")
+    }
+
+    @Test func aLabelledQueueKeepsItsLabel() {
         let label = DispatchQueue(label: "com.example.timing-test").sync { MeasuredAXBackend.currentThreadLabel() }
         #expect(label == "com.example.timing-test")
+    }
+
+    /// B62: GCD's global (root) queues and plain threads carry no label of ours.
+    @Test func globalQueuesAndPlainThreadsReadOther() async {
+        #expect(DispatchQueue.global().sync { MeasuredAXBackend.currentThreadLabel() } == "other")
+        #expect(DispatchQueue.global(qos: .userInitiated).sync { MeasuredAXBackend.currentThreadLabel() } == "other")
+        let fromThread = await withCheckedContinuation { (done: CheckedContinuation<String, Never>) in
+            Thread { done.resume(returning: MeasuredAXBackend.currentThreadLabel()) }.start()
+        }
+        #expect(fromThread == "other")
     }
 }

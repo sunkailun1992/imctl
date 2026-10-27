@@ -149,9 +149,11 @@ public final class FakeAXBackend: AXBackend {
     /// Called before every attribute read; tests use it to change the tree after a number of polls.
     public var onRead: ((AXElementHandle, String) -> Void)?
 
-    /// B61: false (default) batches nothing, so callers read attributes on access as they
-    /// did before batching; true reads every requested name at once, like a live batch.
-    public var batchesReads = false
+    /// B61: false batches nothing, so callers read attributes on access as they did before
+    /// batching; true reads every requested name at once, like a live batch. B62: the
+    /// default is false unless `IMCTL_FAKE_BATCH=1`, which CI uses to run every suite
+    /// on the batched path the daemon takes.
+    public var batchesReads = ProcessInfo.processInfo.environment["IMCTL_FAKE_BATCH"] == "1"
 
     public func attributes(_ names: [String], of element: AXElementHandle) throws -> [String: AXAttributeResult] {
         batchesReads ? try attributesBySingleReads(names, of: element) : [:]

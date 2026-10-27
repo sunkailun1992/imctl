@@ -14,7 +14,7 @@
 | live 测试 | `IMCTL_LIVE=1 swift test` | `LiveAXBackend` 对真实客户端的只读假设 | 本机、有授权时 |
 | 活体 E2E（门） | `imctld` + `imctl mqtt call` / socket 脚本 / `probe …` | 完整回路、观察延迟、归因、重放、常驻 | 每个批次收尾，写 `docs/gates/` |
 
-公开 CI 的 `swift` 检查在 `macos-latest` 先构建，再显式以 `IMCTL_LIVE=0`、`IMCTL_LIVE_VISION=0` 跑 `swift test`。这关闭真实 AX 与视觉提供商测试，不需要企微账号、API 密钥、broker 或系统授权；首次解析 SwiftPM 依赖仍需联网。CI 不签名、安装、发布或做活体验收。
+公开 CI 的 `swift` 检查在 `macos-latest` 先构建，再显式以 `IMCTL_LIVE=0`、`IMCTL_LIVE_VISION=0` 跑 `swift test`，随后加 `IMCTL_FAKE_BATCH=1` 再跑一轮：这时 `FakeAXBackend` 默认像真实客户端一样回应批次读，所有套件也覆盖守护进程实际走的批次路径；专门断言逐个读行为的测试要显式设 `batchesReads = false`。这关闭真实 AX 与视觉提供商测试，不需要企微账号、API 密钥、broker 或系统授权；首次解析 SwiftPM 依赖仍需联网。CI 不签名、安装、发布或做活体验收。
 
 ## 单元测试规则
 

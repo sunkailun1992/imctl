@@ -18,7 +18,7 @@ struct AXTimingReporterTests {
 
     private static func reporter(_ box: Box, reportURL: URL) -> (AXTimingReporter, AXCallTimings) {
         let timings = AXCallTimings(wallMs: { box.nowMs })
-        let reporter = AXTimingReporter(timings: timings, reportURL: reportURL, log: { box.lines.append($0) }, nowMs: { box.nowMs })
+        let reporter = AXTimingReporter(timings: timings, reportURL: reportURL, log: { box.lines.append($0) }, clockMs: { box.nowMs })
         return (reporter, timings)
     }
 
@@ -60,6 +60,32 @@ struct AXTimingReporterTests {
         }
         #expect(writes == [0, 30_000, 299_000])
         #expect(box.lines.filter { $0.hasPrefix("ax: summary") }.count == 1)
+    }
+
+    /// B62: windows follow a monotonic clock, and a clock that still steps backwards
+    /// (an injected or misbehaving one) makes every window due instead of stalling it.
+    @Test func aClockGoingBackwardsDoesNotStall() throws {
+        let box = Box()
+        let url = try Self.temporaryDirectory().appendingPathComponent("ax-timings.json")
+        let (reporter, timings) = Self.reporter(box, reportURL: url)
+        box.nowMs = 300_000
+        timings.record(Self.slow(ms: 1, outcome: "ok"))
+        reporter.tick()
+        #expect(box.lines.filter { $0.hasPrefix("ax: summary") }.count == 1)
+        for _ in 0..<30 { reporter.noteSlowCall(Self.slow()) }
+        box.nowMs = 100_000
+        reporter.noteSlowCall(Self.slow())
+        #expect(box.lines.filter { $0.hasPrefix("ax: slow") }.count == 31)
+        reporter.tick()
+        #expect(box.lines.filter { $0.hasPrefix("ax: summary") }.count == 2)
+        let report = try JSONDecoder().decode(AXCallTimingReport.self, from: Data(contentsOf: url))
+        #expect(report.generatedMs == 100_000)
+    }
+
+    @Test func theDefaultClockIsMonotonic() {
+        let first = AXTimingReporter.monotonicMs()
+        let second = AXTimingReporter.monotonicMs()
+        #expect(second >= first && first > 0)
     }
 
     @Test func reportFileIsOwnerOnlyAndDecodes() throws {
@@ -115,6 +141,22 @@ struct AXTimingReporterTests {
         box.nowMs = 300_000
         reporter.tick()
         #expect(box.lines.last?.contains("fallbacks=3") == true)
+    }
+
+    /// B62: when the live backend switched batching off, the state and the summary say so.
+    @Test func batchingOffIsReportedWhenKnown() throws {
+        let box = Box()
+        let (reporter, timings) = Self.reporter(box, reportURL: try Self.temporaryDirectory().appendingPathComponent("ax-timings.json"))
+        #expect(reporter.stateSummary()["batchingDisabled"] == nil)
+        var off = false
+        reporter.batchingDisabled = { off }
+        #expect(reporter.stateSummary()["batchingDisabled"] as? Bool == false)
+        #expect(!AXTimingReporter.summaryLine(timings.report(), suppressedSlowLines: 0, batchingDisabled: false).contains("batching=off"))
+        off = true
+        #expect(reporter.stateSummary()["batchingDisabled"] as? Bool == true)
+        box.nowMs = 300_000
+        reporter.tick()
+        #expect(box.lines.last?.contains("batching=off") == true)
     }
 
     @Test func stateSummaryHasPollPercentiles() throws {

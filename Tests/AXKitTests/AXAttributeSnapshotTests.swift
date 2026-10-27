@@ -176,6 +176,7 @@ struct AXAttributeSnapshotTests {
 
     @Test func withoutBatchingNothingIsReadUntilAccessed() throws {
         let fake = FakeAXBackend(root: AXNode(role: AXRole.window, title: "Main"))
+        fake.batchesReads = false   // asserts the single-read path, whatever IMCTL_FAKE_BATCH says
         let reads = Self.counting(fake)
         let snapshot = try fake.rootElement.read([AXAttribute.role, AXAttribute.title, AXAttribute.frame])
         #expect(reads().isEmpty)

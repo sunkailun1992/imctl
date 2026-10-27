@@ -106,6 +106,7 @@ struct MessageRowParserTests {
             ]),
         ])
         let fake = FakeAXBackend(root: table)
+        fake.batchesReads = false   // counts the on-access reads of the single-read path
         let ignored = try #require(fake.handle(atPath: [0, 0, 0]))
         let body = try #require(fake.handle(atPath: [0, 0, 1]))
         var ignoredGeometryReads = 0

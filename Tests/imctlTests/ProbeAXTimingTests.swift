@@ -29,6 +29,7 @@ struct ProbeAXTimingTests {
 
     @Test func aBackendThatCannotBatchShowsFallbacks() throws {
         let fake = FakeAXBackend(root: try AXNode.load(from: URL(fileURLWithPath: Fixtures.mainWindowPath())))
+        fake.batchesReads = false   // asserts the single-read path, whatever IMCTL_FAKE_BATCH says
         let result = try AXTimingProbe.run(rounds: 1, base: fake, root: { AXElement(handle: fake.rootHandle, backend: $0) })
         #expect(result.batch.fallbacks > 0)
         #expect(result.conversationsEqual && result.messagesEqual)

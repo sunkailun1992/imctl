@@ -31,6 +31,6 @@ struct ProbeActionCommandTests {
 
     @Test func allProbeSubcommandsRegistered() {
         let sub = ProbeCommand.configuration.subcommands.compactMap { $0.configuration.commandName }
-        #expect(sub == ["conversations", "messages", "watch", "select", "compose", "submit", "menu", "scrollback", "menubar", "contacts", "picker", "rowmenu", "addcustomer", "addmembers", "rail"])
+        #expect(sub == ["conversations", "messages", "watch", "select", "compose", "submit", "menu", "scrollback", "menubar", "contacts", "picker", "rowmenu", "addcustomer", "addmembers", "rail", "ax-timing"])
     }
 }

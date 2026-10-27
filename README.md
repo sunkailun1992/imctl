@@ -66,6 +66,7 @@ imctl agent install --dry-run --mqtt                        # 只打印 LaunchAg
 imctl call client.navigate --params '{"action":"nextConversation","idempotencyKey":"n1"}'   # 经本地套接字：窗口菜单「选择下一个会话」（previousConversation / nextUnreadConversation）
 imctl probe menubar                                         # 只读：列出「窗口」菜单项与 enabled 标记
 imctl probe rail                                            # 只读：导航栏角标对 / 锚点列与「通讯录」计数能否归属（只输出计数与几何）
+imctl probe ax-timing --repeat 5                            # 只读：同一客户端逐个读与批次读各跑 N 轮，对比耗时、AX 往返次数与解析结果是否一致（只输出数字）
 scripts/build-app.sh debug && scripts/build-pkg.sh debug    # out/imctl.app（控制台 + CLI + 守护进程，签名）与 out/imctl-<版本>.pkg（docs/ops/installer.md）
 imctl policy list                                           # 编译白名单 + policy.json 规则 + 有效标题
 imctl policy allow --title <测试群名> [--type group] [--chat-id <id>] [--external-user-id <id>]   # 放宽是人的决定；imctld 下一次轮询内生效

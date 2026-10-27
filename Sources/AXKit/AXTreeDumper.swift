@@ -39,32 +39,47 @@ public struct AXTreeDumper {
         return (node, stats)
     }
 
+    /// B61: read together in one round trip per node, with `extraAttributes`.
+    static let batchedAttributes = [
+        AXAttribute.role, AXAttribute.subrole, AXAttribute.roleDescription, AXAttribute.title, AXAttribute.value,
+        AXAttribute.description, AXAttribute.identifier, AXAttribute.help, AXAttribute.placeholderValue,
+        AXAttribute.enabled, AXAttribute.selected, AXAttribute.focused,
+        AXAttribute.frame, AXAttribute.position, AXAttribute.size, AXAttribute.children,
+    ]
+
     private func visit(_ element: AXElement, depth: Int, stats: inout Stats) -> AXNode {
         stats.nodes += 1
         var node = AXNode()
-        node.role = read(element, AXAttribute.role, &stats)?.stringValue
-        node.subrole = read(element, AXAttribute.subrole, &stats)?.stringValue
-        node.roleDescription = read(element, AXAttribute.roleDescription, &stats)?.stringValue
-        node.title = read(element, AXAttribute.title, &stats)?.stringValue
-        node.value = read(element, AXAttribute.value, &stats).map(AXNodeValue.init)
-        node.description = read(element, AXAttribute.description, &stats)?.stringValue
-        node.identifier = read(element, AXAttribute.identifier, &stats)?.stringValue
-        node.help = read(element, AXAttribute.help, &stats)?.stringValue
-        node.placeholder = read(element, AXAttribute.placeholderValue, &stats)?.stringValue
-        node.enabled = read(element, AXAttribute.enabled, &stats)?.boolValue
-        node.selected = read(element, AXAttribute.selected, &stats)?.boolValue
-        node.focused = read(element, AXAttribute.focused, &stats)?.boolValue
-        do { node.frame = try element.frame().map(AXFrame.init) } catch { stats.errors += 1 }
+        // A batch that fails as a whole counts once and leaves every batched field nil.
+        var snapshot: AXAttributeSnapshot?
+        do { snapshot = try element.read(Self.batchedAttributes + extraAttributes) } catch { stats.errors += 1 }
+        node.role = read(snapshot, AXAttribute.role, &stats)?.stringValue
+        node.subrole = read(snapshot, AXAttribute.subrole, &stats)?.stringValue
+        node.roleDescription = read(snapshot, AXAttribute.roleDescription, &stats)?.stringValue
+        node.title = read(snapshot, AXAttribute.title, &stats)?.stringValue
+        node.value = read(snapshot, AXAttribute.value, &stats).map(AXNodeValue.init)
+        node.description = read(snapshot, AXAttribute.description, &stats)?.stringValue
+        node.identifier = read(snapshot, AXAttribute.identifier, &stats)?.stringValue
+        node.help = read(snapshot, AXAttribute.help, &stats)?.stringValue
+        node.placeholder = read(snapshot, AXAttribute.placeholderValue, &stats)?.stringValue
+        node.enabled = read(snapshot, AXAttribute.enabled, &stats)?.boolValue
+        node.selected = read(snapshot, AXAttribute.selected, &stats)?.boolValue
+        node.focused = read(snapshot, AXAttribute.focused, &stats)?.boolValue
+        if let snapshot {
+            do { node.frame = try snapshot.frame().map(AXFrame.init) } catch { stats.errors += 1 }
+        }
         do { node.actions = try element.actions() } catch { stats.errors += 1 }
         for name in Self.settableProbes {
             do { if try element.isSettable(name) { node.settable.append(name) } } catch { stats.errors += 1 }
         }
         for name in extraAttributes {
-            if let v = read(element, name, &stats) { node.extra[name] = v.summary }
+            if let v = read(snapshot, name, &stats) { node.extra[name] = v.summary }
         }
 
         var children: [AXElement] = []
-        do { children = try element.children() } catch { stats.errors += 1 }
+        if let snapshot {
+            do { children = try snapshot.children() } catch { stats.errors += 1 }
+        }
         if children.isEmpty { return node }
         if depth >= maxDepth {
             node.truncated = true
@@ -80,8 +95,9 @@ public struct AXTreeDumper {
         return node
     }
 
-    private func read(_ element: AXElement, _ name: String, _ stats: inout Stats) -> AXAttributeValue? {
-        do { return try element.attributeIfSupported(name) } catch {
+    private func read(_ snapshot: AXAttributeSnapshot?, _ name: String, _ stats: inout Stats) -> AXAttributeValue? {
+        guard let snapshot else { return nil }
+        do { return try snapshot.attributeIfSupported(name) } catch {
             stats.errors += 1
             return nil
         }

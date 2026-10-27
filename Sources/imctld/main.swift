@@ -44,7 +44,13 @@ struct RunCommand: ParsableCommand {
         let store = try ControlStore(path: db)
         let checkpoints = try FileCheckpointStore(directory: DaemonPaths.checkpoints)
         let policyProvider = PolicyProvider(url: URL(fileURLWithPath: policyFile))
-        let backend = LiveAXBackend()
+        // B61: every AX call the handler and the watcher make is timed; outputs carry names and numbers only.
+        let axTimings = AXCallTimings()
+        let axReporter = AXTimingReporter(timings: axTimings, reportURL: DaemonPaths.axTimings, log: log.info)
+        let liveBackend = LiveAXBackend()
+        let backend = MeasuredAXBackend(base: liveBackend, timings: axTimings)
+        backend.onSlowCall = axReporter.noteSlowCall
+        axReporter.batchFallbacks = { liveBackend.batchFallbacks }
         let bundleID = bundle
         let handler = WeComCommandHandler(
             rootProvider: { try AXApp.byBundleID(bundleID, backend: backend) },
@@ -215,6 +221,7 @@ struct RunCommand: ParsableCommand {
                                     observe: !noObserve, debounce: debounce, policyProvider: policyProvider,
                                     statePath: URL(fileURLWithPath: state), log: log, health: watchHealth)
         watcher.socketPath = socket
+        watcher.axReporter = axReporter
         watcher.mediaIndex = handler.mediaIndex
         watcher.automation = RequestAutomation(executor: executor, policyProvider: policyProvider, store: store, log: log)
         watcher.start()

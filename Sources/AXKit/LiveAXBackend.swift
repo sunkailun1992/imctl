@@ -57,6 +57,84 @@ public final class LiveAXBackend: AXBackend {
         return convert(value)
     }
 
+    /// B61: one `AXUIElementCopyMultipleAttributeValues` round trip; per-attribute
+    /// errors come back inside the array (options 0) and map like single reads. When the
+    /// element cannot batch, the result is empty and each attribute is read on access.
+    public func attributes(_ names: [String], of element: AXElementHandle) throws -> [String: AXAttributeResult] {
+        var unique: [String] = []
+        for name in names where !unique.contains(name) { unique.append(name) }
+        guard !unique.isEmpty else { return [:] }
+        var values: CFArray?
+        let err = AXUIElementCopyMultipleAttributeValues(try ref(element), unique as CFArray, AXCopyMultipleAttributeOptions(), &values)
+        switch Self.batchCallDisposition(err) {
+        case .proceed: break
+        case .fallBack: noteFallback(); return [:]
+        case .fail(let error): throw error
+        }
+        guard let items = values as? [AnyObject], items.count == unique.count else {
+            noteFallback()
+            return [:]
+        }
+        var results: [String: AXAttributeResult] = [:]
+        for (name, item) in zip(unique, items) {
+            let typeID = CFGetTypeID(item)
+            if typeID == CFNullGetTypeID() {
+                results[name] = .success(nil)
+            } else if typeID == AXValueGetTypeID(), AXValueGetType(item as! AXValue) == .axError {
+                // The CFTypeID check is the guard, as in `convert`.
+                var code = AXError.success
+                _ = AXValueGetValue(item as! AXValue, .axError, &code)
+                results[name] = Self.itemResult(code: code, name: name)
+            } else {
+                results[name] = .success(convert(item))
+            }
+        }
+        return results
+    }
+
+    private let fallbackLock = NSLock()
+    private var fallbacks = 0
+
+    /// Batched reads this backend answered with an empty result (the element could not
+    /// batch, or the array was malformed); the probe and the daemon report it.
+    public var batchFallbacks: Int {
+        fallbackLock.lock()
+        defer { fallbackLock.unlock() }
+        return fallbacks
+    }
+
+    private func noteFallback() {
+        fallbackLock.lock()
+        fallbacks += 1
+        fallbackLock.unlock()
+    }
+
+    /// What a batched call's own status means for the read.
+    enum BatchCallDisposition: Equatable {
+        case proceed
+        /// The element cannot answer a batch: read each attribute when it is asked for.
+        case fallBack
+        /// Every single read would fail the same way at once; no fallback, so one
+        /// messaging timeout is not multiplied by the number of attributes.
+        case fail(AXKitError)
+    }
+
+    static func batchCallDisposition(_ err: AXError) -> BatchCallDisposition {
+        switch err {
+        case .success: return .proceed
+        case .cannotComplete: return .fail(.cannotComplete("get multiple attributes"))
+        case .invalidUIElement: return .fail(.invalidElement)
+        case .apiDisabled: return .fail(.notTrusted)
+        default: return .fallBack
+        }
+    }
+
+    /// One array item that carried an AXError, mapped exactly like a single read of `name`.
+    static func itemResult(code: AXError, name: String) -> AXAttributeResult {
+        guard code != .noValue, let error = mapError(code, operation: "get", subject: name) else { return .success(nil) }
+        return .failure(error)
+    }
+
     public func isAttributeSettable(_ name: String, of element: AXElementHandle) throws -> Bool {
         var settable = DarwinBoolean(false)
         let err = AXUIElementIsAttributeSettable(try ref(element), name as CFString, &settable)
@@ -100,16 +178,21 @@ public final class LiveAXBackend: AXBackend {
     // MARK: Error mapping
 
     private func check(_ err: AXError, operation: String, subject: String) throws {
+        if let error = Self.mapError(err, operation: operation, subject: subject) { throw error }
+    }
+
+    /// nil for success; shared by single reads and batched array items.
+    static func mapError(_ err: AXError, operation: String, subject: String) -> AXKitError? {
         let what = subject.isEmpty ? operation : "\(operation) \(subject)"
         switch err {
-        case .success: return
-        case .attributeUnsupported, .parameterizedAttributeUnsupported: throw AXKitError.attributeUnsupported(subject)
-        case .actionUnsupported: throw AXKitError.actionUnsupported(subject)
-        case .cannotComplete: throw AXKitError.cannotComplete(what)
-        case .invalidUIElement: throw AXKitError.invalidElement
-        case .apiDisabled: throw AXKitError.notTrusted
-        case .notImplemented: throw AXKitError.notImplemented(what)
-        default: throw AXKitError.apiFailure(code: err.rawValue, operation: what)
+        case .success: return nil
+        case .attributeUnsupported, .parameterizedAttributeUnsupported: return .attributeUnsupported(subject)
+        case .actionUnsupported: return .actionUnsupported(subject)
+        case .cannotComplete: return .cannotComplete(what)
+        case .invalidUIElement: return .invalidElement
+        case .apiDisabled: return .notTrusted
+        case .notImplemented: return .notImplemented(what)
+        default: return .apiFailure(code: err.rawValue, operation: what)
         }
     }
 

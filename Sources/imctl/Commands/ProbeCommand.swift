@@ -6,7 +6,7 @@ struct ProbeCommand: ParsableCommand {
     static let configuration = CommandConfiguration(
         commandName: "probe",
         abstract: "Read-only probes of the WeCom window (phase 0 gates).",
-        subcommands: [ProbeConversationsCommand.self, ProbeMessagesCommand.self, ProbeWatchCommand.self, ProbeSelectCommand.self, ProbeComposeCommand.self, ProbeSubmitCommand.self, ProbeMenuCommand.self, ProbeScrollbackCommand.self, ProbeMenuBarCommand.self, ProbeContactsCommand.self, ProbePickerCommand.self, ProbeRowMenuCommand.self, ProbeAddCustomerCommand.self, ProbeAddMembersCommand.self, ProbeRailCommand.self]
+        subcommands: [ProbeConversationsCommand.self, ProbeMessagesCommand.self, ProbeWatchCommand.self, ProbeSelectCommand.self, ProbeComposeCommand.self, ProbeSubmitCommand.self, ProbeMenuCommand.self, ProbeScrollbackCommand.self, ProbeMenuBarCommand.self, ProbeContactsCommand.self, ProbePickerCommand.self, ProbeRowMenuCommand.self, ProbeAddCustomerCommand.self, ProbeAddMembersCommand.self, ProbeRailCommand.self, ProbeAXTimingCommand.self]
     )
 }
 

@@ -6,6 +6,8 @@ enum DaemonPaths {
     static var db: URL { IMCTLPaths.database }
     static var state: URL { IMCTLPaths.stateFile }
     static var checkpoints: URL { root.appendingPathComponent("checkpoints", isDirectory: true) }
+    /// B61: AX call timing report (names, counts and milliseconds only), rewritten every 30 s.
+    static var axTimings: URL { root.appendingPathComponent("ax-timings.json") }
 }
 
 struct DaemonLog {

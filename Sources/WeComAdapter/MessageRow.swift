@@ -98,7 +98,7 @@ public struct MessageRowParser {
     /// AXElement retries one transient -25201 read. If that also fails for
     /// this child, retain an explicit partial row rather than losing history.
     /// Permission and other client failures still propagate.
-    static func readableValue(_ element: AXElement, readError: inout String?) throws -> String? {
+    static func readableValue(_ element: AXAttributeSnapshot, readError: inout String?) throws -> String? {
         do {
             return try element.valueString()
         } catch AXKitError.apiFailure(let code, let operation) where code == -25201 && operation == "get AXValue" {
@@ -107,14 +107,24 @@ public struct MessageRowParser {
         }
     }
 
+    /// B61: one batched AX round trip per row, row child and cell child.
+    static let rowAttributes = [AXAttribute.role, AXAttribute.frame, AXAttribute.position, AXAttribute.size, AXAttribute.children]
+    static let cellChildAttributes = [AXAttribute.role, AXAttribute.value, AXAttribute.frame, AXAttribute.position,
+                                      AXAttribute.size, AXAttribute.title, AXAttribute.description]
+
     /// `images`: frames of pictures / avatars drawn in the message pane; the largest one
     /// overlapping a media row gives that row its direction.
     public func parse(table: AXElement, tableFrame: CGRect, images: [CGRect] = []) throws -> [MessageRow] {
         var rows: [MessageRow] = []
-        for (index, row) in try table.children().enumerated() {
+        for (index, rowElement) in try table.children().enumerated() {
+            let row = try rowElement.read(Self.rowAttributes)
             guard try row.role() == AXRole.row else { continue }
             let frame = try row.frame() ?? .zero
-            let cell = try row.children().first { try $0.role() == AXRole.cell } ?? row
+            var cell = row
+            for child in try row.children() {
+                let candidate = try child.read(Self.rowAttributes)
+                if try candidate.role() == AXRole.cell { cell = candidate; break }
+            }
             var statics: [(String, CGRect)] = []
             var labels: [(String, CGRect)] = []   // clickable sender names (external groups render them as buttons, live 2026-09-15)
             var icons: [(String, CGRect)] = []    // described AXImage children: file icons, the video play button (live 2026-09-22)
@@ -122,7 +132,8 @@ public struct MessageRowParser {
             var body: (String, CGRect)?
             var unreadableTextFrame: CGRect?
             var readError: String?
-            for child in try cell.children() {
+            for childElement in try cell.children() {
+                let child = try childElement.read(Self.cellChildAttributes)
                 switch try child.role() {
                 case AXRole.textArea:
                     if body == nil {
@@ -215,7 +226,7 @@ public struct MessageRowParser {
             rows.append(MessageRow(
                 index: index, kind: kind, text: body?.0, timeLabel: time?.0, bodyFrame: anchor,
                 direction: directed ? resolvedDirection : .unknown,
-                senderLabel: sender, frame: frame, handle: row.handle,
+                senderLabel: sender, frame: frame, handle: rowElement.handle,
                 fileName: fileName, fileSize: fileSize, fileType: fileType, duration: duration,
                 mediaType: kind == .media ? .unknown : nil, readError: readError
             ))

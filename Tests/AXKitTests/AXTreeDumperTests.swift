@@ -21,6 +21,19 @@ struct AXTreeDumperTests {
         #expect(narrow.children[0].truncated)
     }
 
+    /// B61: one batched read per node instead of one round trip per attribute.
+    @Test func dumperUsesOneBatchPerNode() throws {
+        let fake = FakeAXBackend(root: SampleTree.make())
+        fake.batchesReads = true
+        let timings = AXCallTimings()
+        let measured = MeasuredAXBackend(base: fake, timings: timings)
+        let dumped = AXTreeDumper(extraAttributes: ["AXSelectedRows"]).dump(AXElement(handle: fake.rootHandle, backend: measured))
+        #expect(dumped == SampleTree.make())
+        let batches = timings.report().operations.filter { $0.operation == AXCallOperation.getMany.rawValue }
+        #expect(batches.reduce(0) { $0 + $1.count } == 7)
+        #expect(!timings.report().operations.contains { $0.operation == AXCallOperation.get.rawValue })
+    }
+
     @Test func attributeErrorsBecomeNilAndAreCounted() {
         let fake = FakeAXBackend(root: SampleTree.make())
         fake.injectedFailures["get:AXTitle"] = .cannotComplete("title")

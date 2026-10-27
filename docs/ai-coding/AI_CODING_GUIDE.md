@@ -95,8 +95,9 @@ bash scripts/check-secrets.sh               # warning-only 扫描疑似 secret /
 | 文件 | 内容 | 权限 | 写入方 |
 |---|---|---|---|
 | `imctl.sqlite` | 命令、事件、暂停原因、kv 游标、身份桥 | 默认 | `imctld`（`imctl identity` 亦可写） |
-| `state.json` | 守护进程状态（轮询 / 通知 / 暂停 / 策略摘要） | 默认 | `imctld`，退出时删除 |
+| `state.json` | 守护进程状态（轮询 / 通知 / 暂停 / 策略摘要 / AX 计时摘要） | 默认 | `imctld`，退出时删除 |
 | `checkpoints/` | submit checkpoint（含目标与文本） | 默认 | 适配器 |
+| `ax-timings.json` | B61 AX 逐次计时报告：只有操作、AX 属性 / 动作名、次数、毫秒、结果类别与队列标签 | 0600 | `imctld`，每 30 秒覆写 |
 | `mqtt.json` | broker、controller id、可选凭据 | 0600 | `imctl enroll` |
 | `policy.json` | 白名单放宽规则 | 0600 | `imctl policy`，`imctld` 按 mtime 热加载并发 `controller.state{policy}` |
 | `run/imctl.sock` | Unix socket | 目录 0700 | `imctld` |

@@ -37,19 +37,31 @@ public struct ConversationRowParser {
 
     public init() {}
 
+    /// B61: one batched AX round trip per row, row child and cell child.
+    static let rowAttributes = [AXAttribute.role, AXAttribute.frame, AXAttribute.position, AXAttribute.size,
+                                AXAttribute.children, AXAttribute.selected]
+    static let cellChildAttributes = [AXAttribute.role, AXAttribute.value, AXAttribute.frame, AXAttribute.position,
+                                      AXAttribute.size, AXAttribute.title]
+
     public func parse(table: AXElement) throws -> [ConversationRow] {
         var rows: [ConversationRow] = []
-        for (index, row) in try table.children().enumerated() {
+        for (index, rowElement) in try table.children().enumerated() {
+            let row = try rowElement.read(Self.rowAttributes)
             guard try row.role() == AXRole.row else { continue }
             let frame = try row.frame() ?? .zero
             guard frame.height > 0 else { continue }
-            let cell = try row.children().first { try $0.role() == AXRole.cell } ?? row
+            var cell = row
+            for child in try row.children() {
+                let candidate = try child.read(Self.rowAttributes)
+                if try candidate.role() == AXRole.cell { cell = candidate; break }
+            }
             let cellFrame = try cell.frame() ?? frame
             var texts: [(String, CGRect)] = []
             var markers: [String] = []
             var badge: String?
             var avatarTitle: String?
-            for child in try cell.children() {
+            for childElement in try cell.children() {
+                let child = try childElement.read(Self.cellChildAttributes)
                 switch try child.role() {
                 case AXRole.staticText:
                     if let v = try child.valueString(), let f = try child.frame() {
@@ -72,7 +84,7 @@ public struct ConversationRowParser {
                 index: index, title: fields.title, preview: fields.preview, timeLabel: fields.time,
                 badge: badge, avatarTitle: avatarTitle, markers: markers,
                 selected: (try row.isSelected() ?? cell.isSelected()) ?? false,
-                frame: frame, handle: row.handle
+                frame: frame, handle: rowElement.handle
             ))
         }
         return rows

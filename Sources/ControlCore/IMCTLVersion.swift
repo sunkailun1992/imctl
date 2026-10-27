@@ -26,7 +26,8 @@ public enum IMCTLVersion {
     /// 1.0.22-dev (2026-10-19): report fixed, content-free group-title guard reasons without changing rejection or reconciliation.
     /// 1.0.23-dev (2026-10-19): preserve top-left window image orientation so JPEG pixels align with AX observation boxes.
     /// 1.0.24-dev (2026-10-19): allow owned group-title width changes after fixed staging; never compensate or blur an uncertain rename.
-    public static let string = "1.0.24-dev"
+    /// 1.0.25-dev (2026-10-27): B61 — per-call AX timings (state.json, ax-timings.json, rate-limited log) and batched attribute reads for row parsing, layout location and tree dumps; read-only AX timing probe.
+    public static let string = "1.0.25-dev"
     /// Code-signing identifier; must stay stable so TCC (Accessibility)
     /// authorization survives rebuilds.
     public static let bundleIdentifier = "com.sunkailun.imctl"

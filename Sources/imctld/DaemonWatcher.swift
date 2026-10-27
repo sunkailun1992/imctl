@@ -46,6 +46,8 @@ final class DaemonWatcher {
     var mediaIndex: MediaIndex?
     /// B52: the latest poll for controller.readiness.
     let health: WatchHealth
+    /// B61: times each poll and puts the AX summary into the state file; nil in tests.
+    var axReporter: AXTimingReporter?
 
     init(store: ControlStore, bundleID: String, backend: AXBackend, interval: Double, observe: Bool, debounce: Double,
          policyProvider: PolicyProvider, statePath: URL, log: DaemonLog, health: WatchHealth = WatchHealth()) {
@@ -105,12 +107,15 @@ final class DaemonWatcher {
             log.info("WARNING: policy file unreadable, last good policy kept: \(problem)")
         }
         let drafts: [WatchDraft]
+        let pollStarted = DispatchTime.now().uptimeNanoseconds
         do {
             // An AX notification is direct evidence that content may have
             // changed in place even if row handles and the preview did not.
             drafts = try engine.poll(forceMessages: trigger.hasPrefix("ax:"))
+            axReporter?.timings.recordScope(AXTimingReporter.pollScope, nanos: DispatchTime.now().uptimeNanoseconds - pollStarted, ok: true)
             lastPollMs = Clock.nowMs()
         } catch {
+            axReporter?.timings.recordScope(AXTimingReporter.pollScope, nanos: DispatchTime.now().uptimeNanoseconds - pollStarted, ok: false)
             subscription?.observer.stop()
             subscription = nil
             let verdict = Self.availabilityVerdict(after: error,
@@ -305,6 +310,10 @@ final class DaemonWatcher {
         ]
         state["paused"] = (try? store.pauseReasons().map(\.rawValue)) ?? []
         state["lastEventId"] = (try? store.lastEventId()) ?? 0
+        if let axReporter {
+            state["ax"] = axReporter.stateSummary()
+            axReporter.tick()
+        }
         if let data = try? JSONSerialization.data(withJSONObject: state, options: [.sortedKeys]) {
             try? data.write(to: statePath, options: .atomic)
         }

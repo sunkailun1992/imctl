@@ -32,6 +32,8 @@ public struct WeComLayout {
         let frame: CGRect
     }
 
+    static let walkAttributes = [AXAttribute.role, AXAttribute.frame, AXAttribute.position, AXAttribute.size]
+
     public static func locate(in window: AXElement) throws -> WeComLayout {
         let windowFrame = try window.frame() ?? .zero
         var candidates: [Candidate] = []
@@ -48,11 +50,13 @@ public struct WeComLayout {
             guard depth < 12, let children = try? parent.children() else { continue }
             for element in children {
                 seen += 1
-                guard let role = try? element.role() else { continue }
+                // B61: role and frame in one round trip; children are still read when dequeued.
+                let read = try? element.read(Self.walkAttributes)
+                guard let role = try? read?.role() else { continue }
                 switch role {
                 case AXRole.table, AXRole.scrollArea, AXRole.textArea, AXRole.staticText,
                      AXRole.textField, AXRole.image, AXRole.button:
-                    let frame = (try? element.frame()) ?? .zero
+                    let frame = (try? read?.frame()) ?? .zero
                     candidates.append(Candidate(element: element, role: role, frame: frame))
                 default:
                     break

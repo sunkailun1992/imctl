@@ -149,6 +149,14 @@ public final class FakeAXBackend: AXBackend {
     /// Called before every attribute read; tests use it to change the tree after a number of polls.
     public var onRead: ((AXElementHandle, String) -> Void)?
 
+    /// B61: false (default) batches nothing, so callers read attributes on access as they
+    /// did before batching; true reads every requested name at once, like a live batch.
+    public var batchesReads = false
+
+    public func attributes(_ names: [String], of element: AXElementHandle) throws -> [String: AXAttributeResult] {
+        batchesReads ? try attributesBySingleReads(names, of: element) : [:]
+    }
+
     public func attribute(_ name: String, of element: AXElementHandle) throws -> AXAttributeValue? {
         onRead?(element, name)
         try checkFailure("get:\(name)", "get:*")

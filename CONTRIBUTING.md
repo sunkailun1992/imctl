@@ -1,6 +1,6 @@
 # 参与贡献
 
-欢迎提交问题、文档、测试和功能修复。中文或英文均可。所有贡献通过分支和 pull request 进入 `main`；第三方 GitHub 账号的贡献由 [@sunkailun1992](https://github.com/sunkailun1992) 本人审核。本人账号与 AI 在授权任务内的协作例外见 [MAINTAINERS.md](MAINTAINERS.md)。公开源代码不会授予任何人直接修改主分支的权限。
+欢迎提交问题、文档、测试和功能修复。中文或英文均可。外部贡献通过分支和 pull request 进入 `main`，由 [@sunkailun1992](https://github.com/sunkailun1992) 本人审核；维护者本人与维护者本机的 AI 会话可以直接合并，规则见 [MAINTAINERS.md](MAINTAINERS.md)。公开源代码不会授予任何人直接修改主分支的权限。
 
 ## 开始之前
 
@@ -52,7 +52,7 @@ CI 的 `swift` 检查在 GitHub 托管的 `macos-latest` 上构建并执行非�
 2. 一个 PR 处理一个明确问题。提交信息和 PR 标题用英文 Conventional Commits，例如 `fix(adapter): verify the original group after rename`；PR 正文可用中文或英文。
 3. 按 [PR 模板](.github/pull_request_template.md) 写问题、修改结果、风险、检查结果和未验收项。草稿 PR 可以提前开。
 4. 新协议方法、事件字段、错误码或 topic 必须同一 PR 更新 [权威协议](docs/protocol/im-control-protocol.md) 与对应测试。行为变化同步相关文档；贡献者不自行升发布版本。
-5. 第三方 GitHub 账号的 PR，须 owner 本人对具体 PR / 版本批准、所需 CI 通过、评审对话解决后才可合入；追加新提交需要重新审核。本人账号与 AI 在用户已授权任务内的协作，按 2026-10-19 的例外在当前版本必要 CI 全部通过、评审对话解决后可直接合并，无需逐 PR / head 再询问批准。合并方式为 squash，完整授权边界与目标设置见 [MAINTAINERS.md](MAINTAINERS.md)。
+5. 合并条件：CI 全绿、维护者审核确认是有益的改动并批准、评审对话全部解决，然后由维护者 squash 合并；追加新提交需要重新审核。维护者本人与维护者本机的 AI 会话可以直接合并，目标设置见 [MAINTAINERS.md](MAINTAINERS.md)。
 
 开工、提交前和推送前先 `git fetch`。未推送的本地提交可以 rebase 到最新上游并重跑验证；已推送的分支通过追加提交或合并 `main` 跟进，禁止强推（包括 `--force-with-lease`）。遇到无法解决的冲突、他人的未提交改动或分叉时报告，不覆盖他人工作。
 
@@ -60,7 +60,7 @@ CI 的 `swift` 检查在 GitHub 托管的 `macos-latest` 上构建并执行非�
 
 欢迎使用 AI 辅助，你仍需审查并负责全部提交。在 PR 中说明 AI 是否参与；协作署名只写实际参与的模型。
 
-AI 可以阅读、修改工作分支、执行测试、提交修复和开 PR，不代替 @sunkailun1992 本人 approve，也不伪造审核。第三方 GitHub 账号的 PR 必须由本人审核批准；本人账号与 AI 的已授权协作任务可按 [MAINTAINERS.md](MAINTAINERS.md) 的例外，在当前版本必要 CI 全部通过、评审对话解决后直接合并。持有 owner 凭据本身不构成任务授权。此例外不授权更改 GitHub 权限、规则集、发布状态、真实客户端动作或安装，这些操作仍分别需要本人明确授权。
+AI 可以阅读、修改工作分支、执行测试、提交修复和开 PR，不代替 @sunkailun1992 本人 approve，也不伪造审核。维护者本机用维护者账号运行的 Claude / Codex 会话可以直接合并到 `main`（本机验证全过、合并后看 CI）；云端会话只推 `claude/<主题>` 分支。直接合并不授权更改 GitHub 权限、规则集、发布状态、真实客户端动作或安装，这些操作仍分别需要本人明确授权。
 
 ## 公开内容与安全问题
 

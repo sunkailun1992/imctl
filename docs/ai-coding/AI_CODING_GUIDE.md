@@ -132,11 +132,11 @@ bash scripts/check-secrets.sh               # warning-only 扫描疑似 secret /
 
 ## 11. 分支与提交
 
-- `main` 是唯一长期分支，必须始终可 `swift build` / `swift test`。所有正常开发走短分支 `feature|feat|fix|docs|chore|refactor|test/<scope>-<desc>` 和 PR，不直接推 `main`；外部贡献者推自己的 fork，已有写权限的协作者也不绕过 PR。
+- `main` 是唯一长期分支，必须始终可 `swift build` / `swift test`。维护者本人与维护者本机的 Claude / Codex 会话可以直接合并到 `main`（本机验证全过、合并后看 CI）；云端会话只推 `claude/<主题>` 分支；其他人走短分支 `feature|feat|fix|docs|chore|refactor|test/<scope>-<desc>` 和 PR，外部贡献者推自己的 fork，已有写权限的协作者也不绕过 PR。
 - 提交信息和 PR 标题使用英文 Conventional Commits，前缀 `feat(scope)` / `fix(scope)` / `test` / `docs(gates|specs|ops|protocol|ai-coding)` / `chore` 等，正文写清结果与验证方式；有 AI 参与时署名实际参与的模型。PR 描述可用中文或英文，按 `.github/pull_request_template.md` 填写。
 - 提交前：`IMCTL_LIVE=0 IMCTL_LIVE_VISION=0 swift test` 通过、`bash scripts/check-secrets.sh` 告警逐条人工判断、`git diff --check` 通过、`git status --short` 无 `.raw.json` / 临时文件 / 本机路径。CI 的 `secrets` 是另一项高可信格式检查，不能代替广泛扫描和个人信息复核。
 - 开工、提交前、推送前先 `git fetch`；未推送的本地提交跟进最新上游后重跑验证，已推送的分支通过追加提交或合并 `main` 跟进，禁止强推（含 `--force-with-lease`）。遇到他人的未提交改动或无法解决的冲突就报告，不覆盖。
-- 全库 CODEOWNER 为 @sunkailun1992。第三方 GitHub 账号的 PR 须本人对具体版本批准、所需 CI 通过且评审对话解决后才可合并；追加可审查的新提交须重新审核。AI 不代替本人 approve；本人账号与 AI 在已授权任务内的协作按根目录 `MAINTAINERS.md` 的例外处理，当前版本必要 CI 全部通过、评审对话解决后可直接合并，新增提交后重新核对最新 CI。持有 owner 凭据本身不构成任务授权。具体权限见 `MAINTAINERS.md`；GitHub 规则实际是否生效以仓库设置为准。
+- 全库 CODEOWNER 为 @sunkailun1992。其他人的 PR 须 CI 全绿、本人审核批准、评审对话解决后由本人 squash 合并；追加可审查的新提交须重新审核。AI 不代替本人 approve；只允许 squash，禁止强推与删除 `main`，任何代理都不得修改 ruleset 或仓库权限。具体权限见 `MAINTAINERS.md`；GitHub 规则实际是否生效以仓库设置为准。
 - 一个门报告一个提交；规范与代码可同一提交但交付说明分开写。
 - 不改写已推送历史；历史中的敏感内容（如早期计划里的 broker 地址）是否改写由用户决定。
 - 外部贡献者不自行修改发布版本、打发布标签或发布安装包；提交内容按 Apache-2.0 授权，见 `CONTRIBUTING.md`。

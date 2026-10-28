@@ -1,4 +1,4 @@
-# 批次 B63：MQTT 重连同一时间只保留一个（2026-10-28 CST）— 通过（离线），活体待安装
+# 批次 B63：MQTT 重连同一时间只保留一个（2026-10-28 CST）— 通过（离线）；已安装，断线重连待活体核对
 
 条件：只做离线验证。本批未安装、未重启守护进程，未连接真实企业微信或真实 broker（只连进程内、只监听 127.0.0.1 的假 broker），未发送、未写入、未调用视觉提供商；版本仍为 `1.0.26-dev`（与未安装的 B62 同版），基于 `main@c06e532`（B62）。项目处于观察期，维护者 2026-10-28 看过下文的故障后同意开 B63，范围限定为 `MQTTNIOLink` 的重连逻辑与离线测试，安装另行授权。
 
@@ -44,11 +44,20 @@ B2（2026-09-13）以来的重连逻辑有三处叠加：
 - 变异检查 6 项全被抓到：`stop()` 失效；被替换连接的关闭当真；旧尝试的失败仍重连；每次 CONNACK 都重置退避；「满 60 s」改成「超过 60 s」；`MQTTNIOLink` 关闭时不看 `isActive()`。
 - `ForbiddenAPITests` 通过；`bash scripts/check-secrets.sh` 为既有 11 条示例 / 模板告警，无新增；`git diff --check` 通过。
 
+## 安装（2026-10-28 09:55 CST）
+
+推送后维护者授权安装 B62＋B63 并只读核对，不做真实写入：
+
+- 构建：`main@2e91f05`，`scripts/build-app.sh release`，1.0.26 / build 13。三个可执行文件的 designated requirement 与已装的 1.0.25 / build 21 逐字相同（同一 Apple Development 证书）。SHA-256：imctl `47cfb699…`、imctl-console `79707e62…`、imctld `be834014…`。
+- 安装：已装的 1.0.25 / build 21 先打包为 `out/rollback/imctl-1.0.25-build21-20261028.zip`（不入库，SHA-256 `fc555bde…`，解包后签章与三个可执行文件哈希已核对）。确认没有执行中的命令后，新包换到 `~/Applications/imctl.app`，09:55:13 `launchctl kickstart -k` 重启守护进程。没有用开发 pkg：磁盘上的 build 21 大于 13，pkgbuild 默认的 `BundleIsVersionChecked` 会跳过 bundle。步骤已写进[安装说明](../ops/installer.md)。
+- 只读核对：守护进程 1.0.26-dev，由 launchd 常驻，未暂停，`trusted`（辅助功能授权保留），屏幕录制、访问企微数据与完全磁盘访问仍允许；`imctl doctor --offline` 就绪，命令行与守护进程同为 build 13；`controller.describe` 回 1.0.26-dev，视觉计数为 0。新进程启动 1 s 内 MQTT 连上（`sessionPresent=true`）并订阅命令主题，没有任何重连行。
+- 命令库：unknown 仍为原有 2 条；安装后只多了两条只读的 `controller.describe`，无发送、无写入。
+
 ## 活体
 
-本批不安装、不重启、不做活体。本机仍运行 B61 的 1.0.25 / build 21，broker 下次夜间断线时风暴仍可能出现。获准安装（会连同 B62）后只读核对：
+断线时的重连行为要等 broker 下次断线才能看到（10-18 至 10-28 多在本地 00:00 前后）。届时只读核对：
 
-- broker 下次断线时，每次失败只跟一行 `reconnecting in`，延迟逐次翻倍、带一位小数，不再出现每分钟上百次的「连上即被断」。
+- 每次失败只跟一行 `reconnecting in`，延迟逐次翻倍、带一位小数，不再出现每分钟上百次的「连上即被断」。
 - 出现 `a replaced connection closed` 时连接保持，`imctl status` 的 MQTT 仍为已连接。
 - 断线恢复后 `state` 为 retained online，命令订阅正常。
 
@@ -56,7 +65,7 @@ B2（2026-09-13）以来的重连逻辑有三处叠加：
 
 ## 结论与未闭环
 
-- 离线通过；活体待安装授权。
+- 离线通过；10-28 09:55 已安装（与 B62 同为 1.0.26 / build 13），安装后只读核对正常；断线重连的活体核对待 broker 下次断线。
 - broker 为何在夜间断线、为何先回 `notAuthorized` / `serverBusy`，不在本仓库，未核实。
 - 若另有进程用同一 client id 连同一 broker，两边仍会互踢；每次连接都不满 60 s，退避会升到 15–30 s，不再是每秒多次。mqtt-nio 的关闭回调不带断开原因（例如 0x8E 会话接管），日志看不出是谁踢的。
 - CONNACK 等待沿用 mqtt-nio 默认（`timeout` 为 nil，不设上限），B63 前后相同：broker 接受 TCP 却既不回 CONNACK 也不关连接时，这次尝试会一直等，不另起重连。

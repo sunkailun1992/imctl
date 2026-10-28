@@ -7,6 +7,7 @@ import NIOFoundationCompat
 /// Live MQTT 5 client (MQTT-NIO). Persistent session so commands published
 /// while we are offline are delivered on reconnect (QoS 1; the executor's
 /// idempotency key absorbs redelivery). Will = retained `state` offline.
+/// Connects and reconnects as `MQTTReconnectState` decides (B63).
 public final class MQTTNIOLink: MQTTLink {
     public let settings: MQTTSettings
     public var log: (String) -> Void
@@ -18,10 +19,8 @@ public final class MQTTNIOLink: MQTTLink {
     private let commandQueue = DispatchQueue(label: "com.sunkailun.imctl.mqtt.commands")
     private let pumpQueue = DispatchQueue(label: "com.sunkailun.imctl.mqtt.pump")
     private var pumpTimer: DispatchSourceTimer?
-    private var reconnectDelay: TimeInterval = 1
-    private var stopped = false
     private let stateLock = NSLock()
-    private var connected = false
+    private var reconnect = MQTTReconnectState()
 
     public init(settings: MQTTSettings, log: @escaping (String) -> Void) {
         self.settings = settings
@@ -37,10 +36,7 @@ public final class MQTTNIOLink: MQTTLink {
                             eventLoopGroupProvider: .createNew, configuration: configuration)
     }
 
-    public var isConnected: Bool {
-        stateLock.lock(); defer { stateLock.unlock() }
-        return connected
-    }
+    public var isConnected: Bool { withReconnect { $0.isConnected } }
 
     // MARK: Lifecycle
 
@@ -52,20 +48,26 @@ public final class MQTTNIOLink: MQTTLink {
             case .failure(let error): self?.log("mqtt: inbound error \(error)")
             }
         }
+        // MQTT-NIO reports the close of every connection it made, also of one a newer connection has replaced.
         client.addCloseListener(named: "imctl.close") { [weak self] _ in
             guard let self else { return }
-            self.setConnected(false)
-            self.log("mqtt: connection closed")
-            self.scheduleReconnect()
+            let active = self.client.isActive()
+            let decision = self.withReconnect { $0.connectionClosed(active: active, now: Self.uptime()) }
+            if case .retry = decision { self.log("mqtt: connection closed") }
+            self.act(on: decision)
         }
-        connect()
+        act(on: withReconnect { $0.start() })
     }
 
     public func stop() {
-        stopped = true
+        let wasConnected = withReconnect { state -> Bool in
+            let connected = state.isConnected
+            state.stop()
+            return connected
+        }
         pumpTimer?.cancel()
         pumpTimer = nil
-        if isConnected, let binding {
+        if wasConnected, let binding {
             _ = try? client.v5.publish(to: settings.stateTopic, payload: ByteBuffer(data: binding.statePayload(online: false)),
                                        qos: .atLeastOnce, retain: true).wait()
         }
@@ -73,8 +75,8 @@ public final class MQTTNIOLink: MQTTLink {
         try? client.syncShutdownGracefully()
     }
 
-    private func connect() {
-        guard !stopped, let binding else { return }
+    private func connect(attempt: Int) {
+        guard let binding else { return }
         let will = (topicName: settings.stateTopic,
                     payload: ByteBuffer(data: binding.statePayload(online: false, extra: ["reason": "will"])),
                     qos: MQTTQoS.atLeastOnce, retain: true, properties: MQTTProperties())
@@ -84,17 +86,16 @@ public final class MQTTNIOLink: MQTTLink {
                 switch result {
                 case .success(let ack):
                     self.log("mqtt: connected to \(self.settings.host):\(self.settings.port) as \(self.settings.clientID) (sessionPresent=\(ack.sessionPresent), reason=\(ack.reason))")
-                    self.onConnected()
+                    let active = self.client.isActive()
+                    self.act(on: self.withReconnect { $0.connectSucceeded(attempt: attempt, active: active, now: Self.uptime()) })
                 case .failure(let error):
                     self.log("mqtt: connect failed: \(error)")
-                    self.scheduleReconnect()
+                    self.act(on: self.withReconnect { $0.connectFailed(attempt: attempt) })
                 }
             }
     }
 
     private func onConnected() {
-        setConnected(true)
-        reconnectDelay = 1
         client.v5.subscribe(to: [MQTTSubscribeInfoV5(topicFilter: settings.commandTopic, qos: .atLeastOnce)])
             .whenComplete { [weak self] result in
                 guard let self else { return }
@@ -111,20 +112,33 @@ public final class MQTTNIOLink: MQTTLink {
         startPump()
     }
 
-    private func scheduleReconnect() {
-        guard !stopped else { return }
-        let delay = reconnectDelay
-        reconnectDelay = min(reconnectDelay * 2, 30)
-        log("mqtt: reconnecting in \(Int(delay)) s")
-        pumpQueue.asyncAfter(deadline: .now() + delay) { [weak self] in
-            guard let self, !self.stopped, !self.isConnected else { return }
-            self.connect()
+    /// Carries out a decision made under `stateLock`, outside it.
+    private func act(on decision: MQTTReconnectState.Decision) {
+        switch decision {
+        case .ignore:
+            break
+        case .connect(let attempt):
+            connect(attempt: attempt)
+        case .online:
+            onConnected()
+        case .staleClose:
+            log("mqtt: a replaced connection closed; the current one stays up")
+        case .retry(let attempt, let delay):
+            log("mqtt: reconnecting in \(String(format: "%.1f", delay)) s")
+            pumpQueue.asyncAfter(deadline: .now() + delay) { [weak self] in
+                guard let self else { return }
+                self.act(on: self.withReconnect { $0.retryDue(attempt: attempt) })
+            }
         }
     }
 
-    private func setConnected(_ value: Bool) {
-        stateLock.lock(); connected = value; stateLock.unlock()
+    private func withReconnect<T>(_ body: (inout MQTTReconnectState) -> T) -> T {
+        stateLock.lock(); defer { stateLock.unlock() }
+        return body(&reconnect)
     }
+
+    /// Monotonic seconds, for how long a connection lasted.
+    private static func uptime() -> TimeInterval { TimeInterval(DispatchTime.now().uptimeNanoseconds) / 1_000_000_000 }
 
     // MARK: Inbound commands
 

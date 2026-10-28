@@ -8,7 +8,7 @@
 
 | 层 | 工具 | 对象 | 何时跑 |
 |---|---|---|---|
-| 单元测试 | swift-testing（`@Suite` / `@Test` / `#expect` / `#require`），`FakeAXBackend`，`ControlStore(":memory:")`，`FakeHandler` / fake link | 协议类型、策略、执行器、存储、解析、动作、观察引擎、分发器、MQTT 绑定、CLI 解析与 `--from-fixture` 探针 | `swift test`，每次提交前 |
+| 单元测试 | swift-testing（`@Suite` / `@Test` / `#expect` / `#require`），`FakeAXBackend`，`ControlStore(":memory:")`，`FakeHandler` / fake link，`FakeMQTTBroker`（进程内，只监听 127.0.0.1） | 协议类型、策略、执行器、存储、解析、动作、观察引擎、分发器、MQTT 绑定与重连、CLI 解析与 `--from-fixture` 探针 | `swift test`，每次提交前 |
 | 守卫测试 | `ForbiddenAPITests` 扫描 `Sources/` | 合成输入与额外 TCC API | 随 `swift test` |
 | 混沌测试 | `IMCTL_CRASH_AFTER=submit`、`exitHook`、`CrashInjected` | submit 后 confirm 前崩溃 → 重启后 `unknown` 不重跑 | 单测 + 阶段 1 活体 |
 | live 测试 | `IMCTL_LIVE=1 swift test` | `LiveAXBackend` 对真实客户端的只读假设 | 本机、有授权时 |
@@ -23,6 +23,7 @@
 - 客户端反应用 `reactions` / `replaceChildren` / `mutate` 模拟（发送后出现气泡、清空输入框、预览变化）。
 - 时钟、随机、进程退出、按键投递全部经闭包注入（`now`、`exitHook`、`postReturnKey`），测试不 sleep 超过必要（`verifyTimeout` 缩到 0.05–0.3 s）。
 - 存储测试用 `:memory:`，覆盖迁移后的新表；不写本机路径。
+- MQTT 重连（B63）：判定在 `MQTTReconnectStateTests` 里注入抖动与时刻、不 sleep；`MQTTNIOLinkReconnectTests` 让真实的 `MQTTNIOLink` 连 `FakeMQTTBroker`，按 broker 收到的 CONNECT 数断言。后者沿用 1 s 起的真实退避（三项共约 11 s），因为验的是装机时的连接行为。
 - 每个 wire 错误码至少一个测试；`tools/list` 数量、CLI 子命令列表有测试，改协议 / 命令时同步更新。
 - 测试不含真实联系人标题 / 正文；用 `文件传输助手`、`«hash»` 或合成名（`imctl测试群`、`小明·a1b2c3`）。
 - B16 云端视觉测试只用**合成裁图和假传输**，不计费、不上传活体截图：先断言策略拒绝与 AX 唯一路径零截图 / 零请求，再断言候选 ID 严格匹配、AX 重读复核、裁图外合成像素不进入请求、三家固定官方端点 / 认证头 / 重定向拒绝、缺密钥 / 429 / 超时 / 坏响应失败关闭。日志与状态测试不得打印密钥、图片字节或企微内容；B16 时常规 MQTT 读取与观察的云端调用数为零。B17 新授权后，显式固定读取命令与后台观察须分别测试；旧配置缺少 `fullWindowEnabled`、只开 `cloudEnabled`、未获屏幕录制授权三种条件都要断言整窗截图和请求为零。

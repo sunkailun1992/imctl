@@ -28,6 +28,7 @@ public enum IMCTLVersion {
     /// 1.0.24-dev (2026-10-19): allow owned group-title width changes after fixed staging; never compensate or blur an uncertain rename.
     /// 1.0.25-dev (2026-10-27): B61 — per-call AX timings (state.json, ax-timings.json, rate-limited log) and batched attribute reads for row parsing, layout location and tree dumps; read-only AX timing probe.
     /// 1.0.26-dev (2026-10-28): B62 — B61 review follow-ups: monotonic AX timing windows, batching switched off when the client never answers a batch, named whole-batch timeouts, GCD queues labelled other; CI also runs every suite with batching fakes.
+    ///   B63 — one MQTT reconnect at a time: a refused connect that also closes, or a replaced connection's late close, starts no second chain; the backoff resets only after a minute connected; jittered delays.
     public static let string = "1.0.26-dev"
     /// Code-signing identifier; must stay stable so TCC (Accessibility)
     /// authorization survives rebuilds.
